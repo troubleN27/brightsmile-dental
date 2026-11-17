@@ -218,7 +218,9 @@
       "consentLink": "Personal Data Policy",
       "honeypot": "Leave this field empty",
       "optional": "optional",
-      "required": "required"
+      "required": "required",
+      "countrySearch": "Search country or code",
+      "countryEmpty": "No matches"
     },
     "time": {
       "morning": "Morning",

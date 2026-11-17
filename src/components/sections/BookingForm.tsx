@@ -5,11 +5,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { AlertCircle, CheckCircle2, Loader2, Phone } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Controller, useForm, useWatch, type FieldError } from "react-hook-form";
-import PhoneInput from "react-phone-number-input";
+import PhoneInput, { type Props as PhoneInputBaseProps } from "react-phone-number-input";
 import enLabels from "react-phone-number-input/locale/en";
 import ruLabels from "react-phone-number-input/locale/ru";
-import "react-phone-number-input/style.css";
 import { Button } from "@/components/ui/button";
+import { CountrySelect } from "@/components/ui/CountrySelect";
 import { phoneHref, site } from "@/config/site";
 import { doctors } from "@/data/doctors";
 import { serviceCategories, services } from "@/data/services";
@@ -41,10 +41,12 @@ function ErrorMessage({ id, text }: { id: string; text: string | null }) {
   );
 }
 
-/** The country "flag" is shown as its ISO code, so no flag images are downloaded. */
-function CountryCode({ country }: { country: string }) {
-  return <span className="text-sm font-bold text-navy">{country}</span>;
-}
+type PhoneInputProps = PhoneInputBaseProps<React.InputHTMLAttributes<HTMLInputElement>>;
+
+/** Countries listed first in the phone country picker, the rest follow alphabetically. */
+const PRIORITY_COUNTRIES: NonNullable<PhoneInputProps["countryOptionsOrder"]> = [
+  "RU", "BY", "KZ", "UZ", "AM", "GE", "US", "GB", "DE", "|", "...",
+];
 
 export function BookingForm() {
   const t = useTranslations("Booking");
@@ -192,12 +194,22 @@ export function BookingForm() {
             control={control}
             render={({ field }) => (
               <PhoneInput
+                // The ref goes to the component itself: it forwards it to the number input.
+                // Passing it through numberInputProps would override the library's own ref
+                // and break country switching.
+                ref={field.ref}
                 id={fieldId("phone")}
                 international
                 defaultCountry="RU"
                 countryCallingCodeEditable={false}
+                addInternationalOption={false}
+                countryOptionsOrder={PRIORITY_COUNTRIES}
                 labels={locale === "ru" ? ruLabels : enLabels}
-                flagComponent={CountryCode}
+                countrySelectComponent={CountrySelect}
+                countrySelectProps={{
+                  searchPlaceholder: t("fields.countrySearch"),
+                  emptyText: t("fields.countryEmpty"),
+                }}
                 autoComplete="tel"
                 value={field.value || undefined}
                 onChange={(value) => field.onChange(value ?? "")}
@@ -206,12 +218,11 @@ export function BookingForm() {
                 aria-invalid={!!errors.phone}
                 aria-describedby={describedBy("phone", errors.phone)}
                 className={cn(
-                  "phone-field flex h-12 items-center gap-2 rounded-button border bg-white pl-3 transition-colors focus-within:border-primary-dark focus-within:ring-3 focus-within:ring-primary/25",
+                  "flex h-12 items-stretch rounded-button border bg-white pl-1 transition-colors focus-within:border-primary-dark focus-within:ring-3 focus-within:ring-primary/25",
                   errors.phone ? "border-destructive" : "border-input hover:border-slate-400",
                 )}
                 numberInputProps={{
-                  ref: field.ref,
-                  className: "h-full min-w-0 flex-1 rounded-r-button bg-transparent pr-4 text-base text-navy outline-none",
+                  className: "h-full min-w-0 flex-1 rounded-r-button bg-transparent px-3 text-base text-navy outline-none",
                 }}
               />
             )}

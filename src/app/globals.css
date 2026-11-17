@@ -98,24 +98,6 @@
   }
 }
 
-/* Phone input (react-phone-number-input): ISO code instead of a flag image */
-.phone-field .PhoneInputCountryIcon {
-  width: auto;
-  height: auto;
-  background: none;
-  box-shadow: none;
-}
-
-.phone-field .PhoneInputCountrySelectArrow {
-  color: var(--color-navy);
-  opacity: 0.6;
-  margin-left: 0.4em;
-}
-
-.phone-field .PhoneInputCountrySelect:focus + .PhoneInputCountryIcon--border {
-  box-shadow: none;
-}
-
 /* Typography scale (SPEC §8): mobile first */
 @utility text-h1 {
   font-size: 32px;
