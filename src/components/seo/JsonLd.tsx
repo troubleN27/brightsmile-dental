@@ -41,7 +41,8 @@ export function JsonLd({ locale }: { locale: Locale }) {
       bestRating: 5,
     },
     availableLanguage: ["Russian", "English"],
-    sameAs: [site.telegram, site.instagram],
+    // Only links that identify the clinic itself (not the generic Instagram home page)
+    sameAs: [site.telegram],
   };
 
   return (

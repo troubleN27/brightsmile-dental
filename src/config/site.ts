@@ -32,8 +32,10 @@ export const site = {
     { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:00", closes: "20:00" },
     { days: ["Sunday"], opens: "10:00", closes: "16:00" },
   ],
-  telegram: "https://t.me/brightsmiledental",
-  instagram: "https://instagram.com/brightsmile.dental",
+  /** Booking bot; all Telegram buttons on the site lead here */
+  telegram: "https://t.me/brightsmile_booking_bot",
+  /** Instagram home page (the clinic has no profile link yet) */
+  instagram: "https://www.instagram.com/",
   map: { lat: 55.7593, lng: 37.6466, zoom: 16 },
   /**
    * Legal details of the clinic (operator of personal data, medical licence).
