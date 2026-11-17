@@ -33,54 +33,14 @@
     "en": "English"
   },
   "Hero": {
-    "eyebrow": "English-speaking dentists in central Moscow",
-    "title": "Dental care that feels calm, not scary",
-    "subtitle": "Gentle dentistry for adults and kids: modern numbing, upfront pricing, and dentists who walk you through every step before treatment begins.",
-    "ctaPrimary": "Book a free consultation",
-    "ctaSecondary": "See pricing",
-    "photoAlt": "Smiling patient with her dentist at BrightSmile Dental",
-    "badgeTitle": "Open 7 days",
-    "badgeText": "Appointments every day, Sundays included",
-    "statsLabel": "BrightSmile Dental at a glance",
-    "years": "{count, plural, one {# year} other {# years}}",
-    "yearsLabel": "caring for smiles",
-    "patients": "{count}+",
-    "patientsLabel": "patients and counting",
-    "rating": "{rating} / 5",
-    "ratingLabel": "average patient rating",
-    "warranty": "Up to {count, plural, one {# year} other {# years}}",
-    "warrantyLabel": "treatment warranty"
-  },
-  "Advantages": {
-    "eyebrow": "Why BrightSmile",
-    "title": "A dental visit you won't dread",
-    "subtitle": "We know a lot of people feel anxious about the dentist. Everything here is designed to keep you comfortable and in the loop.",
-    "items": {
-      "painless": {
-        "title": "Gentle numbing",
-        "text": "A numbing gel before every injection and modern anesthetics. Most patients feel nothing more than light pressure."
-      },
-      "equipment": {
-        "title": "Modern technology",
-        "text": "3D cone-beam imaging, a dental microscope and digital scanners mean more accurate diagnoses and gentler treatment."
-      },
-      "warranty": {
-        "title": "Up to {years}-year warranty",
-        "text": "Written coverage on implants, crowns and veneers, with the terms laid out before you start."
-      },
-      "installments": {
-        "title": "Interest-free payment plans",
-        "text": "Spread treatment from ₽30,000 across up to 12 months. We also accept voluntary health insurance (DMS) policies."
-      },
-      "kids": {
-        "title": "Pediatric dentist",
-        "text": "A playful first meeting and short visits, so kids grow up without a fear of the dentist."
-      },
-      "everyday": {
-        "title": "Open 7 days a week",
-        "text": "Evening hours until 8 PM and weekend appointments make it easy to fit a visit into your schedule."
-      }
-    }
+    "title": "Dental care without the rush",
+    "lead": "Before any treatment, your dentist shows you the scan, explains what they see and tells you the price. We don't hurry you or talk you into extras. We're on Pokrovka Street, a seven-minute walk from Chistye Prudy metro.",
+    "ctaPrimary": "Book a consultation",
+    "ctaSecondary": "See prices",
+    "photoAlt": "A dentist talking through a treatment plan with a patient",
+    "factSince": "On Pokrovka Street since 2014",
+    "factRating": "Average rating {rating} from {count, plural, one {# review} other {# reviews}}",
+    "factKids": "Children seen from age three"
   },
   "Doctors": {
     "eyebrow": "Our team",
@@ -357,5 +317,44 @@
     "telegram": "Message us on Telegram",
     "book": "Book a visit",
     "call": "Call"
+  },
+  "OpenStatus": {
+    "open": "Open today until {time}",
+    "opensToday": "Closed now, opening at {time}",
+    "opensTomorrow": "Closed now, opening tomorrow at {time}"
+  },
+  "About": {
+    "title": "A clinic where we talk first",
+    "story1": "Anna Sokolova opened the clinic in 2014, after ten years in chain clinics where dentists were expected to sell as much treatment as possible. We decided to work the other way round: an exam and a conversation first, then a written plan with prices, and treatment only once you agree.",
+    "story2": "Today there are four dentists and three treatment rooms. Appointments don't overlap, so if you're booked for 10:00, you're in the chair at 10:00, not waiting in the hallway.",
+    "quote": "If someone is scared, we don't start. We get to know each other, show them the instruments and agree on a stop signal. Sometimes nothing gets treated on the first visit, and that's fine.",
+    "quoteAuthor": "Anna Sokolova, clinical director",
+    "photoAlt": "Waiting area at the clinic",
+    "points": {
+      "numbing": {
+        "title": "Numbing that works",
+        "text": "We apply a numbing gel before every injection and choose the anesthetic with your health and allergies in mind. Raise your hand and we stop."
+      },
+      "plan": {
+        "title": "A written plan with prices",
+        "text": "After the exam you take home a printed plan. The price won't go up because of something we missed."
+      },
+      "warranty": {
+        "title": "Up to {years}-year warranty",
+        "text": "On implants, crowns and veneers, and two years on fillings. The terms are in your contract, not just a verbal promise."
+      },
+      "scan": {
+        "title": "Scans on site",
+        "text": "The 3D scanner is in the next room, so there's no trip to a separate imaging center and back."
+      },
+      "kids": {
+        "title": "Kids from age three",
+        "text": "Dr. Granina sees children. The first visit is about getting comfortable with the chair and the tools; treatment starts next time."
+      },
+      "everyday": {
+        "title": "Open seven days",
+        "text": "Until 8 pm Monday to Saturday and 4 pm on Sunday, so you can come by after work."
+      }
+    }
   }
 }

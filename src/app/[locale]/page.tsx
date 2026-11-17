@@ -1,4 +1,4 @@
-import { Advantages } from "@/components/sections/Advantages";
+import { About } from "@/components/sections/About";
 import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { Booking } from "@/components/sections/Booking";
 import { Contacts } from "@/components/sections/Contacts";
@@ -17,7 +17,7 @@ export default function HomePage() {
       {/* Hero is not animated: it is the first thing people see */}
       <Hero />
       <Reveal>
-        <Advantages />
+        <About />
         <Services />
         <BeforeAfter />
         <Doctors />

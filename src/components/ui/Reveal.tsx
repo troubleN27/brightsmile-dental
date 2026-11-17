@@ -31,12 +31,18 @@ export function Reveal({ children }: RevealProps) {
           targets.forEach((target) => {
             // Blocks already on screen stay put instead of flashing
             if (target.getBoundingClientRect().top < window.innerHeight) return;
+            // Lists and grids come in item by item; other blocks as a whole
+            const items =
+              target.matches("ul, ol") && target.children.length > 1
+                ? Array.from(target.children)
+                : [target];
             // Opacity only (not visibility), so content stays reachable by keyboard
-            gsap.from(target, {
-              y: 32,
+            gsap.from(items, {
+              y: 12,
               opacity: 0,
-              duration: 0.8,
+              duration: 0.6,
               ease: "power2.out",
+              stagger: 0.07,
               scrollTrigger: { trigger: target, start: "top 88%", once: true },
             });
           });

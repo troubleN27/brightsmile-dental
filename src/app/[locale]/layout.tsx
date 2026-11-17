@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { cacheLife } from "next/cache";
-import { Manrope } from "next/font/google";
+import { Lora, Manrope } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import { FloatingButtons } from "@/components/layout/FloatingButtons";
@@ -20,12 +20,20 @@ const manrope = Manrope({
   display: "swap",
 });
 
+const lora = Lora({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-lora",
+  weight: ["500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
 export const viewport: Viewport = {
-  themeColor: "#14B8A6",
+  themeColor: "#FAF8F4",
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -69,7 +77,7 @@ export default async function LocaleLayout({
   const year = await getCurrentYear();
 
   return (
-    <html lang={locale} className={manrope.variable}>
+    <html lang={locale} className={`${manrope.variable} ${lora.variable}`}>
       <head>
         <ReloadScrollReset />
       </head>
