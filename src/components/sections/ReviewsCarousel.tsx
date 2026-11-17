@@ -72,9 +72,9 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
   return (
     <div role="region" aria-roledescription="carousel" aria-label={t("carousel")}>
       <div ref={emblaRef} className="-mx-3 overflow-hidden px-3 py-2">
-        <ul className="-ml-4 flex touch-pan-y lg:-ml-6">
+        <div className="-ml-4 flex touch-pan-y lg:-ml-6">
           {reviews.map((review, index) => (
-            <li
+            <div
               key={review.id}
               role="group"
               aria-roledescription="slide"
@@ -109,9 +109,9 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
                   <p className="text-sm text-primary-dark">{review.service}</p>
                 </figcaption>
               </figure>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
 
       <div className="mt-8 flex items-center justify-between gap-4">

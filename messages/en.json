@@ -3,6 +3,11 @@
     "title": "BrightSmile Dental — Calm, Gentle Dentistry in San Francisco",
     "description": "Fillings, cleanings, implants and cosmetic dentistry in San Francisco. Gentle care, clear pricing and a written warranty. Free consultation when you book online."
   },
+  "OgImage": {
+    "title": "Dental care that feels calm, not scary",
+    "subtitle": "Family dentistry in San Francisco · English & Russian",
+    "badge": "Free consultation when you book online"
+  },
   "Common": {
     "logoLabel": "BrightSmile Dental home"
   },
@@ -250,6 +255,72 @@
       "plan": "You get a written treatment plan with prices — free of charge."
     },
     "preferPhone": "Prefer to call?"
+  },
+  "Privacy": {
+    "metaTitle": "Privacy Policy",
+    "metaDescription": "How BrightSmile Dental collects, uses and protects the information you share on our website.",
+    "title": "Privacy Policy",
+    "updated": "Last updated: {date}",
+    "intro": "We take your privacy seriously. This page explains, in plain language, what information we receive through our website, why we need it, and the choices you have.",
+    "back": "Back to home",
+    "sections": [
+      {
+        "title": "Who we are",
+        "paragraphs": [
+          "This website belongs to BrightSmile Dental, 1250 Market Street, San Francisco, CA 94102, USA. For any privacy questions, email {email} or call {phone}."
+        ]
+      },
+      {
+        "title": "What we collect",
+        "paragraphs": [
+          "Only what you enter in the booking form: your name, phone number and, if you choose, a service, a dentist, a preferred date and time, and a comment.",
+          "We don't ask for or store medical records, payment details or insurance ID numbers through this website. Please don't include that kind of information in the comment field."
+        ]
+      },
+      {
+        "title": "How we use it",
+        "paragraphs": [
+          "To call you back, answer your questions and schedule your visit. We don't use your details for marketing emails, and we never sell them."
+        ]
+      },
+      {
+        "title": "Where it's stored and who sees it",
+        "paragraphs": [
+          "Your request goes to a private Telegram chat used by our front desk team. The website has no database. Only staff who handle scheduling can see booking requests.",
+          "The website is hosted on Vercel, and Telegram delivers booking requests. These services process data only as needed to run. We don't share your information with anyone else unless the law requires it."
+        ]
+      },
+      {
+        "title": "How long we keep it",
+        "paragraphs": [
+          "Booking requests are kept for up to 12 months and then deleted from the team chat. If you become our patient, your records are kept as required by law."
+        ]
+      },
+      {
+        "title": "Cookies and analytics",
+        "paragraphs": [
+          "We don't use advertising cookies or web analytics. The Contact section includes an embedded Google Map; when it loads, Google may set its own cookies under Google's privacy policy."
+        ]
+      },
+      {
+        "title": "Your rights",
+        "paragraphs": [
+          "You can ask what information we hold about you, have it corrected or deleted, or withdraw your consent at any time. Just email {email} and we'll respond within 30 days."
+        ]
+      },
+      {
+        "title": "Children",
+        "paragraphs": [
+          "Only a parent or legal guardian can book a visit for a child. We don't knowingly accept requests from children under 13."
+        ]
+      },
+      {
+        "title": "Changes to this policy",
+        "paragraphs": [
+          "If we update this policy, the new version will be posted on this page with a new date."
+        ]
+      }
+    ]
   },
   "Floating": {
     "telegram": "Message us on Telegram",

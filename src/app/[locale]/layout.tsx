@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { cacheLife } from "next/cache";
 import { Manrope } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
@@ -6,7 +6,10 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { FloatingButtons } from "@/components/layout/FloatingButtons";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { site, siteUrl } from "@/config/site";
+import { routing, type Locale } from "@/i18n/routing";
+import { localeAlternates, localizedPath, ogLocale } from "@/lib/seo";
 import { BookingProvider } from "@/store/booking";
 import "../globals.css";
 
@@ -20,11 +23,35 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+export const viewport: Viewport = {
+  themeColor: "#14B8A6",
+};
+
 export async function generateMetadata(): Promise<Metadata> {
+  const locale = (await getLocale()) as Locale;
   const t = await getTranslations("Metadata");
+  const title = t("title");
+  const description = t("description");
+
   return {
-    title: t("title"),
-    description: t("description"),
+    metadataBase: new URL(siteUrl()),
+    // Pages set their own title; the home page uses the default
+    title: { default: title, template: `%s — ${site.name}` },
+    description,
+    applicationName: site.name,
+    alternates: localeAlternates(locale),
+    openGraph: {
+      type: "website",
+      siteName: site.name,
+      title,
+      description,
+      url: localizedPath(locale),
+      locale: ogLocale[locale],
+      alternateLocale: routing.locales.filter((l) => l !== locale).map((l) => ogLocale[l]),
+    },
+    twitter: { card: "summary_large_image", title, description },
+    robots: { index: true, follow: true },
+    formatDetection: { telephone: false },
   };
 }
 
@@ -43,6 +70,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={manrope.variable}>
       <body className="flex min-h-dvh flex-col font-sans">
+        <JsonLd locale={locale as Locale} />
         <NextIntlClientProvider>
           <Header />
           <BookingProvider>

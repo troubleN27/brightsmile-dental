@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { phoneHref, site } from "@/config/site";
 import type { Locale } from "@/i18n/routing";
-import { BookingForm } from "./BookingForm";
+import { LazyBookingForm } from "./LazyBookingForm";
 
 const nextSteps: { key: string; icon: LucideIcon }[] = [
   { key: "call", icon: PhoneCall },
@@ -22,7 +22,7 @@ export function Booking() {
         <SectionTitle eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
         <div className="grid gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] lg:gap-8">
           <div className="rounded-card bg-white p-5 shadow-[0_24px_60px_-32px_rgba(15,118,110,0.45)] ring-1 ring-primary/10 sm:p-8">
-            <BookingForm />
+            <LazyBookingForm />
           </div>
 
           <aside className="space-y-6 rounded-card bg-navy p-6 text-slate-300 sm:p-8 lg:self-start">

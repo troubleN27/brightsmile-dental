@@ -1,11 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+import { useEffect, useRef } from "react";
 
 type RevealProps = {
   children: React.ReactNode;
@@ -14,30 +9,47 @@ type RevealProps = {
 /**
  * Fades the blocks of a section in from below as they scroll into view.
  * Animates the direct children of the section's container (title, grid, …).
- * Nothing moves when the visitor prefers reduced motion.
+ * GSAP is loaded after the first paint so it never delays the first screen,
+ * and nothing moves when the visitor prefers reduced motion.
  */
 export function Reveal({ children }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        const targets = gsap.utils.toArray<HTMLElement>(":scope > section > div > *", ref.current);
-        targets.forEach((target) => {
-          // Opacity only (not visibility), so content stays reachable by keyboard
-          gsap.from(target, {
-            y: 32,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: { trigger: target, start: "top 88%", once: true },
+  useEffect(() => {
+    const root = ref.current;
+    if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let cancelled = false;
+    let revert: (() => void) | undefined;
+
+    Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(
+      ([{ gsap }, { ScrollTrigger }]) => {
+        if (cancelled) return;
+        gsap.registerPlugin(ScrollTrigger);
+        const ctx = gsap.context(() => {
+          const targets = gsap.utils.toArray<HTMLElement>(":scope > section > div > *", root);
+          targets.forEach((target) => {
+            // Blocks already on screen stay put instead of flashing
+            if (target.getBoundingClientRect().top < window.innerHeight) return;
+            // Opacity only (not visibility), so content stays reachable by keyboard
+            gsap.from(target, {
+              y: 32,
+              opacity: 0,
+              duration: 0.8,
+              ease: "power2.out",
+              scrollTrigger: { trigger: target, start: "top 88%", once: true },
+            });
           });
-        });
-      });
-    },
-    { scope: ref },
-  );
+        }, root);
+        revert = () => ctx.revert();
+      },
+    );
+
+    return () => {
+      cancelled = true;
+      revert?.();
+    };
+  }, []);
 
   return (
     <div ref={ref} className="contents">

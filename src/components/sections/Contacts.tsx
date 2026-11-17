@@ -22,15 +22,15 @@ type ContactRowProps = {
 
 function ContactRow({ icon: Icon, label, children }: ContactRowProps) {
   return (
-    <div className="flex gap-4">
+    <li className="flex gap-4">
       <span className="flex size-11 shrink-0 items-center justify-center rounded-button bg-primary/15 text-primary-dark">
         <Icon aria-hidden className="size-5" />
       </span>
       <div className="min-w-0">
-        <dt className="text-sm text-muted-foreground">{label}</dt>
-        <dd className="font-semibold break-words text-navy">{children}</dd>
+        <p className="text-sm text-muted-foreground">{label}</p>
+        <p className="font-semibold break-words text-navy">{children}</p>
       </div>
-    </div>
+    </li>
   );
 }
 
@@ -45,7 +45,7 @@ export function Contacts() {
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
           <div className="rounded-card bg-white p-6 ring-1 ring-primary/10 md:p-8">
-            <dl className="space-y-6">
+            <ul className="space-y-6">
               <ContactRow icon={MapPin} label={t("address")}>
                 {site.address[locale]}
               </ContactRow>
@@ -62,7 +62,7 @@ export function Contacts() {
               <ContactRow icon={Clock} label={t("hours")}>
                 {site.hours[locale]}
               </ContactRow>
-            </dl>
+            </ul>
 
             <div className="mt-8 border-t border-border pt-6">
               <p className="mb-3 text-sm text-muted-foreground">{t("socials")}</p>
