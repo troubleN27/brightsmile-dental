@@ -1,4 +1,6 @@
-import Script from "next/script";
+"use client";
+
+import { useSyncExternalStore } from "react";
 
 // Runs in <head> before the page is drawn. On a browser reload (not on normal
 // navigation or a shared link with an anchor) the page should start at the top:
@@ -21,15 +23,16 @@ const script = `(function () {
   } catch (e) {}
 })();`;
 
-// next/script with beforeInteractive puts the script into the server HTML <head>;
-// a raw <script> rendered by a component triggers a React warning on the client.
+const noopSubscribe = () => () => {};
+
+/**
+ * The script only matters in the HTML that the server sends on a page load.
+ * It is rendered there (and kept during hydration, so the markup matches),
+ * but never created by React on the client — e.g. when switching language
+ * re-renders the root layout — which React 19 would flag as an error.
+ */
 export function ReloadScrollReset() {
-  return (
-    // The lint rule predates the App Router: Next docs allow beforeInteractive in a
-    // root layout (this component is rendered only from app/[locale]/layout.tsx).
-    // eslint-disable-next-line @next/next/no-before-interactive-script-outside-document
-    <Script id="reload-scroll-reset" strategy="beforeInteractive">
-      {script}
-    </Script>
-  );
+  const inServerHtml = useSyncExternalStore(noopSubscribe, () => false, () => true);
+  if (!inServerHtml) return null;
+  return <script dangerouslySetInnerHTML={{ __html: script }} />;
 }
