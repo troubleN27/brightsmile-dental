@@ -70,10 +70,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={manrope.variable}>
-      <head>
-        <ReloadScrollReset />
-      </head>
       <body className="flex min-h-dvh flex-col font-sans">
+        {/* beforeInteractive: Next injects it into <head> */}
+        <ReloadScrollReset />
         <JsonLd locale={locale as Locale} />
         <NextIntlClientProvider>
           <Header />
