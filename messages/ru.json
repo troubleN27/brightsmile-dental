@@ -220,7 +220,13 @@
       "optional": "необязательно",
       "required": "обязательное поле",
       "countrySearch": "Поиск страны или кода",
-      "countryEmpty": "Ничего не найдено"
+      "countryEmpty": "Ничего не найдено",
+      "serviceSearch": "Поиск услуги",
+      "nothingFound": "Ничего не найдено",
+      "datePlaceholder": "Выберите дату",
+      "prevMonth": "Предыдущий месяц",
+      "nextMonth": "Следующий месяц",
+      "clearDate": "Сбросить дату"
     },
     "time": {
       "morning": "Утро",

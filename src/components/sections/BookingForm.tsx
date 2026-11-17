@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useId, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AlertCircle, CheckCircle2, Loader2, Phone } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
@@ -10,12 +10,15 @@ import enLabels from "react-phone-number-input/locale/en";
 import ruLabels from "react-phone-number-input/locale/ru";
 import { Button } from "@/components/ui/button";
 import { CountrySelect } from "@/components/ui/CountrySelect";
+import { DatePicker } from "@/components/ui/DatePicker";
+import { SelectMenu, type SelectMenuGroup } from "@/components/ui/SelectMenu";
 import { phoneHref, site } from "@/config/site";
 import { doctors } from "@/data/doctors";
 import { serviceCategories, services } from "@/data/services";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { bookingSchema, timesOfDay, toIsoDate, type BookingInput } from "@/lib/booking-schema";
+import { formatPrice } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { useBooking } from "@/store/booking";
 
@@ -57,6 +60,34 @@ export function BookingForm() {
   const statusRef = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<Status>("idle");
   const booking = useBooking();
+
+  const serviceGroups = useMemo<SelectMenuGroup[]>(
+    () =>
+      serviceCategories.map((category) => ({
+        label: tServices(`categories.${category}`),
+        options: services
+          .filter((service) => service.category === category)
+          .map((service) => ({
+            value: service.id,
+            label: service.title[locale],
+            description: tServices("priceFrom", { price: formatPrice(service.priceFrom, locale) }),
+          })),
+      })),
+    [tServices, locale],
+  );
+
+  const doctorGroups = useMemo<SelectMenuGroup[]>(
+    () => [
+      {
+        options: doctors.map((doctor) => ({
+          value: doctor.id,
+          label: doctor.name[locale],
+          description: doctor.specialty[locale],
+        })),
+      },
+    ],
+    [locale],
+  );
 
   const {
     register,
@@ -166,7 +197,7 @@ export function BookingForm() {
         </div>
       )}
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor={fieldId("name")} className="mb-1.5 block font-semibold text-navy">
             {t("fields.name")} <span aria-hidden className="text-destructive">*</span>
@@ -231,31 +262,30 @@ export function BookingForm() {
         </div>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor={fieldId("service")} className="mb-1.5 block font-semibold text-navy">
             {t("fields.service")}
           </label>
-          <select
-            id={fieldId("service")}
-            aria-invalid={!!errors.serviceId}
-            aria-describedby={describedBy("service", errors.serviceId)}
-            className={cn(fieldClass, "cursor-pointer")}
-            {...register("serviceId")}
-          >
-            <option value="">{t("fields.servicePlaceholder")}</option>
-            {serviceCategories.map((category) => (
-              <optgroup key={category} label={tServices(`categories.${category}`)}>
-                {services
-                  .filter((service) => service.category === category)
-                  .map((service) => (
-                    <option key={service.id} value={service.id}>
-                      {service.title[locale]}
-                    </option>
-                  ))}
-              </optgroup>
-            ))}
-          </select>
+          <Controller
+            name="serviceId"
+            control={control}
+            render={({ field }) => (
+              <SelectMenu
+                ref={field.ref}
+                id={fieldId("service")}
+                value={field.value ?? ""}
+                onChange={field.onChange}
+                onBlur={field.onBlur}
+                groups={serviceGroups}
+                placeholder={t("fields.servicePlaceholder")}
+                searchPlaceholder={t("fields.serviceSearch")}
+                emptyText={t("fields.nothingFound")}
+                aria-invalid={!!errors.serviceId}
+                aria-describedby={describedBy("service", errors.serviceId)}
+              />
+            )}
+          />
           <ErrorMessage {...errorProps("service", errors.serviceId)} />
         </div>
 
@@ -263,37 +293,54 @@ export function BookingForm() {
           <label htmlFor={fieldId("doctor")} className="mb-1.5 block font-semibold text-navy">
             {t("fields.doctor")}
           </label>
-          <select
-            id={fieldId("doctor")}
-            aria-invalid={!!errors.doctorId}
-            aria-describedby={describedBy("doctor", errors.doctorId)}
-            className={cn(fieldClass, "cursor-pointer")}
-            {...register("doctorId")}
-          >
-            <option value="">{t("fields.doctorPlaceholder")}</option>
-            {doctors.map((doctor) => (
-              <option key={doctor.id} value={doctor.id}>
-                {doctor.name[locale]} — {doctor.specialty[locale]}
-              </option>
-            ))}
-          </select>
+          <Controller
+            name="doctorId"
+            control={control}
+            render={({ field }) => (
+              <SelectMenu
+                ref={field.ref}
+                id={fieldId("doctor")}
+                value={field.value ?? ""}
+                onChange={field.onChange}
+                onBlur={field.onBlur}
+                groups={doctorGroups}
+                placeholder={t("fields.doctorPlaceholder")}
+                aria-invalid={!!errors.doctorId}
+                aria-describedby={describedBy("doctor", errors.doctorId)}
+              />
+            )}
+          />
           <ErrorMessage {...errorProps("doctor", errors.doctorId)} />
         </div>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor={fieldId("date")} className="mb-1.5 block font-semibold text-navy">
             {t("fields.date")}
           </label>
-          <input
-            id={fieldId("date")}
-            type="date"
-            min={today || undefined}
-            aria-invalid={!!errors.date}
-            aria-describedby={describedBy("date", errors.date)}
-            className={cn(fieldClass, "cursor-pointer")}
-            {...register("date")}
+          <Controller
+            name="date"
+            control={control}
+            render={({ field }) => (
+              <DatePicker
+                ref={field.ref}
+                id={fieldId("date")}
+                value={field.value ?? ""}
+                onChange={field.onChange}
+                onBlur={field.onBlur}
+                locale={locale}
+                min={today}
+                labels={{
+                  placeholder: t("fields.datePlaceholder"),
+                  prevMonth: t("fields.prevMonth"),
+                  nextMonth: t("fields.nextMonth"),
+                  clear: t("fields.clearDate"),
+                }}
+                aria-invalid={!!errors.date}
+                aria-describedby={describedBy("date", errors.date)}
+              />
+            )}
           />
           <ErrorMessage {...errorProps("date", errors.date)} />
         </div>

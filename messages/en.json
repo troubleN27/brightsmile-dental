@@ -220,7 +220,13 @@
       "optional": "optional",
       "required": "required",
       "countrySearch": "Search country or code",
-      "countryEmpty": "No matches"
+      "countryEmpty": "No matches",
+      "serviceSearch": "Search services",
+      "nothingFound": "No matches",
+      "datePlaceholder": "Choose a date",
+      "prevMonth": "Previous month",
+      "nextMonth": "Next month",
+      "clearDate": "Clear date"
     },
     "time": {
       "morning": "Morning",
