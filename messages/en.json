@@ -131,8 +131,7 @@
     "socials": "Message us",
     "route": "Get directions",
     "mapTitle": "BrightSmile Dental on the map",
-    "metro": "Metro",
-    "vk": "VKontakte"
+    "metro": "Metro"
   },
   "Footer": {
     "tagline": "A family dental clinic in central Moscow. Gentle treatment, plain explanations, and results we stand behind.",
@@ -335,7 +334,7 @@
       {
         "title": "11. Cookies and analytics",
         "paragraphs": [
-          "We don't use advertising cookies or web analytics. The Contact section includes an embedded Yandex Map; when it loads, Yandex may set its own cookies under its own policy."
+          "We don't use advertising cookies or web analytics. The Contact section includes an embedded Google Map; when it loads, Google may set its own cookies under its own policy."
         ]
       },
       {

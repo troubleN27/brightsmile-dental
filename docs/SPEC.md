@@ -107,7 +107,7 @@ export const site = {
   address: { ru: 'Москва, …', en: '…, Moscow' },
   hours: { ru: 'Пн–Сб 9:00–20:00, Вс 10:00–16:00', en: 'Mon–Sat 9 AM–8 PM, Sun 10 AM–4 PM' },
   telegram: 'https://t.me/…',
-  vk: 'https://vk.com/…',
+  instagram: 'https://instagram.com/…',
   map: { lat: 0, lng: 0, zoom: 15 },
   stats: { years: 12, patients: 15000, rating: 4.9, warrantyYears: 5 },
 };
@@ -237,7 +237,7 @@ NEXT_PUBLIC_SITE_URL=
 | Reviews | Карусель Embla: 1 карточка на мобильных, 2 на планшете, 3 на десктопе; точки и стрелки |
 | Accordion (FAQ) | Открыт один пункт за раз; плавная анимация высоты; `aria-expanded` |
 | FloatingButtons | Кнопка Telegram справа снизу; на экранах < 768 px — закреплённая полоса «Записаться», которая скрывается, когда форма записи в зоне видимости |
-| Карта | Яндекс Карты (виджет-iframe) по координатам из `site.map`; загружается лениво |
+| Карта | Google Maps embed (iframe) по координатам из `site.map`; загружается лениво |
 | Анимации | Появление секций снизу вверх при прокрутке; уважать `prefers-reduced-motion` |
 
 ## 8. Дизайн-система

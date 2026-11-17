@@ -1,20 +1,18 @@
 import { Clock, Mail, MapPin, Navigation, Phone, TrainFront, type LucideIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { TelegramIcon, VkIcon } from "@/components/ui/BrandIcons";
+import { InstagramIcon, TelegramIcon } from "@/components/ui/BrandIcons";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { phoneHref, site } from "@/config/site";
 import type { Locale } from "@/i18n/routing";
 
-// Yandex Maps widget: no API key needed. Coordinates go as "longitude,latitude".
 function mapEmbedUrl(locale: Locale) {
   const { lat, lng, zoom } = site.map;
-  const lang = locale === "ru" ? "ru_RU" : "en_US";
-  return `https://yandex.ru/map-widget/v1/?ll=${lng},${lat}&z=${zoom}&pt=${lng},${lat},pm2rdm&lang=${lang}`;
+  return `https://maps.google.com/maps?q=${lat},${lng}&z=${zoom}&hl=${locale}&output=embed`;
 }
 
-const directionsUrl = `https://yandex.ru/maps/?rtext=~${site.map.lat},${site.map.lng}&rtt=auto`;
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${site.map.lat},${site.map.lng}`;
 
 type ContactRowProps = {
   icon: LucideIcon;
@@ -79,27 +77,24 @@ export function Contacts() {
                   </a>
                 </Button>
                 <Button asChild variant="secondary">
-                  <a href={site.vk} target="_blank" rel="noopener noreferrer">
-                    <VkIcon className="size-5" />
-                    {t("vk")}
+                  <a href={site.instagram} target="_blank" rel="noopener noreferrer">
+                    <InstagramIcon className="size-5" />
+                    Instagram
                   </a>
                 </Button>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <div className="relative min-h-[320px] flex-1 overflow-hidden rounded-card bg-white ring-1 ring-primary/10 md:min-h-[420px]">
-              <iframe
-                title={t("mapTitle")}
-                src={mapEmbedUrl(locale)}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0 size-full border-0"
-              />
-            </div>
-            {/* Below the map, not on top of it: the Yandex widget has its own controls and banners */}
-            <Button asChild variant="outline" className="self-start bg-white">
+          <div className="relative min-h-[320px] overflow-hidden rounded-card bg-white ring-1 ring-primary/10 md:min-h-[420px]">
+            <iframe
+              title={t("mapTitle")}
+              src={mapEmbedUrl(locale)}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0 size-full border-0"
+            />
+            <Button asChild size="sm" className="absolute right-4 bottom-4 shadow-lg">
               <a href={directionsUrl} target="_blank" rel="noopener noreferrer">
                 <Navigation />
                 {t("route")}

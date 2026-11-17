@@ -33,7 +33,7 @@ export const site = {
     { days: ["Sunday"], opens: "10:00", closes: "16:00" },
   ],
   telegram: "https://t.me/brightsmiledental",
-  vk: "https://vk.com/brightsmiledental",
+  instagram: "https://instagram.com/brightsmile.dental",
   map: { lat: 55.7593, lng: 37.6466, zoom: 16 },
   /**
    * Legal details of the clinic (operator of personal data, medical licence).

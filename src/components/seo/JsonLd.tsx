@@ -41,7 +41,7 @@ export function JsonLd({ locale }: { locale: Locale }) {
       bestRating: 5,
     },
     availableLanguage: ["Russian", "English"],
-    sameAs: [site.telegram, site.vk],
+    sameAs: [site.telegram, site.instagram],
   };
 
   return (
