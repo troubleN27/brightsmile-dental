@@ -1,0 +1,47 @@
+{
+  "Metadata": {
+    "title": "BrightSmile Dental — Calm, Gentle Dentistry in San Francisco",
+    "description": "Fillings, cleanings, implants and cosmetic dentistry in San Francisco. Gentle care, clear pricing and a written warranty. Free consultation when you book online."
+  },
+  "Common": {
+    "logoLabel": "BrightSmile Dental home"
+  },
+  "Nav": {
+    "label": "Site sections",
+    "services": "Services & Pricing",
+    "results": "Results",
+    "doctors": "Our Dentists",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "contacts": "Contact"
+  },
+  "Header": {
+    "book": "Book a visit",
+    "call": "Call the clinic",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menuTitle": "Menu"
+  },
+  "LanguageSwitcher": {
+    "label": "Site language",
+    "ru": "Русский",
+    "en": "English"
+  },
+  "Home": {
+    "title": "Dental care that feels calm, not scary",
+    "subtitle": "Gentle dentistry for adults and kids: modern numbing, upfront pricing, and dentists who walk you through every step before treatment begins."
+  },
+  "Footer": {
+    "tagline": "A family dental practice in San Francisco. Gentle treatment, plain explanations, and results we stand behind.",
+    "navTitle": "Explore",
+    "contactsTitle": "Contact",
+    "privacy": "Privacy Policy",
+    "rights": "© {year} BrightSmile Dental. All rights reserved."
+  },
+  "NotFound": {
+    "metaTitle": "Page not found",
+    "title": "We couldn't find that page",
+    "text": "The link may be out of date, or there might be a typo in the address. Head back to the home page for treatments, pricing and booking.",
+    "home": "Back to home"
+  }
+}
