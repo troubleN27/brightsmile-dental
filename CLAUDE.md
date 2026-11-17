@@ -20,7 +20,8 @@ Landing site for a dental clinic. Requirements: [docs/PRD.md](docs/PRD.md). Tech
 
 - Next.js 16 App Router, TypeScript, `cacheComponents: true`. Locale proxy lives in `src/proxy.ts` (Next 16 renamed `middleware.ts`).
 - Tailwind CSS 4 + **shadcn/ui** (Radix) for UI primitives — chosen by the owner instead of hand-written primitives.
-- **GSAP** for animations instead of Framer Motion (owner's decision); installed when animations are needed (stage 3). Respect `prefers-reduced-motion`.
+- **GSAP** (+ `@gsap/react`, ScrollTrigger) for animations instead of Framer Motion (owner's decision). Section reveal lives in `src/components/ui/Reveal.tsx`; animate only under `gsap.matchMedia("(prefers-reduced-motion: no-preference)")`.
+- Embla Carousel v8 for the reviews carousel. Prices: `formatPrice` → "$1 100" / "$1,100" (dollar sign first in both locales, owner's decision).
 - next-intl 4: locale is read via `next/root-params` in `src/i18n/request.ts`; no `setRequestLocale`. `[locale]/layout.tsx` is the root layout.
 
 ## Conventions

@@ -139,5 +139,56 @@
     "title": "We couldn't find that page",
     "text": "The link may be out of date, or there might be a typo in the address. Head back to the home page for treatments, pricing and booking.",
     "home": "Back to home"
+  },
+  "Services": {
+    "eyebrow": "Services & pricing",
+    "title": "Straightforward pricing",
+    "subtitle": "Pick a category to see what we offer and where prices start.",
+    "categories": {
+      "therapy": "General",
+      "hygiene": "Cleanings",
+      "implants": "Implants",
+      "orthodontics": "Orthodontics",
+      "aesthetics": "Cosmetic",
+      "kids": "Kids"
+    },
+    "priceFrom": "from {price}",
+    "book": "Book",
+    "bookLabel": "Book: {service}",
+    "note": "Your exact cost depends on your needs and is confirmed at your consultation. You'll get a written treatment plan with prices before any work begins."
+  },
+  "Results": {
+    "eyebrow": "Results",
+    "title": "Real smiles, real results",
+    "subtitle": "Drag the divider to compare. Photos shared with our patients' permission.",
+    "before": "Before",
+    "after": "After",
+    "beforeAlt": "{service}: before treatment",
+    "afterAlt": "{service}: after treatment",
+    "sliderLabel": "Before and after comparison: {service}",
+    "duration": "Treatment time: {duration}"
+  },
+  "Reviews": {
+    "eyebrow": "Reviews",
+    "title": "What our patients say",
+    "subtitle": "An average rating of {rating} out of 5 from our patients.",
+    "rating": "Rated {rating} out of 5",
+    "carousel": "Patient reviews",
+    "slide": "Review {index} of {total}",
+    "prev": "Previous reviews",
+    "next": "Next reviews",
+    "goTo": "Go to reviews, group {index}"
+  },
+  "Faq": {
+    "eyebrow": "FAQ",
+    "title": "Questions we hear a lot",
+    "subtitle": "Didn't find your answer? Give us a call or send a message on Telegram.",
+    "call": "Call us",
+    "telegram": "Message on Telegram"
+  },
+  "Floating": {
+    "telegram": "Message us on Telegram",
+    "book": "Book a visit",
+    "call": "Call"
   }
 }

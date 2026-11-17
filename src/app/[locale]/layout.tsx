@@ -3,6 +3,7 @@ import { cacheLife } from "next/cache";
 import { Manrope } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
+import { FloatingButtons } from "@/components/layout/FloatingButtons";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { routing } from "@/i18n/routing";
@@ -45,6 +46,7 @@ export default async function LocaleLayout({
           <Header />
           <main className="flex-1">{children}</main>
           <Footer year={year} />
+          <FloatingButtons />
         </NextIntlClientProvider>
       </body>
     </html>

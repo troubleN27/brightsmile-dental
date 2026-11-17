@@ -16,6 +16,7 @@ type PhotoProps = {
   /** Only for the above-the-fold hero image */
   preload?: boolean;
   placeholderIcon?: LucideIcon;
+  placeholderTone?: "brand" | "muted";
   className?: string;
 };
 
@@ -36,6 +37,7 @@ export function Photo({
   sizes,
   preload = false,
   placeholderIcon,
+  placeholderTone,
   className,
 }: PhotoProps) {
   if (!publicFileExists(src)) {
@@ -44,6 +46,7 @@ export function Photo({
         ratio={`${width} / ${height}`}
         label={alt}
         icon={placeholderIcon}
+        tone={placeholderTone}
         className={className}
       />
     );
