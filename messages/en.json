@@ -1,11 +1,11 @@
 {
   "Metadata": {
-    "title": "BrightSmile Dental — Calm, Gentle Dentistry in Moscow",
-    "description": "English-speaking dental clinic in central Moscow: fillings, cleanings, implants and cosmetic dentistry. Gentle care, clear pricing and a written warranty. Free consultation when you book online."
+    "title": "BrightSmile Dental — Dentist on Pokrovka, Moscow",
+    "description": "English-speaking dentists in central Moscow, seven minutes from Chistye Prudy metro. Fillings, root canals, cleanings, implants, veneers and kids' dentistry, seven days a week. Book online and the consultation and 3D scan are free."
   },
   "OgImage": {
-    "title": "Dental care that feels calm, not scary",
-    "subtitle": "Family dentistry in central Moscow · English & Russian",
+    "title": "A dentist you won't dread visiting",
+    "subtitle": "27 Pokrovka St, Moscow. We speak English and Russian",
     "badge": "Free consultation when you book online"
   },
   "Common": {
@@ -33,97 +33,97 @@
     "en": "English"
   },
   "Hero": {
-    "eyebrow": "English-speaking dentists in central Moscow",
-    "title": "Dental care that feels calm, not scary",
-    "subtitle": "Gentle dentistry for adults and kids: modern numbing, upfront pricing, and dentists who walk you through every step before treatment begins.",
+    "eyebrow": "English-speaking dentists on Pokrovka",
+    "title": "A dentist you won't dread visiting",
+    "subtitle": "We see adults and kids. We numb the gum with gel before any injection, tell you the price before we start, and explain what we're doing as we go. Raise your hand at any point and we'll stop.",
     "ctaPrimary": "Book a free consultation",
     "ctaSecondary": "See pricing",
     "photoAlt": "Smiling patient with her dentist at BrightSmile Dental",
-    "badgeTitle": "Open 7 days",
-    "badgeText": "Appointments every day, Sundays included",
+    "badgeTitle": "Open every day",
+    "badgeText": "Until 8 PM on weekdays, 10 to 4 on Sundays",
     "statsLabel": "BrightSmile Dental at a glance",
     "years": "{count, plural, one {# year} other {# years}}",
-    "yearsLabel": "caring for smiles",
+    "yearsLabel": "in Moscow",
     "patients": "{count}+",
-    "patientsLabel": "patients and counting",
+    "patientsLabel": "patients so far",
     "rating": "{rating} / 5",
-    "ratingLabel": "average patient rating",
+    "ratingLabel": "average review score",
     "warranty": "Up to {count, plural, one {# year} other {# years}}",
-    "warrantyLabel": "treatment warranty"
+    "warrantyLabel": "written warranty"
   },
   "Advantages": {
-    "eyebrow": "Why BrightSmile",
-    "title": "A dental visit you won't dread",
-    "subtitle": "We know a lot of people feel anxious about the dentist. Everything here is designed to keep you comfortable and in the loop.",
+    "eyebrow": "Why us",
+    "title": "Nobody looks forward to the dentist. We get it.",
+    "subtitle": "So we try to keep the visit calm and the bill free of surprises.",
     "items": {
       "painless": {
-        "title": "Gentle numbing",
-        "text": "A numbing gel before every injection and modern anesthetics. Most patients feel nothing more than light pressure."
+        "title": "Gel first, then the shot",
+        "text": "We numb the gum with gel before the injection, so you barely feel it. During treatment most people only notice some pressure."
       },
       "equipment": {
-        "title": "Modern technology",
-        "text": "3D cone-beam imaging, a dental microscope and digital scanners mean more accurate diagnoses and gentler treatment."
+        "title": "Microscope and 3D scans",
+        "text": "Root canals are done under a microscope. Before implants or complex work we take a 3D scan, so nothing is guesswork."
       },
       "warranty": {
         "title": "Up to {years}-year warranty",
-        "text": "Written coverage on implants, crowns and veneers, with the terms laid out before you start."
+        "text": "On implants, crowns and veneers. The terms are in your contract, and you can take it home to read before signing."
       },
       "installments": {
         "title": "Interest-free payment plans",
-        "text": "Spread treatment from ₽30,000 across up to 12 months. We also accept voluntary health insurance (DMS) policies."
+        "text": "Treatment over ₽30,000 can be split into payments over up to 12 months. We also take DMS health insurance."
       },
       "kids": {
-        "title": "Pediatric dentist",
-        "text": "A playful first meeting and short visits, so kids grow up without a fear of the dentist."
+        "title": "A dentist just for kids",
+        "text": "Our pediatric dentist meets your child first, shows them the tools, and keeps visits short. We see kids from age three."
       },
       "everyday": {
-        "title": "Open 7 days a week",
-        "text": "Evening hours until 8 PM and weekend appointments make it easy to fit a visit into your schedule."
+        "title": "Open seven days",
+        "text": "Monday to Saturday until 8 PM, Sundays until 4 PM. Easy to come in after work."
       }
     }
   },
   "Doctors": {
-    "eyebrow": "Our team",
-    "title": "Meet your dentists",
-    "subtitle": "Each of our dentists keeps up with ongoing training and stays with you from first consultation to final result.",
+    "eyebrow": "Dentists",
+    "title": "Who'll be treating you",
+    "subtitle": "Each dentist has their own specialty. Whoever starts your treatment finishes it, so you won't be passed around.",
     "experience": "{years} years in practice",
     "book": "Book with this dentist",
     "photoAlt": "{name}, {specialty}"
   },
   "Process": {
-    "eyebrow": "How it works",
-    "title": "Four simple steps",
-    "subtitle": "No surprises. You'll know what happens at each stage and what it costs before we begin.",
+    "eyebrow": "Booking",
+    "title": "What happens after you book",
+    "subtitle": "You'll know the cost before treatment starts, not at the front desk.",
     "steps": {
       "request": {
-        "title": "Request a visit",
-        "text": "Send a quick request online or give us a call — it takes less than a minute."
+        "title": "Send a request",
+        "text": "Fill in the form below or call us. Your name and phone number are enough."
       },
       "call": {
-        "title": "We call you back",
-        "text": "Our front desk calls within 15 minutes during office hours to find a time and dentist that suit you."
+        "title": "We call you",
+        "text": "During opening hours, the front desk calls back within 15 minutes to pick a day and a dentist."
       },
       "consultation": {
         "title": "Exam and plan",
-        "text": "Your dentist examines you, takes any needed imaging, and gives you a written plan with exact prices."
+        "text": "Your dentist checks your teeth, takes scans, and writes up a plan: what needs doing, in what order, and what each step costs."
       },
       "treatment": {
         "title": "Treatment",
-        "text": "We follow the plan you agreed to, then see you for routine checkups to keep things healthy."
+        "text": "We stick to the plan you signed off on, then see you for a checkup every six months."
       }
     }
   },
   "Offer": {
-    "badge": "When you book online",
+    "badge": "Online bookings only",
     "title": "Free consultation and 3D scan",
-    "text": "A full exam, 3D imaging and a written treatment plan with prices — at no cost. Then decide when and how to move forward, no pressure.",
+    "text": "Your dentist examines you, takes a 3D scan and hands you a treatment plan with prices. Take it home and decide in your own time.",
     "cta": "Book my free visit",
-    "note": "Normally from ₽1,500 for the exam and ₽3,000 for the 3D scan"
+    "note": "Usually ₽1,500 for the consultation and from ₽3,000 for the 3D scan"
   },
   "Contacts": {
     "eyebrow": "Contact",
-    "title": "Visit us",
-    "subtitle": "We're in central Moscow, a 7-minute walk from Chistye Prudy metro station.",
+    "title": "Finding us",
+    "subtitle": "27 Pokrovka St, building 1. About a seven-minute walk from Chistye Prudy metro.",
     "address": "Address",
     "phone": "Phone",
     "email": "Email",
@@ -134,7 +134,7 @@
     "metro": "Metro"
   },
   "Footer": {
-    "tagline": "A family dental clinic in central Moscow. Gentle treatment, plain explanations, and results we stand behind.",
+    "tagline": "A dental clinic for adults and kids on Pokrovka, near Chistye Prudy.",
     "navTitle": "Explore",
     "contactsTitle": "Contact",
     "privacy": "Privacy Policy",
@@ -145,14 +145,14 @@
   },
   "NotFound": {
     "metaTitle": "Page not found",
-    "title": "We couldn't find that page",
-    "text": "The link may be out of date, or there might be a typo in the address. Head back to the home page for treatments, pricing and booking.",
+    "title": "That page doesn't exist",
+    "text": "The link may be old, or there's a typo in the address. Prices, dentists and booking are all on the home page.",
     "home": "Back to home"
   },
   "Services": {
     "eyebrow": "Services & pricing",
-    "title": "Straightforward pricing",
-    "subtitle": "Pick a category to see what we offer and where prices start.",
+    "title": "What treatment costs",
+    "subtitle": "Pick a category. Each service shows its starting price.",
     "categories": {
       "therapy": "General",
       "hygiene": "Cleanings",
@@ -164,12 +164,12 @@
     "priceFrom": "from {price}",
     "book": "Book",
     "bookLabel": "Book: {service}",
-    "note": "Your exact cost depends on your needs and is confirmed at your consultation. You'll get a written treatment plan with prices before any work begins."
+    "note": "Your dentist gives you the exact price after the exam, since it depends on what you actually need. You get the plan with prices before any work starts, and it doesn't change without your OK."
   },
   "Results": {
     "eyebrow": "Results",
-    "title": "Real smiles, real results",
-    "subtitle": "Drag the divider to compare. Photos shared with our patients' permission.",
+    "title": "Work by our dentists",
+    "subtitle": "Drag the slider to compare. These patients agreed to let us share their photos.",
     "before": "Before",
     "after": "After",
     "beforeAlt": "{service}: before treatment",
@@ -179,8 +179,8 @@
   },
   "Reviews": {
     "eyebrow": "Reviews",
-    "title": "What our patients say",
-    "subtitle": "An average rating of {rating} out of 5 from our patients.",
+    "title": "From our patients",
+    "subtitle": "Average rating: {rating} out of 5. Here's what people say after their visits.",
     "rating": "Rated {rating} out of 5",
     "carousel": "Patient reviews",
     "slide": "Review {index} of {total}",
@@ -190,15 +190,15 @@
   },
   "Faq": {
     "eyebrow": "FAQ",
-    "title": "Questions we hear a lot",
-    "subtitle": "Didn't find your answer? Give us a call or send a message on Telegram.",
+    "title": "Questions people ask us",
+    "subtitle": "Can't find your answer? Call us or message us on Telegram. The front desk will answer or check with a dentist.",
     "call": "Call us",
     "telegram": "Message on Telegram"
   },
   "Booking": {
     "eyebrow": "Book a visit",
-    "title": "Book your free consultation",
-    "subtitle": "Leave your details and our front desk will call you back within 15 minutes during office hours to find a time that works.",
+    "title": "Book a free consultation",
+    "subtitle": "Leave your name and number. During opening hours we'll call back within 15 minutes to set a day.",
     "fields": {
       "name": "Name",
       "namePlaceholder": "What should we call you?",
@@ -206,7 +206,7 @@
       "phonePlaceholder": "+7 900 000-00-00",
       "country": "Country",
       "service": "Service",
-      "servicePlaceholder": "Not sure yet — I'd like a consultation",
+      "servicePlaceholder": "Not sure yet, I'd like a consultation",
       "doctor": "Dentist",
       "doctorPlaceholder": "First available dentist",
       "date": "Preferred date",
@@ -240,12 +240,12 @@
     },
     "submit": "Request appointment",
     "submitting": "Sending…",
-    "successTitle": "Thank you! We'll call you within 15 minutes",
-    "successText": "We've got your request. If it comes in after hours, our front desk will call you first thing the next business day.",
+    "successTitle": "Got it. We'll call you shortly",
+    "successText": "It usually takes up to 15 minutes. If you sent this after closing time, we'll call you in the morning.",
     "again": "Send another request",
     "errorTitle": "We couldn't send your request",
-    "errorText": "Please try again, or give us a call and we'll book you over the phone.",
-    "tooManyText": "Several requests have already been sent from this device. Please call us and we'll book you over the phone.",
+    "errorText": "Please try again. If it still doesn't go through, call us and we'll book you by phone.",
+    "tooManyText": "A few requests have already gone out from this device. It's quicker to call us and book by phone.",
     "callUs": "Call {phone}",
     "retry": "Try again",
     "errors": {
@@ -262,9 +262,9 @@
     },
     "nextTitle": "What happens next",
     "next": {
-      "call": "Our front desk calls you to confirm a date and time.",
-      "visit": "At your consultation, the dentist does an exam and a 3D scan.",
-      "plan": "You get a written treatment plan with prices — free of charge."
+      "call": "The front desk calls to offer a date and time.",
+      "visit": "At the consultation, your dentist checks your teeth and takes a 3D scan.",
+      "plan": "You leave with a treatment plan and prices. There's nothing to pay."
     },
     "preferPhone": "Prefer to call?"
   },

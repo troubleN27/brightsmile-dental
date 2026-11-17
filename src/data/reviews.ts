@@ -17,8 +17,8 @@ export const reviews: Review[] = [
     rating: 5,
     serviceId: "implant",
     text: {
-      ru: "Поставил имплант у Михаила Ремизова. Получил план с ценой на каждый этап — итог совпал до рубля.",
-      en: "Had an implant placed by Dr. Remizov. The written plan priced every step, and the final bill matched it to the ruble.",
+      ru: "Поставил имплант у Михаила Ремизова. Получил план с ценой на каждый этап. В итоге заплатил ровно столько, сколько там было написано.",
+      en: "Had an implant placed by Dr. Remizov. The plan listed a price for every step, and I paid exactly that, not a ruble more.",
     },
   },
   {
@@ -27,7 +27,7 @@ export const reviews: Review[] = [
     rating: 5,
     serviceId: "kids-checkup",
     text: {
-      ru: "Сын впервые пошёл к стоматологу без слёз. Ольга Андреевна показала инструменты, дала подержать зеркальце — теперь он сам просится на осмотр.",
+      ru: "Сын впервые пошёл к стоматологу без слёз. Ольга Андреевна показала инструменты, дала подержать зеркальце. Теперь сам спрашивает, когда снова пойдём.",
       en: "My son's first dentist visit with zero tears. Dr. Granina let him hold the mirror and showed him every tool. Now he actually asks to go back.",
     },
   },
@@ -37,7 +37,7 @@ export const reviews: Review[] = [
     rating: 5,
     serviceId: "aligners",
     text: {
-      ru: "Носила элайнеры 10 месяцев. Елена Викторовна каждый визит показывала прогресс на 3D-модели — мотивирует не бросать.",
+      ru: "Носила элайнеры 10 месяцев. Елена Викторовна каждый визит показывала на 3D-модели, как сдвинулись зубы. Очень помогает не бросить.",
       en: "Wore aligners for 10 months. Dr. Pak showed my progress on a 3D model at every visit, which kept me motivated.",
     },
   },
@@ -47,8 +47,8 @@ export const reviews: Review[] = [
     rating: 4,
     serviceId: "cleaning",
     text: {
-      ru: "Хорошо, что в клинике говорят по-английски — всё объяснили без переводчика. Минус звезда только за парковку в центре: удобнее приезжать на метро.",
-      en: "Great to find a clinic in Moscow where the staff speak English — everything was explained without a translator. One star off only for parking in the center; the metro is easier.",
+      ru: "Врач и администратор говорят по-английски, так что переводчик не понадобился. Звезду снимаю только за парковку: в центре её почти нет, проще доехать на метро.",
+      en: "Really glad to find a clinic in Moscow where the staff speak English. No translator needed. One star off for parking, which is tough in the center. Take the metro.",
     },
   },
   {
@@ -57,7 +57,7 @@ export const reviews: Review[] = [
     rating: 5,
     serviceId: "veneers",
     text: {
-      ru: "Сделала шесть виниров. Сначала примерили временный вариант, чтобы я увидела форму. Результат естественный — никто не догадывается.",
+      ru: "Сделала шесть виниров. Сначала примерили временный вариант, чтобы я увидела форму. Выглядит естественно, никто не догадывается.",
       en: "Got six veneers. They let me try a temporary mock-up first so I could see the shape. The result looks so natural nobody can tell.",
     },
   },
