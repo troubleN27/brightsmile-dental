@@ -71,4 +71,34 @@ export const reviews: Review[] = [
       en: "Booked online in the evening and got a call back the next morning. Whitening took about an hour with barely any sensitivity.",
     },
   },
+  {
+    id: "r8",
+    author: { ru: "Павел Г.", en: "Pavel G." },
+    rating: 5,
+    serviceId: "extraction",
+    text: {
+      ru: "Удаляли нижнюю восьмёрку, которая росла боком. Михаил Ремизов показал на снимке, как лежат корни, и честно сказал, что будет отёк. Отёк был, но через три дня уже ходил на работу.",
+      en: "Had a sideways lower wisdom tooth taken out. Dr. Remizov showed me on the scan how the roots sat and was upfront that there'd be swelling. There was, but I was back at work in three days.",
+    },
+  },
+  {
+    id: "r9",
+    author: { ru: "Наталья С.", en: "Natalia S." },
+    rating: 4,
+    serviceId: "kids-filling",
+    text: {
+      ru: "Дочке шесть лет, лечили два молочных зуба за два визита. Врач терпеливая, дочь не плакала. Одна звезда долой: на второй приём пришлось ждать минут двадцать.",
+      en: "My daughter is six and had two baby teeth filled over two visits. The dentist was patient and there were no tears. One star off because we waited about twenty minutes for the second appointment.",
+    },
+  },
+  {
+    id: "r10",
+    author: { ru: "Анна М.", en: "Anna M." },
+    rating: 5,
+    serviceId: "deep-cleaning",
+    text: {
+      ru: "Год кровили дёсны при чистке зубов, думала, так и надо. Сделали глубокую чистку и показали, как пользоваться ирригатором. Через месяц кровь пропала.",
+      en: "My gums had bled when I brushed for a year and I thought that was normal. They did a deep cleaning and showed me how to use a water flosser. A month later the bleeding stopped.",
+    },
+  },
 ];

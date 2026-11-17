@@ -57,4 +57,36 @@ export const faq: FaqItem[] = [
       en: "Yes, we work with the major Russian DMS insurers. Tell us your provider when you book and we'll check your coverage. If you have travel insurance, we can give you an itemized invoice in English for your claim.",
     },
   },
+  {
+    id: "urgent",
+    question: { ru: "Болит зуб. Можно прийти сегодня?", en: "I have a toothache. Can I come in today?" },
+    answer: {
+      ru: "Позвоните нам, а не оставляйте заявку на сайте: так быстрее. С острой болью стараемся принять в тот же день, даже если на сегодня всё расписано. Врач снимет боль и скажет, что делать дальше.",
+      en: "Call us rather than booking online, it's faster. We try to see people in pain the same day, even when the schedule is full. Your dentist will deal with the pain first and then explain what comes next.",
+    },
+  },
+  {
+    id: "pregnancy",
+    question: { ru: "Можно лечить зубы во время беременности?", en: "Can I have dental work while pregnant?" },
+    answer: {
+      ru: "Можно, и запускать кариес как раз не стоит. Удобнее всего лечиться во втором триместре. Используем анестетики, которые разрешены беременным, а снимки делаем только если без них никак. Скажите о беременности, когда будете записываться.",
+      en: "Yes, and it's better not to let a cavity get worse. The second trimester is the most comfortable time. We use anesthetics that are safe in pregnancy and only take X-rays when there's no way around it. Just let us know you're pregnant when you book.",
+    },
+  },
+  {
+    id: "lifespan",
+    question: { ru: "Сколько прослужит пломба или винир?", en: "How long will a filling or veneer last?" },
+    answer: {
+      ru: "Пломба обычно служит 5–7 лет, керамические виниры и коронки 10–15 лет. Многое зависит от вас: если раз в полгода приходить на осмотр и чистку, работа живёт дольше. Гарантийные сроки прописаны в договоре.",
+      en: "A filling usually lasts 5 to 7 years, porcelain veneers and crowns 10 to 15. A lot depends on you: coming in for a checkup and cleaning every six months makes them last longer. The warranty periods are in your contract.",
+    },
+  },
+  {
+    id: "after-care",
+    question: { ru: "Что делать, если после лечения что-то беспокоит?", en: "What if something bothers me after treatment?" },
+    answer: {
+      ru: "Позвоните администратору и опишите, что происходит. Лёгкая чувствительность пару дней после пломбы бывает и проходит сама. Если болит сильнее или дольше, врач посмотрит вас в ближайшие дни, и по гарантии это бесплатно.",
+      en: "Call the front desk and tell us what's going on. Some sensitivity for a couple of days after a filling is normal and passes on its own. If it hurts more or for longer, your dentist will see you within a few days, free of charge under the warranty.",
+    },
+  },
 ];
