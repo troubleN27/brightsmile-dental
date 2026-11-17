@@ -30,13 +30,15 @@ export function ImagePlaceholder({
       style={{ aspectRatio: ratio }}
       className={cn(
         "flex w-full items-center justify-center overflow-hidden rounded-card",
-        tone === "brand" ? "bg-sky" : "bg-[#dfe5ec]",
+        tone === "brand"
+          ? "border border-primary/15 bg-[radial-gradient(circle_at_30%_20%,#ccfbf1,transparent_60%),linear-gradient(135deg,#f0fdfa,#e6fffa)]"
+          : "border border-slate-300/60 bg-[radial-gradient(circle_at_30%_20%,#f1f5f9,transparent_60%),linear-gradient(135deg,#e2e8f0,#cbd5e1)]",
         className,
       )}
     >
       <Icon
         aria-hidden
-        className={cn("size-10", tone === "brand" ? "text-primary-dark/40" : "text-slate-500/60")}
+        className={cn("size-10", tone === "brand" ? "text-primary/60" : "text-slate-500/70")}
         strokeWidth={1.5}
       />
     </div>

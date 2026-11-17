@@ -25,7 +25,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
     <nav
       aria-label={t("label")}
       className={cn(
-        "inline-flex rounded-full border border-line bg-white p-0.5 text-sm font-semibold",
+        "inline-flex rounded-button border border-border bg-white p-0.5 text-sm font-semibold",
         className,
       )}
     >
@@ -42,8 +42,10 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
             aria-label={t(locale)}
             onClick={(event) => switchTo(event, locale)}
             className={cn(
-              "rounded-full px-3 py-1.5 uppercase transition-colors",
-              isActive ? "bg-navy text-white" : "text-muted-foreground hover:text-navy",
+              "rounded-[10px] px-2.5 py-1.5 uppercase transition-colors",
+              isActive
+                ? "bg-navy text-white"
+                : "text-muted-foreground hover:text-navy",
             )}
           >
             {locale}

@@ -50,9 +50,9 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "64px 72px",
-          background: "#CFE2F7",
+          background: "linear-gradient(135deg, #F0FDFA 0%, #CCFBF1 55%, #99F6E4 100%)",
           fontFamily: "Manrope",
-          color: "#15253B",
+          color: "#0F172A",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
@@ -61,7 +61,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
               width: 76,
               height: 76,
               borderRadius: 22,
-              background: "#2A64A8",
+              background: "#14B8A6",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -75,7 +75,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
             </svg>
           </div>
           <div style={{ display: "flex", fontSize: 40, fontWeight: 800 }}>
-            BrightSmile<span style={{ color: "#2A64A8", marginLeft: 12 }}>Dental</span>
+            BrightSmile<span style={{ color: "#0F766E", marginLeft: 12 }}>Dental</span>
           </div>
         </div>
 
@@ -83,7 +83,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
           <div style={{ fontSize: 72, fontWeight: 800, lineHeight: 1.1, letterSpacing: -1.5, maxWidth: 960 }}>
             {title}
           </div>
-          <div style={{ fontSize: 32, fontWeight: 600, color: "#3A4A5F", maxWidth: 900 }}>{subtitle}</div>
+          <div style={{ fontSize: 32, fontWeight: 600, color: "#334155", maxWidth: 900 }}>{subtitle}</div>
         </div>
 
         <div style={{ display: "flex" }}>
@@ -92,7 +92,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
               display: "flex",
               padding: "14px 28px",
               borderRadius: 999,
-              background: "#15253B",
+              background: "#0F172A",
               color: "#fff",
               fontSize: 28,
               fontWeight: 600,

@@ -60,7 +60,7 @@ export default async function PrivacyPage() {
           {t("back")}
         </Link>
         {/* Slightly smaller on narrow phones so long Russian words fit on one line */}
-        <h1 className="type-h1 hyphens-auto break-words text-navy max-sm:text-[28px] max-sm:leading-9">
+        <h1 className="text-h1 hyphens-auto break-words text-navy max-sm:text-[28px] max-sm:leading-9">
           {t("title")}
         </h1>
         <p className="mt-3 text-sm text-muted-foreground">

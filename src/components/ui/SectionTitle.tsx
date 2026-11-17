@@ -3,40 +3,35 @@ import { cn } from "@/lib/utils";
 type SectionTitleProps = {
   title: string;
   subtitle?: string;
-  /** Headings are left-aligned; "center" is for the rare centered block */
+  /** Small label above the title, e.g. "Prices" */
+  eyebrow?: string;
   align?: "left" | "center";
-  /** For headings on dark backgrounds */
-  tone?: "dark" | "light";
   className?: string;
 };
 
 export function SectionTitle({
   title,
   subtitle,
-  align = "left",
-  tone = "dark",
+  eyebrow,
+  align = "center",
   className,
 }: SectionTitleProps) {
   return (
     <div
       className={cn(
-        "mb-10 max-w-2xl md:mb-14",
+        "mb-8 max-w-2xl md:mb-12",
         align === "center" && "mx-auto text-center",
         className,
       )}
     >
-      <h2 className={cn("type-h2 text-balance", tone === "dark" ? "text-navy" : "text-white")}>
-        {title}
-      </h2>
-      {subtitle && (
-        <p
-          className={cn(
-            "mt-4 max-w-[60ch] text-pretty",
-            tone === "dark" ? "text-muted-foreground" : "text-white/75",
-          )}
-        >
-          {subtitle}
+      {eyebrow && (
+        <p className="mb-3 text-sm font-semibold tracking-wider text-primary-dark uppercase">
+          {eyebrow}
         </p>
+      )}
+      <h2 className="text-h2 text-navy text-balance">{title}</h2>
+      {subtitle && (
+        <p className="mt-4 text-muted-foreground text-pretty">{subtitle}</p>
       )}
     </div>
   );

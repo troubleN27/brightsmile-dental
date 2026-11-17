@@ -216,7 +216,7 @@ export const SelectMenu = forwardRef<HTMLButtonElement, SelectMenuProps>(functio
                   {group.label && (
                     <div
                       id={`${listId}-g${groupIndex}`}
-                      className="px-2.5 pt-2 pb-1 text-[13px] font-semibold text-muted-foreground"
+                      className="px-2.5 pt-2 pb-1 text-xs font-bold tracking-wider text-primary-dark uppercase"
                     >
                       {group.label}
                     </div>

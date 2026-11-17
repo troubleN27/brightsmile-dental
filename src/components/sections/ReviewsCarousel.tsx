@@ -2,7 +2,7 @@
 
 import { useCallback, useSyncExternalStore } from "react";
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -81,23 +81,32 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
               aria-label={t("slide", { index: index + 1, total: reviews.length })}
               className="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3 lg:pl-6"
             >
-              <figure className="flex h-full flex-col rounded-card bg-white p-6 md:p-8">
-                <div role="img" aria-label={t("rating", { rating: review.rating })} className="flex gap-0.5">
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <Star
-                      key={i}
-                      aria-hidden
-                      className={cn(
-                        "size-[18px]",
-                        i < review.rating ? "fill-warning text-warning" : "fill-line text-line",
-                      )}
-                    />
-                  ))}
+              <figure className="flex h-full flex-col rounded-card bg-white p-6 ring-1 ring-primary/10 md:p-7">
+                <div className="flex items-center justify-between">
+                  <div
+                    role="img"
+                    aria-label={t("rating", { rating: review.rating })}
+                    className="flex gap-0.5"
+                  >
+                    {Array.from({ length: 5 }, (_, i) => (
+                      <Star
+                        key={i}
+                        aria-hidden
+                        className={cn(
+                          "size-5",
+                          i < review.rating
+                            ? "fill-warning text-warning"
+                            : "fill-slate-200 text-slate-200",
+                        )}
+                      />
+                    ))}
+                  </div>
+                  <Quote aria-hidden className="size-7 text-primary/30" />
                 </div>
-                <blockquote className="mt-5 flex-1 text-[17px] leading-7 text-navy">{review.text}</blockquote>
-                <figcaption className="mt-6">
+                <blockquote className="mt-4 flex-1 text-navy/85">{review.text}</blockquote>
+                <figcaption className="mt-6 border-t border-border pt-4">
                   <p className="font-bold text-navy">{review.author}</p>
-                  <p className="text-sm text-muted-foreground">{review.service}</p>
+                  <p className="text-sm text-primary-dark">{review.service}</p>
                 </figcaption>
               </figure>
             </div>
@@ -114,7 +123,7 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
               onClick={() => emblaApi?.scrollTo(index)}
               aria-label={t("goTo", { index: index + 1 })}
               aria-current={index === selected ? "true" : undefined}
-              className="group flex size-6 cursor-pointer items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-primary-dark"
+              className="group flex size-6 cursor-pointer items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               <span
                 className={cn(

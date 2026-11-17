@@ -4,7 +4,7 @@
     "description": "English-speaking dental clinic in central Moscow: fillings, cleanings, implants and cosmetic dentistry. Gentle care, clear pricing and a written warranty. Free consultation when you book online."
   },
   "OgImage": {
-    "title": "Dental care without the rush",
+    "title": "Dental care that feels calm, not scary",
     "subtitle": "Family dentistry in central Moscow · English & Russian",
     "badge": "Free consultation when you book online"
   },
@@ -33,69 +33,97 @@
     "en": "English"
   },
   "Hero": {
-    "title": "Dental care without the rush",
-    "lead": "Before any treatment, your dentist shows you the scan, explains what they see and tells you the price. We don't hurry you or talk you into extras. We're on Pokrovka Street, a seven-minute walk from Chistye Prudy metro.",
-    "ctaPrimary": "Book a consultation",
-    "ctaSecondary": "See prices",
-    "photoAlt": "A dentist talking through a treatment plan with a patient",
-    "factSince": "On Pokrovka Street since 2014",
-    "factRating": "Average rating {rating} from {count, plural, one {# review} other {# reviews}}",
-    "factKids": "Children seen from age three"
+    "eyebrow": "English-speaking dentists in central Moscow",
+    "title": "Dental care that feels calm, not scary",
+    "subtitle": "Gentle dentistry for adults and kids: modern numbing, upfront pricing, and dentists who walk you through every step before treatment begins.",
+    "ctaPrimary": "Book a free consultation",
+    "ctaSecondary": "See pricing",
+    "photoAlt": "Smiling patient with her dentist at BrightSmile Dental",
+    "badgeTitle": "Open 7 days",
+    "badgeText": "Appointments every day, Sundays included",
+    "statsLabel": "BrightSmile Dental at a glance",
+    "years": "{count, plural, one {# year} other {# years}}",
+    "yearsLabel": "caring for smiles",
+    "patients": "{count}+",
+    "patientsLabel": "patients and counting",
+    "rating": "{rating} / 5",
+    "ratingLabel": "average patient rating",
+    "warranty": "Up to {count, plural, one {# year} other {# years}}",
+    "warrantyLabel": "treatment warranty"
+  },
+  "Advantages": {
+    "eyebrow": "Why BrightSmile",
+    "title": "A dental visit you won't dread",
+    "subtitle": "We know a lot of people feel anxious about the dentist. Everything here is designed to keep you comfortable and in the loop.",
+    "items": {
+      "painless": {
+        "title": "Gentle numbing",
+        "text": "A numbing gel before every injection and modern anesthetics. Most patients feel nothing more than light pressure."
+      },
+      "equipment": {
+        "title": "Modern technology",
+        "text": "3D cone-beam imaging, a dental microscope and digital scanners mean more accurate diagnoses and gentler treatment."
+      },
+      "warranty": {
+        "title": "Up to {years}-year warranty",
+        "text": "Written coverage on implants, crowns and veneers, with the terms laid out before you start."
+      },
+      "installments": {
+        "title": "Interest-free payment plans",
+        "text": "Spread treatment from ₽30,000 across up to 12 months. We also accept voluntary health insurance (DMS) policies."
+      },
+      "kids": {
+        "title": "Pediatric dentist",
+        "text": "A playful first meeting and short visits, so kids grow up without a fear of the dentist."
+      },
+      "everyday": {
+        "title": "Open 7 days a week",
+        "text": "Evening hours until 8 PM and weekend appointments make it easy to fit a visit into your schedule."
+      }
+    }
   },
   "Doctors": {
-    "title": "Our dentists",
-    "subtitle": "Each dentist has their own focus. Not sure who to see? Book a consultation and our front desk will match you with the right one.",
+    "eyebrow": "Our team",
+    "title": "Meet your dentists",
+    "subtitle": "Each of our dentists keeps up with ongoing training and stays with you from first consultation to final result.",
     "experience": "{years} years in practice",
     "book": "Book with this dentist",
     "photoAlt": "{name}, {specialty}"
   },
   "Process": {
-    "title": "How your first visit goes",
-    "subtitle": "It usually takes a couple of days from request to treatment. Here's what happens in between.",
+    "eyebrow": "How it works",
+    "title": "Four simple steps",
+    "subtitle": "No surprises. You'll know what happens at each stage and what it costs before we begin.",
     "steps": {
       "request": {
-        "title": "You send a request",
-        "text": "Online or by phone. Your name and number are enough."
+        "title": "Request a visit",
+        "text": "Send a quick request online or give us a call — it takes less than a minute."
       },
       "call": {
         "title": "We call you back",
-        "text": "Within 15 minutes during opening hours, to agree on a day, time and dentist."
+        "text": "Our front desk calls within 15 minutes during office hours to find a time and dentist that suit you."
       },
       "consultation": {
         "title": "Exam and plan",
-        "text": "Your dentist takes a look, does a scan and explains what they see. You leave with a plan and prices in hand."
+        "text": "Your dentist examines you, takes any needed imaging, and gives you a written plan with exact prices."
       },
       "treatment": {
         "title": "Treatment",
-        "text": "We start when you're ready. Take your time to think it over; the plan will still be there."
+        "text": "We follow the plan you agreed to, then see you for routine checkups to keep things healthy."
       }
     }
   },
   "Offer": {
     "badge": "When you book online",
-    "title": "Your first consultation is free",
-    "text": "The dentist examines you, takes a 3D scan and draws up a treatment plan. You don't pay for any of it, even if you're not ready to start treatment yet.",
-    "cta": "Book a consultation",
-    "includedTitle": "What's included",
-    "free": "free",
-    "included": {
-      "exam": {
-        "name": "Dental exam",
-        "price": "₽1,500"
-      },
-      "scan": {
-        "name": "3D scan",
-        "price": "₽3,000"
-      },
-      "plan": {
-        "name": "Treatment plan with prices",
-        "price": "₽800"
-      }
-    }
+    "title": "Free consultation and 3D scan",
+    "text": "A full exam, 3D imaging and a written treatment plan with prices — at no cost. Then decide when and how to move forward, no pressure.",
+    "cta": "Book my free visit",
+    "note": "Normally from ₽1,500 for the exam and ₽3,000 for the 3D scan"
   },
   "Contacts": {
-    "title": "How to find us",
-    "subtitle": "27 Pokrovka Street. The entrance is from the courtyard; look for the clinic sign by the door.",
+    "eyebrow": "Contact",
+    "title": "Visit us",
+    "subtitle": "We're in central Moscow, a 7-minute walk from Chistye Prudy metro station.",
     "address": "Address",
     "phone": "Phone",
     "email": "Email",
@@ -122,8 +150,9 @@
     "home": "Back to home"
   },
   "Services": {
-    "title": "Prices",
-    "subtitle": "These are starting prices. Your dentist confirms the exact cost after the exam and writes it into your plan, so it doesn't creep up during treatment.",
+    "eyebrow": "Services & pricing",
+    "title": "Straightforward pricing",
+    "subtitle": "Pick a category to see what we offer and where prices start.",
     "categories": {
       "therapy": "General",
       "hygiene": "Cleanings",
@@ -135,11 +164,12 @@
     "priceFrom": "from {price}",
     "book": "Book",
     "bookLabel": "Book: {service}",
-    "note": "Prices are per tooth or per procedure. The final cost is set by your dentist after the exam."
+    "note": "Your exact cost depends on your needs and is confirmed at your consultation. You'll get a written treatment plan with prices before any work begins."
   },
   "Results": {
-    "title": "Our patients' results",
-    "subtitle": "Drag the divider to compare before and after. Shared with our patients' permission.",
+    "eyebrow": "Results",
+    "title": "Real smiles, real results",
+    "subtitle": "Drag the divider to compare. Photos shared with our patients' permission.",
     "before": "Before",
     "after": "After",
     "beforeAlt": "{service}: before treatment",
@@ -148,8 +178,9 @@
     "duration": "Treatment time: {duration}"
   },
   "Reviews": {
-    "title": "What patients say",
-    "subtitle": "Average rating {rating} out of 5.",
+    "eyebrow": "Reviews",
+    "title": "What our patients say",
+    "subtitle": "An average rating of {rating} out of 5 from our patients.",
     "rating": "Rated {rating} out of 5",
     "carousel": "Patient reviews",
     "slide": "Review {index} of {total}",
@@ -158,14 +189,16 @@
     "goTo": "Go to reviews, group {index}"
   },
   "Faq": {
-    "title": "Common questions",
-    "subtitle": "Didn't find your answer? Call us or message us on Telegram.",
+    "eyebrow": "FAQ",
+    "title": "Questions we hear a lot",
+    "subtitle": "Didn't find your answer? Give us a call or send a message on Telegram.",
     "call": "Call us",
     "telegram": "Message on Telegram"
   },
   "Booking": {
-    "title": "Book a consultation",
-    "subtitle": "Leave your number and our front desk will call you back within 15 minutes during opening hours. We'll sort out the rest on the phone.",
+    "eyebrow": "Book a visit",
+    "title": "Book your free consultation",
+    "subtitle": "Leave your details and our front desk will call you back within 15 minutes during office hours to find a time that works.",
     "fields": {
       "name": "Name",
       "namePlaceholder": "What should we call you?",
@@ -229,9 +262,9 @@
     },
     "nextTitle": "What happens next",
     "next": {
-      "call": "Our front desk calls you and offers a convenient time.",
-      "visit": "At the consultation, the dentist examines your teeth and takes a 3D scan.",
-      "plan": "You get a treatment plan with prices. The decision is yours."
+      "call": "Our front desk calls you to confirm a date and time.",
+      "visit": "At your consultation, the dentist does an exam and a 3D scan.",
+      "plan": "You get a written treatment plan with prices — free of charge."
     },
     "preferPhone": "Prefer to call?"
   },
@@ -324,47 +357,5 @@
     "telegram": "Message us on Telegram",
     "book": "Book a visit",
     "call": "Call"
-  },
-  "OpenStatus": {
-    "open": "Open today until {time}",
-    "opensToday": "Closed now, opening at {time}",
-    "opensTomorrow": "Closed now, opening tomorrow at {time}"
-  },
-  "About": {
-    "title": "A clinic where we talk first",
-    "story1": "Anna Sokolova opened the clinic in 2014, after ten years in chain clinics where dentists were expected to sell as much treatment as possible. We decided to work the other way round: an exam and a conversation first, then a written plan with prices, and treatment only once you agree.",
-    "story2": "Today there are four dentists and three treatment rooms. Appointments don't overlap, so if you're booked for 10:00, you're in the chair at 10:00, not waiting in the hallway.",
-    "quote": "If someone is scared, we don't start. We get to know each other, show them the instruments and agree on a stop signal. Sometimes nothing gets treated on the first visit, and that's fine.",
-    "quoteAuthor": "Anna Sokolova, clinical director",
-    "photoAlt": "Waiting area at the clinic",
-    "points": {
-      "numbing": {
-        "title": "Numbing that works",
-        "text": "We apply a numbing gel before every injection and choose the anesthetic with your health and allergies in mind. Raise your hand and we stop."
-      },
-      "plan": {
-        "title": "A written plan with prices",
-        "text": "After the exam you take home a printed plan. The price won't go up because of something we missed."
-      },
-      "warranty": {
-        "title": "Up to {years}-year warranty",
-        "text": "On implants, crowns and veneers, and two years on fillings. The terms are in your contract, not just a verbal promise."
-      },
-      "scan": {
-        "title": "Scans on site",
-        "text": "The 3D scanner is in the next room, so there's no trip to a separate imaging center and back."
-      },
-      "kids": {
-        "title": "Kids from age three",
-        "text": "Dr. Granina sees children. The first visit is about getting comfortable with the chair and the tools; treatment starts next time."
-      },
-      "everyday": {
-        "title": "Open seven days",
-        "text": "Until 8 pm Monday to Saturday and 4 pm on Sunday, so you can come by after work."
-      }
-    }
-  },
-  "Legal": {
-    "contraindications": "Contraindications apply. Please consult a specialist."
   }
 }

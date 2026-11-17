@@ -23,6 +23,8 @@ export function Faq() {
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <SectionTitle
+            align="left"
+            eyebrow={t("eyebrow")}
             title={t("title")}
             subtitle={t("subtitle")}
             className="mb-6 md:mb-8"
@@ -43,13 +45,17 @@ export function Faq() {
           </div>
         </div>
 
-        <Accordion type="single" collapsible className="border-t border-line">
+        <Accordion type="single" collapsible className="space-y-3">
           {faq.map((item) => (
-            <AccordionItem key={item.id} value={item.id} className="border-b border-line">
-              <AccordionTrigger className="cursor-pointer py-6 text-[17px] font-semibold text-navy hover:text-primary-dark hover:no-underline md:text-lg [&>svg]:size-5 [&>svg]:text-primary-dark">
+            <AccordionItem
+              key={item.id}
+              value={item.id}
+              className="rounded-card border-none bg-surface px-5 ring-1 ring-primary/10 data-[state=open]:bg-white data-[state=open]:shadow-[0_16px_40px_-24px_rgba(15,118,110,0.45)] md:px-6"
+            >
+              <AccordionTrigger className="cursor-pointer py-5 text-base font-bold text-navy hover:no-underline md:text-lg [&>svg]:size-5 [&>svg]:text-primary-dark">
                 {item.question[locale]}
               </AccordionTrigger>
-              <AccordionContent className="max-w-[64ch] pb-6 text-base leading-7 text-muted-foreground">
+              <AccordionContent className="pb-5 text-base leading-7 text-muted-foreground">
                 {item.answer[locale]}
               </AccordionContent>
             </AccordionItem>

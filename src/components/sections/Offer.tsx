@@ -1,40 +1,43 @@
+import { Gift, ScanLine } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { sectionHref } from "@/components/layout/nav-items";
 import { Link } from "@/i18n/navigation";
 
-const included = ["exam", "scan", "plan"] as const;
-
 export function Offer() {
   const t = useTranslations("Offer");
 
   return (
-    <section id="offer" className="pb-16 md:pb-24">
+    <section id="offer" className="py-16 md:py-24">
       <Container>
-        <div className="grid gap-10 rounded-[28px] bg-sky px-6 py-10 md:px-12 md:py-14 lg:grid-cols-12 lg:items-center">
-          <div className="lg:col-span-7">
-            <p className="w-fit rounded-full bg-peach px-3.5 py-1 text-sm font-semibold text-navy">{t("badge")}</p>
-            <h2 className="type-h2 mt-5 max-w-[18ch] text-navy">{t("title")}</h2>
-            <p className="mt-4 max-w-[52ch] text-lg leading-8 text-navy/80">{t("text")}</p>
-            <Button asChild size="lg" className="mt-8">
-              <Link href={sectionHref("booking")}>{t("cta")}</Link>
-            </Button>
-          </div>
-
-          <div className="rounded-card bg-white p-6 md:p-8 lg:col-span-5">
-            <h3 className="type-h3 text-navy">{t("includedTitle")}</h3>
-            <ul className="mt-4 divide-y divide-line">
-              {included.map((item) => (
-                <li key={item} className="flex items-baseline justify-between gap-4 py-3">
-                  <span className="text-navy">{t(`included.${item}.name`)}</span>
-                  <span className="text-[15px] whitespace-nowrap text-muted-foreground">
-                    <span className="line-through">{t(`included.${item}.price`)}</span>{" "}
-                    <span className="font-semibold text-primary-dark no-underline">{t("free")}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
+        <div className="relative overflow-hidden rounded-[24px] bg-primary-dark px-6 py-10 text-white md:px-12 md:py-14">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -top-24 -right-16 size-80 rounded-full bg-primary/40 blur-3xl"
+          />
+          <ScanLine
+            aria-hidden
+            strokeWidth={1}
+            className="pointer-events-none absolute -right-6 -bottom-10 hidden size-72 text-white/10 md:block"
+          />
+          <div className="relative max-w-2xl">
+            <p className="inline-flex items-center gap-2 rounded-full bg-warning px-3.5 py-1.5 text-sm font-bold text-navy">
+              <Gift aria-hidden className="size-4" />
+              {t("badge")}
+            </p>
+            <h2 className="mt-5 text-h2 text-balance">{t("title")}</h2>
+            <p className="mt-4 text-lg leading-8 text-white/90 text-pretty">{t("text")}</p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-primary-dark hover:bg-surface hover:text-primary-dark"
+              >
+                <Link href={sectionHref("booking")}>{t("cta")}</Link>
+              </Button>
+              <p className="text-sm text-white/80">{t("note")}</p>
+            </div>
           </div>
         </div>
       </Container>

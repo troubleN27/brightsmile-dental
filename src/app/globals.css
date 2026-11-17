@@ -2,34 +2,19 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/*
- * Brand tokens — soft blue.
- * paper     #FAFCFE  page background
- * surface   #EAF2FB  alternating sections (mist blue)
- * sky       #CFE2F7  soft blue panels (hero, offer, highlights)
- * primary   #8DB8E8  soft blue accents: dots, rings, selected dates
- * primary-dark #2A64A8  deep blue: buttons, links (white text passes AA)
- * navy      #15253B  text and footer (ink blue)
- * peach     #F7DCCB  warm pair to blue: small badges
- * warning   #E8A15C  apricot: rating stars
- * line      #D8E3EF  hairlines
- */
+/* Brand tokens (SPEC §8) */
 @theme {
-  --color-paper: #fafcfe;
-  --color-surface: #eaf2fb;
-  --color-sky: #cfe2f7;
-  --color-navy: #15253b;
-  --color-primary-dark: #2a64a8;
-  --color-primary-hover: #1f4f88;
-  --color-peach: #f7dccb;
-  --color-line: #d8e3ef;
-  --color-warning: #e8a15c;
+  --color-primary-dark: #0f766e;
+  --color-navy: #0f172a;
+  --color-surface: #f0fdfa;
+  --color-warning: #f59e0b;
 
-  --radius-card: 24px;
+  --radius-card: 16px;
   --radius-button: 12px;
 }
 
-/* shadcn/ui semantic tokens mapped onto the brand palette */
+/* shadcn/ui semantic tokens mapped onto the brand palette.
+   SPEC "muted" (#64748B, secondary text) = text-muted-foreground. */
 @theme inline {
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
@@ -59,24 +44,25 @@
 
 :root {
   --radius: 0.75rem;
-  --background: #fafcfe;
-  --foreground: #15253b;
+  --background: #ffffff;
+  --foreground: #0f172a;
   --card: #ffffff;
-  --card-foreground: #15253b;
+  --card-foreground: #0f172a;
   --popover: #ffffff;
-  --popover-foreground: #15253b;
-  --primary: #8db8e8;
-  --primary-foreground: #15253b;
-  --secondary: #eaf2fb;
-  --secondary-foreground: #2a64a8;
-  --muted: #eaf2fb;
-  --muted-foreground: #556579;
-  --accent: #cfe2f7;
-  --accent-foreground: #2a64a8;
-  --destructive: #c2410c;
-  --border: #d8e3ef;
-  --input: #c6d4e4;
-  --ring: #2a64a8;
+  --popover-foreground: #0f172a;
+  /* Teal fails AA with white text, so text on primary is navy */
+  --primary: #14b8a6;
+  --primary-foreground: #0f172a;
+  --secondary: #f0fdfa;
+  --secondary-foreground: #0f766e;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #ccfbf1;
+  --accent-foreground: #0f766e;
+  --destructive: #dc2626;
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --ring: #14b8a6;
 }
 
 @layer base {
@@ -107,45 +93,30 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-size: 17px;
-    line-height: 28px;
-  }
-
-  ::selection {
-    background: var(--color-sky);
+    font-size: 16px;
+    line-height: 26px;
   }
 }
 
-/* Typography: Manrope only, weight and tight tracking carry the headings. Mobile first. */
-@utility type-h1 {
-  font-weight: 700;
-  font-size: 38px;
-  line-height: 44px;
-  letter-spacing: -0.035em;
+/* Typography scale (SPEC §8): mobile first */
+@utility text-h1 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   @media (width >= 48rem) {
-    font-size: 52px;
-    line-height: 58px;
-  }
-  @media (width >= 80rem) {
-    font-size: 60px;
-    line-height: 66px;
+    font-size: 48px;
+    line-height: 56px;
   }
 }
 
-@utility type-h2 {
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 36px;
-  letter-spacing: -0.03em;
+@utility text-h2 {
+  font-size: 26px;
+  line-height: 34px;
+  font-weight: 800;
+  letter-spacing: -0.015em;
   @media (width >= 48rem) {
-    font-size: 42px;
-    line-height: 48px;
+    font-size: 36px;
+    line-height: 44px;
   }
-}
-
-@utility type-h3 {
-  font-weight: 700;
-  font-size: 19px;
-  line-height: 26px;
-  letter-spacing: -0.01em;
 }

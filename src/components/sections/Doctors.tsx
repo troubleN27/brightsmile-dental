@@ -1,6 +1,7 @@
-import { UserRound } from "lucide-react";
+import { Award, CalendarPlus, UserRound } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { BookingLink } from "@/components/ui/BookingLink";
+import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Photo } from "@/components/ui/Photo";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -12,36 +13,44 @@ export function Doctors() {
   const locale = useLocale() as Locale;
 
   return (
-    <section id="doctors" className="bg-surface py-16 md:py-24">
+    <section id="doctors" className="py-16 md:py-24">
       <Container>
-        <SectionTitle title={t("title")} subtitle={t("subtitle")} />
-        <ul className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionTitle
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          subtitle={t("subtitle")}
+        />
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {doctors.map((doctor) => {
             const name = doctor.name[locale];
             const specialty = doctor.specialty[locale];
             return (
-              <li key={doctor.id} className="flex flex-col">
+              <li
+                key={doctor.id}
+                className="flex flex-col rounded-card bg-white p-3 ring-1 ring-border"
+              >
                 <Photo
                   src={doctor.photo}
                   alt={t("photoAlt", { name, specialty })}
                   width={600}
                   height={750}
-                  sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 100vw"
+                  sizes="(min-width: 1024px) 270px, (min-width: 640px) 45vw, 100vw"
                   placeholderIcon={UserRound}
-                  className="bg-white"
                 />
-                <h3 className="type-h3 mt-5 text-navy">{name}</h3>
-                <p className="mt-1 text-[15px] text-navy/75">{specialty}</p>
-                <p className="mt-1 mb-4 text-[15px] text-muted-foreground">
-                  {t("experience", { years: doctor.experienceYears })}
-                </p>
-                <BookingLink
-                  doctorId={doctor.id}
-                  aria-label={`${t("book")}: ${name}`}
-                  className="mt-auto w-fit text-[15px] font-semibold text-primary-dark underline decoration-primary-dark/30 underline-offset-4 hover:decoration-primary-dark"
-                >
-                  {t("book")}
-                </BookingLink>
+                <div className="flex flex-1 flex-col px-2 pt-5 pb-2">
+                  <h3 className="text-lg font-bold text-navy">{name}</h3>
+                  <p className="mt-1 text-primary-dark">{specialty}</p>
+                  <p className="mt-3 mb-5 flex items-center gap-2 text-sm text-muted-foreground">
+                    <Award aria-hidden className="size-4 text-primary-dark" />
+                    {t("experience", { years: doctor.experienceYears })}
+                  </p>
+                  <Button asChild variant="outline" className="mt-auto w-full">
+                    <BookingLink doctorId={doctor.id} aria-label={`${t("book")}: ${name}`}>
+                      <CalendarPlus />
+                      {t("book")}
+                    </BookingLink>
+                  </Button>
+                </div>
               </li>
             );
           })}

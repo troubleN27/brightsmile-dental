@@ -1,7 +1,9 @@
 "use client";
 
+import { CalendarPlus, Info } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { BookingLink } from "@/components/ui/BookingLink";
+import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -11,23 +13,22 @@ import { formatPrice } from "@/lib/format";
 
 export function Services() {
   const t = useTranslations("Services");
-  const tLegal = useTranslations("Legal");
   const locale = useLocale() as Locale;
 
   return (
-    <section id="services" className="bg-surface py-16 md:py-24">
+    <section id="services" className="py-16 md:py-24">
       <Container>
-        <SectionTitle title={t("title")} subtitle={t("subtitle")} />
+        <SectionTitle eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
 
         <Tabs defaultValue={serviceCategories[0]} className="gap-6">
           {/* Scrolls sideways on small screens instead of wrapping */}
           <div className="-mx-4 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden">
-            <TabsList className="flex h-auto w-max gap-1 rounded-full bg-white p-1 ring-1 ring-line">
+            <TabsList className="flex h-auto w-max gap-1 rounded-button bg-surface p-1.5 ring-1 ring-primary/10 md:mx-auto">
               {serviceCategories.map((category) => (
                 <TabsTrigger
                   key={category}
                   value={category}
-                  className="h-10 flex-none cursor-pointer rounded-full border-none px-4 text-[15px] font-semibold text-navy/70 shadow-none hover:text-navy data-[state=active]:bg-navy data-[state=active]:text-white data-[state=active]:shadow-none"
+                  className="h-10 flex-none cursor-pointer rounded-[10px] px-4 text-[15px] font-semibold text-navy/70 hover:text-navy data-[state=active]:bg-white data-[state=active]:text-primary-dark data-[state=active]:shadow-sm"
                 >
                   {t(`categories.${category}`)}
                 </TabsTrigger>
@@ -37,7 +38,7 @@ export function Services() {
 
           {serviceCategories.map((category) => (
             <TabsContent key={category} value={category}>
-              <ul className="divide-y divide-line rounded-card bg-white px-5 md:px-8">
+              <ul className="grid gap-4 md:grid-cols-2">
                 {services
                   .filter((service) => service.category === category)
                   .map((service) => {
@@ -45,24 +46,23 @@ export function Services() {
                     return (
                       <li
                         key={service.id}
-                        className="grid gap-x-8 gap-y-2 py-5 md:grid-cols-[1fr_auto_auto] md:items-center md:py-6"
+                        className="flex flex-col gap-4 rounded-card bg-white p-5 ring-1 ring-border transition-shadow hover:shadow-[0_16px_40px_-24px_rgba(15,118,110,0.4)] sm:flex-row sm:items-center md:p-6"
                       >
-                        <div>
-                          <h3 className="type-h3 text-navy">{title}</h3>
-                          <p className="mt-1 max-w-[60ch] text-[15px] leading-6 text-muted-foreground">
-                            {service.description[locale]}
-                          </p>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-bold text-navy">{title}</h3>
+                          <p className="mt-1.5 text-muted-foreground">{service.description[locale]}</p>
                         </div>
-                        <p className="text-lg font-bold whitespace-nowrap text-navy tabular-nums">
-                          {t("priceFrom", { price: formatPrice(service.priceFrom, locale) })}
-                        </p>
-                        <BookingLink
-                          serviceId={service.id}
-                          aria-label={t("bookLabel", { service: title })}
-                          className="w-fit text-[15px] font-semibold text-primary-dark underline decoration-primary-dark/30 underline-offset-4 hover:decoration-primary-dark"
-                        >
-                          {t("book")}
-                        </BookingLink>
+                        <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end">
+                          <p className="text-xl font-extrabold whitespace-nowrap text-primary-dark">
+                            {t("priceFrom", { price: formatPrice(service.priceFrom, locale) })}
+                          </p>
+                          <Button asChild size="sm" variant="outline">
+                            <BookingLink serviceId={service.id} aria-label={t("bookLabel", { service: title })}>
+                              <CalendarPlus />
+                              {t("book")}
+                            </BookingLink>
+                          </Button>
+                        </div>
                       </li>
                     );
                   })}
@@ -71,10 +71,10 @@ export function Services() {
           ))}
         </Tabs>
 
-        <div className="mt-6 max-w-3xl space-y-2 text-sm leading-6 text-muted-foreground">
-          <p>{t("note")}</p>
-          <p className="font-semibold text-navy/80">{tLegal("contraindications")}</p>
-        </div>
+        <p className="mx-auto mt-8 flex max-w-3xl gap-3 rounded-card bg-surface p-4 text-sm leading-6 text-navy/80 md:p-5">
+          <Info aria-hidden className="mt-0.5 size-5 shrink-0 text-primary-dark" />
+          {t("note")}
+        </p>
       </Container>
     </section>
   );
