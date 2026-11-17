@@ -149,7 +149,36 @@
     "priceFrom": "from {price}",
     "book": "Book",
     "bookLabel": "Book: {service}",
-    "note": "Your dentist gives you the exact price after the exam, since it depends on what you actually need. You get the plan with prices before any work starts, and it doesn't change without your OK."
+    "note": "Your dentist gives you the exact price after the exam, since it depends on what you actually need. You get the plan with prices before any work starts, and it doesn't change without your OK.",
+    "photoAlt": "{category} at BrightSmile Dental",
+    "categoryText": {
+      "therapy": "Fillings, root canals and treating tooth pain. We do root canals under a microscope, which shows what the naked eye misses and saves more teeth.",
+      "hygiene": "We recommend a cleaning every six months. We remove tartar and stains, polish the enamel and show you the spots your brush misses.",
+      "implants": "Before any implant we take a 3D scan and walk you through the plan on screen. The surgeon places the implant and we make the crown in-house.",
+      "orthodontics": "We straighten teeth with clear aligners or braces. Your orthodontist shows you on a 3D model how your teeth will move before you start.",
+      "aesthetics": "Whitening, veneers and chip repair. We match color and shape so your teeth look natural, not uniformly white.",
+      "kids": "Our pediatric dentist sees children from age three. The first visit is about getting comfortable, and treatment is done in short sessions with breaks."
+    }
+  },
+  "Kids": {
+    "title": "Children see their own dentist",
+    "text": "Dr. Granina works only with kids. She takes her time and makes sure the visit feels interesting rather than scary.",
+    "points": {
+      "firstVisit": {
+        "title": "First visit, no treatment.",
+        "text": "Your child sits in the chair, holds the mirror, gets a checkup, and you get tips for brushing at home."
+      },
+      "short": {
+        "title": "Short appointments.",
+        "text": "Treatment takes 20 to 30 minutes, with breaks whenever your child needs one."
+      },
+      "parent": {
+        "title": "You can stay.",
+        "text": "Parents are welcome in the room for the whole visit."
+      }
+    },
+    "cta": "Book for my child",
+    "photoAlt": "A pediatric dentist talking to a little girl in the dental chair"
   },
   "Results": {
     "title": "Work by our dentists",
@@ -247,7 +276,8 @@
       "visit": "At the consultation, your dentist checks your teeth and takes a 3D scan.",
       "plan": "You leave with a treatment plan and prices. There's nothing to pay."
     },
-    "preferPhone": "Prefer to call?"
+    "preferPhone": "Prefer to call?",
+    "hoursTitle": "Opening hours"
   },
   "Privacy": {
     "metaTitle": "Personal Data Policy",

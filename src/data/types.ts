@@ -35,6 +35,8 @@ export type Case = {
   before: string;
   after: string;
   duration: Localized;
+  /** Patient review shown next to this case instead of in the carousel */
+  reviewId?: string;
 };
 
 export type Review = {

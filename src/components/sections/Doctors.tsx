@@ -34,6 +34,7 @@ export function Doctors() {
                   width={600}
                   height={750}
                   sizes="(min-width: 1024px) 270px, (min-width: 640px) 45vw, 100vw"
+                  square
                   placeholderIcon={UserRound}
                 />
                 <div className="flex flex-1 flex-col pt-4">

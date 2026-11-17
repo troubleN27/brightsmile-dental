@@ -10,6 +10,7 @@ export const cases: Case[] = [
     before: casePhoto("veneers-front", "before"),
     after: casePhoto("veneers-front", "after"),
     duration: { ru: "3 недели", en: "3 weeks" },
+    reviewId: "r6",
   },
   {
     id: "aligners-crowding",

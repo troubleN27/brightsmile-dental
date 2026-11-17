@@ -5,58 +5,93 @@ import { Container } from "@/components/ui/Container";
 import { Photo } from "@/components/ui/Photo";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { cases } from "@/data/cases";
+import { reviews } from "@/data/reviews";
 import { getService } from "@/data/services";
+import type { Case } from "@/data/types";
 import type { Locale } from "@/i18n/routing";
 
 const PHOTO = { width: 1200, height: 900 };
-const SIZES = "(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw";
+
+type CaseSliderProps = {
+  item: Case;
+  sizes: string;
+};
+
+function CaseSlider({ item, sizes }: CaseSliderProps) {
+  const t = useTranslations("Results");
+  const locale = useLocale() as Locale;
+  const service = getService(item.serviceId)?.title[locale] ?? "";
+
+  return (
+    <figure>
+      <CompareSlider
+        label={t("sliderLabel", { service })}
+        beforeLabel={t("before")}
+        afterLabel={t("after")}
+        before={
+          <Photo
+            src={item.before}
+            alt={t("beforeAlt", { service })}
+            {...PHOTO}
+            sizes={sizes}
+            square
+            placeholderIcon={Smile}
+            placeholderTone="muted"
+          />
+        }
+        after={
+          <Photo
+            src={item.after}
+            alt={t("afterAlt", { service })}
+            {...PHOTO}
+            sizes={sizes}
+            square
+            placeholderIcon={Smile}
+          />
+        }
+      />
+      <figcaption className="pt-3">
+        <span className="font-bold text-navy">{service}</span>
+        <span className="text-sm text-muted-foreground">
+          {" "}
+          {t("duration", { duration: item.duration[locale] })}
+        </span>
+      </figcaption>
+    </figure>
+  );
+}
 
 export function BeforeAfter() {
   const t = useTranslations("Results");
   const locale = useLocale() as Locale;
 
+  // The first case with a linked review is shown large, next to that review
+  const featured = cases.find((item) => item.reviewId) ?? cases[0];
+  const review = reviews.find((item) => item.id === featured.reviewId);
+  const rest = cases.filter((item) => item !== featured);
+
   return (
-    <section id="results" className="bg-surface py-16 md:py-24">
+    <section id="results" className="bg-mist py-16 md:py-24">
       <Container>
-        <SectionTitle title={t("title")} subtitle={t("subtitle")} />
-        <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {cases.map((item) => {
-            const service = getService(item.serviceId)?.title[locale] ?? "";
-            return (
-              <li key={item.id}>
-                <CompareSlider
-                  label={t("sliderLabel", { service })}
-                  beforeLabel={t("before")}
-                  afterLabel={t("after")}
-                  before={
-                    <Photo
-                      src={item.before}
-                      alt={t("beforeAlt", { service })}
-                      {...PHOTO}
-                      sizes={SIZES}
-                      placeholderIcon={Smile}
-                      placeholderTone="muted"
-                    />
-                  }
-                  after={
-                    <Photo
-                      src={item.after}
-                      alt={t("afterAlt", { service })}
-                      {...PHOTO}
-                      sizes={SIZES}
-                      placeholderIcon={Smile}
-                    />
-                  }
-                />
-                <div className="pt-4">
-                  <h3 className="font-bold text-navy">{service}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {t("duration", { duration: item.duration[locale] })}
-                  </p>
-                </div>
-              </li>
-            );
-          })}
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-center lg:gap-16">
+          <div>
+            <SectionTitle title={t("title")} subtitle={t("subtitle")} />
+            {review && (
+              <blockquote className="border-l-2 border-primary pl-6">
+                <p className="text-lg leading-8 text-navy text-pretty">{review.text[locale]}</p>
+                <footer className="mt-3 text-sm text-muted-foreground">{review.author[locale]}</footer>
+              </blockquote>
+            )}
+          </div>
+          <CaseSlider item={featured} sizes="(min-width: 1024px) 660px, 100vw" />
+        </div>
+
+        <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          {rest.map((item) => (
+            <li key={item.id}>
+              <CaseSlider item={item} sizes="(min-width: 1024px) 280px, (min-width: 640px) 50vw, 100vw" />
+            </li>
+          ))}
         </ul>
       </Container>
     </section>

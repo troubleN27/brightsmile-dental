@@ -5,6 +5,7 @@ import { Contacts } from "@/components/sections/Contacts";
 import { Doctors } from "@/components/sections/Doctors";
 import { Faq } from "@/components/sections/Faq";
 import { Hero } from "@/components/sections/Hero";
+import { Kids } from "@/components/sections/Kids";
 import { Offer } from "@/components/sections/Offer";
 import { Process } from "@/components/sections/Process";
 import { Reviews } from "@/components/sections/Reviews";
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Reveal>
         <Advantages />
         <Services />
+        <Kids />
         <BeforeAfter />
         <Doctors />
         <Process />
