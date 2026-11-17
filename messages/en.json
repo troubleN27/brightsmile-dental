@@ -27,9 +27,105 @@
     "ru": "Русский",
     "en": "English"
   },
-  "Home": {
+  "Hero": {
+    "eyebrow": "Family dentistry in San Francisco",
     "title": "Dental care that feels calm, not scary",
-    "subtitle": "Gentle dentistry for adults and kids: modern numbing, upfront pricing, and dentists who walk you through every step before treatment begins."
+    "subtitle": "Gentle dentistry for adults and kids: modern numbing, upfront pricing, and dentists who walk you through every step before treatment begins.",
+    "ctaPrimary": "Book a free consultation",
+    "ctaSecondary": "See pricing",
+    "photoAlt": "Smiling patient with her dentist at BrightSmile Dental",
+    "badgeTitle": "Open 7 days",
+    "badgeText": "Appointments every day, Sundays included",
+    "statsLabel": "BrightSmile Dental at a glance",
+    "years": "{count, plural, one {# year} other {# years}}",
+    "yearsLabel": "caring for smiles",
+    "patients": "{count}+",
+    "patientsLabel": "patients and counting",
+    "rating": "{rating} / 5",
+    "ratingLabel": "average patient rating",
+    "warranty": "Up to {count, plural, one {# year} other {# years}}",
+    "warrantyLabel": "treatment warranty"
+  },
+  "Advantages": {
+    "eyebrow": "Why BrightSmile",
+    "title": "A dental visit you won't dread",
+    "subtitle": "We know a lot of people feel anxious about the dentist. Everything here is designed to keep you comfortable and in the loop.",
+    "items": {
+      "painless": {
+        "title": "Gentle numbing",
+        "text": "A numbing gel before every injection and modern anesthetics. Most patients feel nothing more than light pressure."
+      },
+      "equipment": {
+        "title": "Modern technology",
+        "text": "3D cone-beam imaging, a dental microscope and digital scanners mean more accurate diagnoses and gentler treatment."
+      },
+      "warranty": {
+        "title": "Up to {years}-year warranty",
+        "text": "Written coverage on implants, crowns and veneers, with the terms laid out before you start."
+      },
+      "installments": {
+        "title": "Interest-free payment plans",
+        "text": "Spread treatment over $500 across up to 12 months. We're also in network with most PPO plans."
+      },
+      "kids": {
+        "title": "Pediatric dentist",
+        "text": "A playful first meeting and short visits, so kids grow up without a fear of the dentist."
+      },
+      "everyday": {
+        "title": "Open 7 days a week",
+        "text": "Evening hours until 8 PM and weekend appointments make it easy to fit a visit into your schedule."
+      }
+    }
+  },
+  "Doctors": {
+    "eyebrow": "Our team",
+    "title": "Meet your dentists",
+    "subtitle": "Each of our dentists keeps up with ongoing training and stays with you from first consultation to final result.",
+    "experience": "{years} years in practice",
+    "book": "Book with this dentist",
+    "photoAlt": "{name}, {specialty}"
+  },
+  "Process": {
+    "eyebrow": "How it works",
+    "title": "Four simple steps",
+    "subtitle": "No surprises. You'll know what happens at each stage and what it costs before we begin.",
+    "steps": {
+      "request": {
+        "title": "Request a visit",
+        "text": "Send a quick request online or give us a call — it takes less than a minute."
+      },
+      "call": {
+        "title": "We call you back",
+        "text": "Our front desk calls within 15 minutes during office hours to find a time and dentist that suit you."
+      },
+      "consultation": {
+        "title": "Exam and plan",
+        "text": "Your dentist examines you, takes any needed imaging, and gives you a written plan with exact prices."
+      },
+      "treatment": {
+        "title": "Treatment",
+        "text": "We follow the plan you agreed to, then see you for routine checkups to keep things healthy."
+      }
+    }
+  },
+  "Offer": {
+    "badge": "When you book online",
+    "title": "Free consultation and 3D scan",
+    "text": "A full exam, 3D imaging and a written treatment plan with prices — at no cost. Then decide when and how to move forward, no pressure.",
+    "cta": "Book my free visit",
+    "note": "Normally from $60 for the exam and $150 for the 3D scan"
+  },
+  "Contacts": {
+    "eyebrow": "Contact",
+    "title": "Visit us",
+    "subtitle": "We're in downtown San Francisco, a five-minute walk from Civic Center station.",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Hours",
+    "socials": "Message us",
+    "route": "Get directions",
+    "mapTitle": "BrightSmile Dental on the map"
   },
   "Footer": {
     "tagline": "A family dental practice in San Francisco. Gentle treatment, plain explanations, and results we stand behind.",

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 import { Phone } from "lucide-react";
@@ -12,12 +12,14 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
 import { navItems, sectionHref } from "./nav-items";
+import { useActiveSection } from "./useActiveSection";
 
 const SCROLL_THRESHOLD = 50;
 
 export function Header() {
   const t = useTranslations();
   const [scrolled, setScrolled] = useState(false);
+  const activeId = useActiveSection(navItems);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD);
@@ -42,16 +44,23 @@ export function Header() {
 
         <nav aria-label={t("Nav.label")} className="hidden xl:block">
           <ul className="flex items-center gap-1">
-            {navItems.map((id) => (
-              <li key={id}>
-                <Link
-                  href={sectionHref(id)}
-                  className="rounded-button px-2.5 py-2 text-[15px] font-semibold whitespace-nowrap text-navy/80 transition-colors hover:text-primary-dark"
-                >
-                  {t(`Nav.${id}`)}
-                </Link>
-              </li>
-            ))}
+            {navItems.map((id) => {
+              const isActive = id === activeId;
+              return (
+                <li key={id}>
+                  <Link
+                    href={sectionHref(id)}
+                    aria-current={isActive ? "location" : undefined}
+                    className={cn(
+                      "rounded-button px-2.5 py-2 text-[15px] font-semibold whitespace-nowrap transition-colors hover:text-primary-dark",
+                      isActive ? "bg-surface text-primary-dark" : "text-navy/80",
+                    )}
+                  >
+                    {t(`Nav.${id}`)}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 

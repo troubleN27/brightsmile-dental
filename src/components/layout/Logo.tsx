@@ -1,4 +1,4 @@
-﻿import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 type LogoProps = {
   /** "light" is for dark backgrounds such as the footer */

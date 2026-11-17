@@ -1,0 +1,65 @@
+import { Award, CalendarPlus, UserRound } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
+import { Container } from "@/components/ui/Container";
+import { Photo } from "@/components/ui/Photo";
+import { SectionTitle } from "@/components/ui/SectionTitle";
+import { sectionHref } from "@/components/layout/nav-items";
+import { doctors } from "@/data/doctors";
+import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
+
+export function Doctors() {
+  const t = useTranslations("Doctors");
+  const locale = useLocale() as Locale;
+
+  return (
+    <section id="doctors" className="py-16 md:py-24">
+      <Container>
+        <SectionTitle
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          subtitle={t("subtitle")}
+        />
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {doctors.map((doctor) => {
+            const name = doctor.name[locale];
+            const specialty = doctor.specialty[locale];
+            return (
+              <li
+                key={doctor.id}
+                className="flex flex-col rounded-card bg-white p-3 ring-1 ring-border"
+              >
+                <Photo
+                  src={doctor.photo}
+                  alt={t("photoAlt", { name, specialty })}
+                  width={600}
+                  height={750}
+                  sizes="(min-width: 1024px) 270px, (min-width: 640px) 45vw, 100vw"
+                  placeholderIcon={UserRound}
+                />
+                <div className="flex flex-1 flex-col px-2 pt-5 pb-2">
+                  <h3 className="text-lg font-bold text-navy">{name}</h3>
+                  <p className="mt-1 text-primary-dark">{specialty}</p>
+                  <p className="mt-3 mb-5 flex items-center gap-2 text-sm text-muted-foreground">
+                    <Award aria-hidden className="size-4 text-primary-dark" />
+                    {t("experience", { years: doctor.experienceYears })}
+                  </p>
+                  <Button asChild variant="outline" className="mt-auto w-full">
+                    <Link
+                      href={sectionHref("booking")}
+                      aria-label={`${t("book")}: ${name}`}
+                    >
+                      <CalendarPlus />
+                      {t("book")}
+                    </Link>
+                  </Button>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </Container>
+    </section>
+  );
+}
