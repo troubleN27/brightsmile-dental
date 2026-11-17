@@ -6,6 +6,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { FloatingButtons } from "@/components/layout/FloatingButtons";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { ReloadScrollReset } from "@/components/layout/ReloadScrollReset";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { site, siteUrl } from "@/config/site";
 import { routing, type Locale } from "@/i18n/routing";
@@ -69,6 +70,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={manrope.variable}>
+      <head>
+        <ReloadScrollReset />
+      </head>
       <body className="flex min-h-dvh flex-col font-sans">
         <JsonLd locale={locale as Locale} />
         <NextIntlClientProvider>

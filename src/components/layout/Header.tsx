@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { phoneHref, site } from "@/config/site";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { Logo } from "./Logo";
@@ -20,6 +20,7 @@ export function Header() {
   const t = useTranslations();
   const [scrolled, setScrolled] = useState(false);
   const activeId = useActiveSection(navItems);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD);
@@ -27,6 +28,18 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // On the home page the router sees "/" as the same route and does nothing,
+  // so scroll to the top ourselves and drop the section anchor from the URL.
+  // From other pages the link simply navigates home (and Next starts at the top).
+  function handleLogoClick(event: React.MouseEvent<HTMLAnchorElement>) {
+    if (pathname !== "/") return;
+    event.preventDefault();
+    window.scrollTo({ top: 0 }); // smooth unless the visitor prefers reduced motion (CSS)
+    if (window.location.hash) {
+      history.replaceState(history.state, "", window.location.pathname + window.location.search);
+    }
+  }
 
   return (
     <header
@@ -38,7 +51,12 @@ export function Header() {
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4 lg:h-20">
-        <Link href="/" aria-label={t("Common.logoLabel")} className="rounded-button">
+        <Link
+          href="/"
+          aria-label={t("Common.logoLabel")}
+          onClick={handleLogoClick}
+          className="rounded-button"
+        >
           <Logo />
         </Link>
 
