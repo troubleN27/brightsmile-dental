@@ -53,6 +53,8 @@ export function Hero() {
           preload
           fill
           square
+          // People sit right of centre in the shot; keep them in the crop
+          className="object-[70%_50%]"
           placeholderIcon={Smile}
         />
       </div>
