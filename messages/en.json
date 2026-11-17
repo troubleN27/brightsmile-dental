@@ -33,26 +33,14 @@
     "en": "English"
   },
   "Hero": {
-    "eyebrow": "English-speaking dentists on Pokrovka",
     "title": "A dentist you won't dread visiting",
     "subtitle": "We see adults and kids. We numb the gum with gel before any injection, tell you the price before we start, and explain what we're doing as we go. Raise your hand at any point and we'll stop.",
     "ctaPrimary": "Book a free consultation",
     "ctaSecondary": "See pricing",
     "photoAlt": "Smiling patient with her dentist at BrightSmile Dental",
-    "badgeTitle": "Open every day",
-    "badgeText": "Until 8 PM on weekdays, 10 to 4 on Sundays",
-    "statsLabel": "BrightSmile Dental at a glance",
-    "years": "{count, plural, one {# year} other {# years}}",
-    "yearsLabel": "in Moscow",
-    "patients": "{count}+",
-    "patientsLabel": "patients so far",
-    "rating": "{rating} / 5",
-    "ratingLabel": "average review score",
-    "warranty": "Up to {count, plural, one {# year} other {# years}}",
-    "warrantyLabel": "written warranty"
+    "facts": "We've been open {years, plural, one {# year} other {# years}} and have treated more than {patients} patients, with an average review score of {rating} out of 5. Open every day, until 4 PM on Sundays."
   },
   "Advantages": {
-    "eyebrow": "Why us",
     "title": "Nobody looks forward to the dentist. We get it.",
     "subtitle": "So we try to keep the visit calm and the bill free of surprises.",
     "items": {
@@ -83,7 +71,6 @@
     }
   },
   "Doctors": {
-    "eyebrow": "Dentists",
     "title": "Who'll be treating you",
     "subtitle": "Each dentist has their own specialty. Whoever starts your treatment finishes it, so you won't be passed around.",
     "experience": "{years} years in practice",
@@ -91,7 +78,6 @@
     "photoAlt": "{name}, {specialty}"
   },
   "Process": {
-    "eyebrow": "Booking",
     "title": "What happens after you book",
     "subtitle": "You'll know the cost before treatment starts, not at the front desk.",
     "steps": {
@@ -121,7 +107,6 @@
     "note": "Usually ₽1,500 for the consultation and from ₽3,000 for the 3D scan"
   },
   "Contacts": {
-    "eyebrow": "Contact",
     "title": "Finding us",
     "subtitle": "27 Pokrovka St, building 1. About a seven-minute walk from Chistye Prudy metro.",
     "address": "Address",
@@ -150,7 +135,6 @@
     "home": "Back to home"
   },
   "Services": {
-    "eyebrow": "Services & pricing",
     "title": "What treatment costs",
     "subtitle": "Pick a category. Each service shows its starting price.",
     "categories": {
@@ -167,7 +151,6 @@
     "note": "Your dentist gives you the exact price after the exam, since it depends on what you actually need. You get the plan with prices before any work starts, and it doesn't change without your OK."
   },
   "Results": {
-    "eyebrow": "Results",
     "title": "Work by our dentists",
     "subtitle": "Drag the slider to compare. These patients agreed to let us share their photos.",
     "before": "Before",
@@ -178,7 +161,6 @@
     "duration": "Treatment time: {duration}"
   },
   "Reviews": {
-    "eyebrow": "Reviews",
     "title": "From our patients",
     "subtitle": "Average rating: {rating} out of 5. Here's what people say after their visits.",
     "rating": "Rated {rating} out of 5",
@@ -189,14 +171,12 @@
     "goTo": "Go to reviews, group {index}"
   },
   "Faq": {
-    "eyebrow": "FAQ",
     "title": "Questions people ask us",
     "subtitle": "Can't find your answer? Call us or message us on Telegram. The front desk will answer or check with a dentist.",
     "call": "Call us",
     "telegram": "Message on Telegram"
   },
   "Booking": {
-    "eyebrow": "Book a visit",
     "title": "Book a free consultation",
     "subtitle": "Leave your name and number. During opening hours we'll call back within 15 minutes to set a day.",
     "fields": {

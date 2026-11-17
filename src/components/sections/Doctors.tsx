@@ -1,4 +1,4 @@
-import { Award, CalendarPlus, UserRound } from "lucide-react";
+import { UserRound } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { BookingLink } from "@/components/ui/BookingLink";
 import { Button } from "@/components/ui/button";
@@ -16,7 +16,6 @@ export function Doctors() {
     <section id="doctors" className="py-16 md:py-24">
       <Container>
         <SectionTitle
-          eyebrow={t("eyebrow")}
           title={t("title")}
           subtitle={t("subtitle")}
         />
@@ -27,7 +26,7 @@ export function Doctors() {
             return (
               <li
                 key={doctor.id}
-                className="flex flex-col rounded-card bg-white p-3 ring-1 ring-border"
+                className="flex flex-col"
               >
                 <Photo
                   src={doctor.photo}
@@ -37,16 +36,14 @@ export function Doctors() {
                   sizes="(min-width: 1024px) 270px, (min-width: 640px) 45vw, 100vw"
                   placeholderIcon={UserRound}
                 />
-                <div className="flex flex-1 flex-col px-2 pt-5 pb-2">
+                <div className="flex flex-1 flex-col pt-4">
                   <h3 className="text-lg font-bold text-navy">{name}</h3>
                   <p className="mt-1 text-primary-dark">{specialty}</p>
-                  <p className="mt-3 mb-5 flex items-center gap-2 text-sm text-muted-foreground">
-                    <Award aria-hidden className="size-4 text-primary-dark" />
+                  <p className="mt-1 mb-5 text-sm text-muted-foreground">
                     {t("experience", { years: doctor.experienceYears })}
                   </p>
                   <Button asChild variant="outline" className="mt-auto w-full">
                     <BookingLink doctorId={doctor.id} aria-label={`${t("book")}: ${name}`}>
-                      <CalendarPlus />
                       {t("book")}
                     </BookingLink>
                   </Button>

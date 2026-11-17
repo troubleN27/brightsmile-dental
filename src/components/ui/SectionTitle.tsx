@@ -3,8 +3,6 @@ import { cn } from "@/lib/utils";
 type SectionTitleProps = {
   title: string;
   subtitle?: string;
-  /** Small label above the title, e.g. "Prices" */
-  eyebrow?: string;
   align?: "left" | "center";
   className?: string;
 };
@@ -12,8 +10,7 @@ type SectionTitleProps = {
 export function SectionTitle({
   title,
   subtitle,
-  eyebrow,
-  align = "center",
+  align = "left",
   className,
 }: SectionTitleProps) {
   return (
@@ -24,14 +21,9 @@ export function SectionTitle({
         className,
       )}
     >
-      {eyebrow && (
-        <p className="mb-3 text-sm font-semibold tracking-wider text-primary-dark uppercase">
-          {eyebrow}
-        </p>
-      )}
       <h2 className="text-h2 text-navy text-balance">{title}</h2>
       {subtitle && (
-        <p className="mt-4 text-muted-foreground text-pretty">{subtitle}</p>
+        <p className="mt-4 text-lg text-muted-foreground text-pretty">{subtitle}</p>
       )}
     </div>
   );

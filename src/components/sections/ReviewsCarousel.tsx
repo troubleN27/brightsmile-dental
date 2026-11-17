@@ -2,7 +2,7 @@
 
 import { useCallback, useSyncExternalStore } from "react";
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
-import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -81,8 +81,8 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
               aria-label={t("slide", { index: index + 1, total: reviews.length })}
               className="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3 lg:pl-6"
             >
-              <figure className="flex h-full flex-col rounded-card bg-white p-6 ring-1 ring-primary/10 md:p-7">
-                <div className="flex items-center justify-between">
+              <figure className="flex h-full flex-col rounded-card bg-white p-6 md:p-7">
+                <div>
                   <div
                     role="img"
                     aria-label={t("rating", { rating: review.rating })}
@@ -101,7 +101,6 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
                       />
                     ))}
                   </div>
-                  <Quote aria-hidden className="size-7 text-primary/30" />
                 </div>
                 <blockquote className="mt-4 flex-1 text-navy/85">{review.text}</blockquote>
                 <figcaption className="mt-6 border-t border-border pt-4">

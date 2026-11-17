@@ -1,4 +1,4 @@
-import { Clock, Smile } from "lucide-react";
+import { Smile } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { CompareSlider } from "@/components/ui/CompareSlider";
 import { Container } from "@/components/ui/Container";
@@ -18,12 +18,12 @@ export function BeforeAfter() {
   return (
     <section id="results" className="bg-surface py-16 md:py-24">
       <Container>
-        <SectionTitle eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
+        <SectionTitle title={t("title")} subtitle={t("subtitle")} />
         <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {cases.map((item) => {
             const service = getService(item.serviceId)?.title[locale] ?? "";
             return (
-              <li key={item.id} className="rounded-card bg-white p-3 ring-1 ring-primary/10">
+              <li key={item.id}>
                 <CompareSlider
                   label={t("sliderLabel", { service })}
                   beforeLabel={t("before")}
@@ -48,10 +48,9 @@ export function BeforeAfter() {
                     />
                   }
                 />
-                <div className="px-2 pt-4 pb-1">
+                <div className="pt-4">
                   <h3 className="font-bold text-navy">{service}</h3>
-                  <p className="mt-1 flex items-center gap-2 text-sm text-muted-foreground">
-                    <Clock aria-hidden className="size-4 text-primary-dark" />
+                  <p className="mt-1 text-sm text-muted-foreground">
                     {t("duration", { duration: item.duration[locale] })}
                   </p>
                 </div>

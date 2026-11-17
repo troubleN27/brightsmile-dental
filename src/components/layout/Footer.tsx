@@ -26,7 +26,7 @@ export function Footer({ year }: FooterProps) {
         </div>
 
         <nav aria-label={t("Footer.navTitle")}>
-          <h2 className="mb-4 text-sm font-bold tracking-wider text-white uppercase">
+          <h2 className="mb-4 font-semibold text-white">
             {t("Footer.navTitle")}
           </h2>
           <ul className="space-y-2.5 text-sm">
@@ -41,7 +41,7 @@ export function Footer({ year }: FooterProps) {
         </nav>
 
         <div>
-          <h2 className="mb-4 text-sm font-bold tracking-wider text-white uppercase">
+          <h2 className="mb-4 font-semibold text-white">
             {t("Footer.contactsTitle")}
           </h2>
           <ul className="space-y-3 text-sm">
@@ -82,7 +82,7 @@ export function Footer({ year }: FooterProps) {
                 site.legal.license && t("Footer.license", { license: site.legal.license }),
               ]
                 .filter(Boolean)
-                .join(" · ")}
+                .join(", ")}
             </p>
           </div>
           <Link href="/privacy" className="underline-offset-4 transition-colors hover:text-primary hover:underline">

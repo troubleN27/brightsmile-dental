@@ -1,6 +1,5 @@
 "use client";
 
-import { CalendarPlus, Info } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { BookingLink } from "@/components/ui/BookingLink";
 import { Button } from "@/components/ui/button";
@@ -18,12 +17,12 @@ export function Services() {
   return (
     <section id="services" className="py-16 md:py-24">
       <Container>
-        <SectionTitle eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
+        <SectionTitle title={t("title")} subtitle={t("subtitle")} />
 
         <Tabs defaultValue={serviceCategories[0]} className="gap-6">
           {/* Scrolls sideways on small screens instead of wrapping */}
           <div className="-mx-4 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden">
-            <TabsList className="flex h-auto w-max gap-1 rounded-button bg-surface p-1.5 ring-1 ring-primary/10 md:mx-auto">
+            <TabsList className="flex h-auto w-max gap-1 rounded-button bg-surface p-1.5 ring-1 ring-primary/10">
               {serviceCategories.map((category) => (
                 <TabsTrigger
                   key={category}
@@ -38,7 +37,7 @@ export function Services() {
 
           {serviceCategories.map((category) => (
             <TabsContent key={category} value={category}>
-              <ul className="grid gap-4 md:grid-cols-2">
+              <ul className="grid gap-x-12 md:grid-cols-2">
                 {services
                   .filter((service) => service.category === category)
                   .map((service) => {
@@ -46,7 +45,7 @@ export function Services() {
                     return (
                       <li
                         key={service.id}
-                        className="flex flex-col gap-4 rounded-card bg-white p-5 ring-1 ring-border transition-shadow hover:shadow-[0_16px_40px_-24px_rgba(15,118,110,0.4)] sm:flex-row sm:items-center md:p-6"
+                        className="flex flex-col gap-4 border-b border-border py-5 sm:flex-row sm:items-center md:py-6"
                       >
                         <div className="flex-1">
                           <h3 className="text-lg font-bold text-navy">{title}</h3>
@@ -58,7 +57,6 @@ export function Services() {
                           </p>
                           <Button asChild size="sm" variant="outline">
                             <BookingLink serviceId={service.id} aria-label={t("bookLabel", { service: title })}>
-                              <CalendarPlus />
                               {t("book")}
                             </BookingLink>
                           </Button>
@@ -71,8 +69,7 @@ export function Services() {
           ))}
         </Tabs>
 
-        <p className="mx-auto mt-8 flex max-w-3xl gap-3 rounded-card bg-surface p-4 text-sm leading-6 text-navy/80 md:p-5">
-          <Info aria-hidden className="mt-0.5 size-5 shrink-0 text-primary-dark" />
+        <p className="mt-8 max-w-3xl text-sm leading-6 text-muted-foreground">
           {t("note")}
         </p>
       </Container>

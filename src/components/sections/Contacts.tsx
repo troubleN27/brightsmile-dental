@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Navigation, Phone, TrainFront, type LucideIcon } from "lucide-react";
+import { Navigation } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { InstagramIcon, TelegramIcon } from "@/components/ui/BrandIcons";
 import { Button } from "@/components/ui/button";
@@ -15,17 +15,13 @@ function mapEmbedUrl(locale: Locale) {
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${site.map.lat},${site.map.lng}`;
 
 type ContactRowProps = {
-  icon: LucideIcon;
   label: string;
   children: React.ReactNode;
 };
 
-function ContactRow({ icon: Icon, label, children }: ContactRowProps) {
+function ContactRow({ label, children }: ContactRowProps) {
   return (
-    <li className="flex gap-4">
-      <span className="flex size-11 shrink-0 items-center justify-center rounded-button bg-primary/15 text-primary-dark">
-        <Icon aria-hidden className="size-5" />
-      </span>
+    <li>
       <div className="min-w-0">
         <p className="text-sm text-muted-foreground">{label}</p>
         <p className="font-semibold break-words text-navy">{children}</p>
@@ -41,28 +37,28 @@ export function Contacts() {
   return (
     <section id="contacts" className="bg-surface py-16 md:py-24">
       <Container>
-        <SectionTitle eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
+        <SectionTitle title={t("title")} subtitle={t("subtitle")} />
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-          <div className="rounded-card bg-white p-6 ring-1 ring-primary/10 md:p-8">
-            <ul className="space-y-6">
-              <ContactRow icon={MapPin} label={t("address")}>
+          <div>
+            <ul className="space-y-5">
+              <ContactRow label={t("address")}>
                 {site.address[locale]}
               </ContactRow>
-              <ContactRow icon={TrainFront} label={t("metro")}>
+              <ContactRow label={t("metro")}>
                 {site.metro[locale]}
               </ContactRow>
-              <ContactRow icon={Phone} label={t("phone")}>
+              <ContactRow label={t("phone")}>
                 <a href={phoneHref} className="hover:text-primary-dark">
                   {site.phone}
                 </a>
               </ContactRow>
-              <ContactRow icon={Mail} label={t("email")}>
+              <ContactRow label={t("email")}>
                 <a href={`mailto:${site.email}`} className="hover:text-primary-dark">
                   {site.email}
                 </a>
               </ContactRow>
-              <ContactRow icon={Clock} label={t("hours")}>
+              <ContactRow label={t("hours")}>
                 {site.hours[locale]}
               </ContactRow>
             </ul>
@@ -70,13 +66,13 @@ export function Contacts() {
             <div className="mt-8 border-t border-border pt-6">
               <p className="mb-3 text-sm text-muted-foreground">{t("socials")}</p>
               <div className="flex flex-wrap gap-3">
-                <Button asChild variant="secondary">
+                <Button asChild variant="outline">
                   <a href={site.telegram} target="_blank" rel="noopener noreferrer">
                     <TelegramIcon className="size-5" />
                     Telegram
                   </a>
                 </Button>
-                <Button asChild variant="secondary">
+                <Button asChild variant="outline">
                   <a href={site.instagram} target="_blank" rel="noopener noreferrer">
                     <InstagramIcon className="size-5" />
                     Instagram
@@ -86,7 +82,7 @@ export function Contacts() {
             </div>
           </div>
 
-          <div className="relative min-h-[320px] overflow-hidden rounded-card bg-white ring-1 ring-primary/10 md:min-h-[420px]">
+          <div className="relative min-h-[320px] overflow-hidden rounded-card bg-white md:min-h-[420px]">
             <iframe
               title={t("mapTitle")}
               src={mapEmbedUrl(locale)}

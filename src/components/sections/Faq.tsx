@@ -24,7 +24,6 @@ export function Faq() {
         <div className="lg:sticky lg:top-28 lg:self-start">
           <SectionTitle
             align="left"
-            eyebrow={t("eyebrow")}
             title={t("title")}
             subtitle={t("subtitle")}
             className="mb-6 md:mb-8"
@@ -45,12 +44,12 @@ export function Faq() {
           </div>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-3">
+        <Accordion type="single" collapsible className="border-t border-border">
           {faq.map((item) => (
             <AccordionItem
               key={item.id}
               value={item.id}
-              className="rounded-card border-none bg-surface px-5 ring-1 ring-primary/10 data-[state=open]:bg-white data-[state=open]:shadow-[0_16px_40px_-24px_rgba(15,118,110,0.45)] md:px-6"
+              className="border-b border-border last:border-b"
             >
               <AccordionTrigger className="cursor-pointer py-5 text-base font-bold text-navy hover:no-underline md:text-lg [&>svg]:size-5 [&>svg]:text-primary-dark">
                 {item.question[locale]}

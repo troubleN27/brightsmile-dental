@@ -24,7 +24,6 @@ export function Reviews() {
     <section id="reviews" className="bg-surface py-16 md:py-24">
       <Container>
         <SectionTitle
-          eyebrow={t("eyebrow")}
           title={t("title")}
           subtitle={t("subtitle", { rating: format.number(site.stats.rating) })}
         />
