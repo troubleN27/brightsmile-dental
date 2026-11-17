@@ -23,7 +23,8 @@ Landing site for a dental clinic. Requirements: [docs/PRD.md](docs/PRD.md). Tech
 - **GSAP** + ScrollTrigger for animations instead of Framer Motion (owner's decision). Section reveal lives in `src/components/ui/Reveal.tsx`; GSAP is imported dynamically after first paint and skipped for `prefers-reduced-motion: reduce`.
 - Performance: heavy below-the-fold client code is lazy-loaded (`LazyBookingForm`, dynamic GSAP). Keep Lighthouse mobile Performance ≥ 90 — check with a production build (`npm run build && npm start`), not `next dev`.
 - SEO: `siteUrl()` in `src/config/site.ts`, hreflang helpers in `src/lib/seo.ts`, JSON-LD in `src/components/seo/JsonLd.tsx`.
-- Embla Carousel v8 for the reviews carousel. Prices: `formatPrice` → "$1 100" / "$1,100" (dollar sign first in both locales, owner's decision).
+- Embla Carousel v8 for the reviews carousel. Prices are in Russian rubles: `formatPrice` → "3 500 ₽" / "₽3,500" (Intl, locale rules).
+- The clinic is in Moscow, Russia (owner's decision, replaces the original US setup): phone default country RU, Yandex Maps widget, Telegram + VK links, privacy policy written for Federal Law 152-FZ. Legal details live in `site.legal` (empty fields are hidden).
 - next-intl 4: locale is read via `next/root-params` in `src/i18n/request.ts`; no `setRequestLocale`. `[locale]/layout.tsx` is the root layout.
 
 ## Conventions

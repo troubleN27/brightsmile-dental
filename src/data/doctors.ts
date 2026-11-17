@@ -3,7 +3,7 @@ import type { Doctor } from "./types";
 export const doctors: Doctor[] = [
   {
     id: "anna-sokolova",
-    name: { ru: "Анна Соколова", en: "Anna Sokolova, DDS" },
+    name: { ru: "Анна Соколова", en: "Anna Sokolova" },
     specialty: {
       ru: "Главный врач, терапевт-эндодонтист",
       en: "Clinical Director, Endodontics",
@@ -12,34 +12,34 @@ export const doctors: Doctor[] = [
     photo: "/images/doctors/anna-sokolova.webp",
   },
   {
-    id: "michael-reyes",
-    name: { ru: "Майкл Рейес", en: "Michael Reyes, DMD" },
+    id: "mikhail-remizov",
+    name: { ru: "Михаил Ремизов", en: "Mikhail Remizov" },
     specialty: {
       ru: "Хирург-имплантолог",
       en: "Oral Surgery & Implants",
     },
     experienceYears: 18,
-    photo: "/images/doctors/michael-reyes.webp",
+    photo: "/images/doctors/mikhail-remizov.webp",
   },
   {
-    id: "elena-park",
-    name: { ru: "Елена Пак", en: "Elena Park, DDS" },
+    id: "elena-pak",
+    name: { ru: "Елена Пак", en: "Elena Pak" },
     specialty: {
       ru: "Ортодонт",
       en: "Orthodontics",
     },
     experienceYears: 11,
-    photo: "/images/doctors/elena-park.webp",
+    photo: "/images/doctors/elena-pak.webp",
   },
   {
-    id: "olivia-grant",
-    name: { ru: "Оливия Грант", en: "Olivia Grant, DDS" },
+    id: "olga-granina",
+    name: { ru: "Ольга Гранина", en: "Olga Granina" },
     specialty: {
       ru: "Детский стоматолог",
       en: "Pediatric Dentistry",
     },
     experienceYears: 9,
-    photo: "/images/doctors/olivia-grant.webp",
+    photo: "/images/doctors/olga-granina.webp",
   },
 ];
 

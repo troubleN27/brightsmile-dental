@@ -102,12 +102,12 @@ brightsmile-dental/
 ```ts
 export const site = {
   name: 'BrightSmile Dental',
-  phone: '+1 555 010 2030',
+  phone: '+7 495 221-78-45',
   email: 'hello@brightsmile.dental',
-  address: { ru: '…', en: '…' },
+  address: { ru: 'Москва, …', en: '…, Moscow' },
   hours: { ru: 'Пн–Сб 9:00–20:00, Вс 10:00–16:00', en: 'Mon–Sat 9 AM–8 PM, Sun 10 AM–4 PM' },
   telegram: 'https://t.me/…',
-  instagram: 'https://instagram.com/…',
+  vk: 'https://vk.com/…',
   map: { lat: 0, lng: 0, zoom: 15 },
   stats: { years: 12, patients: 15000, rating: 4.9, warrantyYears: 5 },
 };
@@ -127,7 +127,7 @@ type Service = {
   category: ServiceCategory;
   title: Localized;
   description: Localized;
-  priceFrom: number;          // в долларах США
+  priceFrom: number;          // в рублях
 };
 
 type Doctor = {
@@ -159,7 +159,7 @@ type FaqItem = { id: string; question: Localized; answer: Localized };
 
 Объём контента: 18–24 услуги (3–4 в категории), 4 врача, 4–6 кейсов, 6–8 отзывов, 6–8 вопросов FAQ.
 
-Цены форматируются через `Intl.NumberFormat` с валютой USD по правилам текущей локали: «от $120» / «from $120».
+Цены форматируются через `Intl.NumberFormat` с валютой RUB по правилам текущей локали: «от 3 500 ₽» / «from ₽3,500».
 
 ### 4.3 Изображения
 
@@ -237,7 +237,7 @@ NEXT_PUBLIC_SITE_URL=
 | Reviews | Карусель Embla: 1 карточка на мобильных, 2 на планшете, 3 на десктопе; точки и стрелки |
 | Accordion (FAQ) | Открыт один пункт за раз; плавная анимация высоты; `aria-expanded` |
 | FloatingButtons | Кнопка Telegram справа снизу; на экранах < 768 px — закреплённая полоса «Записаться», которая скрывается, когда форма записи в зоне видимости |
-| Карта | Google Maps embed (iframe) по координатам из `site.map`; загружается лениво |
+| Карта | Яндекс Карты (виджет-iframe) по координатам из `site.map`; загружается лениво |
 | Анимации | Появление секций снизу вверх при прокрутке; уважать `prefers-reduced-motion` |
 
 ## 8. Дизайн-система

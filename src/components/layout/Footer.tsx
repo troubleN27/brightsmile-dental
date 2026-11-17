@@ -71,7 +71,20 @@ export function Footer({ year }: FooterProps) {
 
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-3 py-6 text-sm sm:flex-row sm:items-center sm:justify-between">
-          <p>{t("Footer.rights", { year })}</p>
+          <div className="space-y-1">
+            <p>{t("Footer.rights", { year })}</p>
+            {/* Legal details: registration numbers and licence appear once filled in site.ts */}
+            <p className="text-xs text-slate-400">
+              {[
+                site.legal.name[locale],
+                site.legal.inn && t("Footer.inn", { inn: site.legal.inn }),
+                site.legal.ogrn && t("Footer.ogrn", { ogrn: site.legal.ogrn }),
+                site.legal.license && t("Footer.license", { license: site.legal.license }),
+              ]
+                .filter(Boolean)
+                .join(" · ")}
+            </p>
+          </div>
           <Link href="/privacy" className="underline-offset-4 transition-colors hover:text-primary hover:underline">
             {t("Footer.privacy")}
           </Link>

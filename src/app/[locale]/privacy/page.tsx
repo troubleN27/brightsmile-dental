@@ -30,11 +30,24 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function PrivacyPage() {
+  const locale = (await getLocale()) as Locale;
   const t = await getTranslations("Privacy");
+  const tFooter = await getTranslations("Footer");
   const format = await getFormatter();
   const sections = t.raw("sections") as Section[];
+
+  // Registration numbers are shown only once they are filled in src/config/site.ts
+  const { inn, ogrn } = site.legal;
+  const registration = [inn && tFooter("inn", { inn }), ogrn && tFooter("ogrn", { ogrn })]
+    .filter(Boolean)
+    .join(", ");
   const fill = (text: string) =>
-    text.replaceAll("{email}", site.email).replaceAll("{phone}", site.phone);
+    text
+      .replaceAll("{legalName}", site.legal.name[locale])
+      .replaceAll("{legalDetails}", registration ? ` (${registration})` : "")
+      .replaceAll("{address}", site.address[locale])
+      .replaceAll("{email}", site.email)
+      .replaceAll("{phone}", site.phone);
 
   return (
     <article className="py-12 break-words md:py-20">
@@ -46,7 +59,7 @@ export default async function PrivacyPage() {
           <ArrowLeft aria-hidden className="size-4" />
           {t("back")}
         </Link>
-        {/* Slightly smaller on narrow phones so "конфиденциальности" fits on one line */}
+        {/* Slightly smaller on narrow phones so long Russian words fit on one line */}
         <h1 className="text-h1 hyphens-auto break-words text-navy max-sm:text-[28px] max-sm:leading-9">
           {t("title")}
         </h1>

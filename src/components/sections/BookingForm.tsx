@@ -194,7 +194,7 @@ export function BookingForm() {
               <PhoneInput
                 id={fieldId("phone")}
                 international
-                defaultCountry="US"
+                defaultCountry="RU"
                 countryCallingCodeEditable={false}
                 labels={locale === "ru" ? ruLabels : enLabels}
                 flagComponent={CountryCode}

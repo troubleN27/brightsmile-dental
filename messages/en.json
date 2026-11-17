@@ -1,11 +1,11 @@
 {
   "Metadata": {
-    "title": "BrightSmile Dental — Calm, Gentle Dentistry in San Francisco",
-    "description": "Fillings, cleanings, implants and cosmetic dentistry in San Francisco. Gentle care, clear pricing and a written warranty. Free consultation when you book online."
+    "title": "BrightSmile Dental — Calm, Gentle Dentistry in Moscow",
+    "description": "English-speaking dental clinic in central Moscow: fillings, cleanings, implants and cosmetic dentistry. Gentle care, clear pricing and a written warranty. Free consultation when you book online."
   },
   "OgImage": {
     "title": "Dental care that feels calm, not scary",
-    "subtitle": "Family dentistry in San Francisco · English & Russian",
+    "subtitle": "Family dentistry in central Moscow · English & Russian",
     "badge": "Free consultation when you book online"
   },
   "Common": {
@@ -33,7 +33,7 @@
     "en": "English"
   },
   "Hero": {
-    "eyebrow": "Family dentistry in San Francisco",
+    "eyebrow": "English-speaking dentists in central Moscow",
     "title": "Dental care that feels calm, not scary",
     "subtitle": "Gentle dentistry for adults and kids: modern numbing, upfront pricing, and dentists who walk you through every step before treatment begins.",
     "ctaPrimary": "Book a free consultation",
@@ -70,7 +70,7 @@
       },
       "installments": {
         "title": "Interest-free payment plans",
-        "text": "Spread treatment over $500 across up to 12 months. We're also in network with most PPO plans."
+        "text": "Spread treatment from ₽30,000 across up to 12 months. We also accept voluntary health insurance (DMS) policies."
       },
       "kids": {
         "title": "Pediatric dentist",
@@ -118,26 +118,31 @@
     "title": "Free consultation and 3D scan",
     "text": "A full exam, 3D imaging and a written treatment plan with prices — at no cost. Then decide when and how to move forward, no pressure.",
     "cta": "Book my free visit",
-    "note": "Normally from $60 for the exam and $150 for the 3D scan"
+    "note": "Normally from ₽1,500 for the exam and ₽3,000 for the 3D scan"
   },
   "Contacts": {
     "eyebrow": "Contact",
     "title": "Visit us",
-    "subtitle": "We're in downtown San Francisco, a five-minute walk from Civic Center station.",
+    "subtitle": "We're in central Moscow, a 7-minute walk from Chistye Prudy metro station.",
     "address": "Address",
     "phone": "Phone",
     "email": "Email",
     "hours": "Hours",
     "socials": "Message us",
     "route": "Get directions",
-    "mapTitle": "BrightSmile Dental on the map"
+    "mapTitle": "BrightSmile Dental on the map",
+    "metro": "Metro",
+    "vk": "VKontakte"
   },
   "Footer": {
-    "tagline": "A family dental practice in San Francisco. Gentle treatment, plain explanations, and results we stand behind.",
+    "tagline": "A family dental clinic in central Moscow. Gentle treatment, plain explanations, and results we stand behind.",
     "navTitle": "Explore",
     "contactsTitle": "Contact",
     "privacy": "Privacy Policy",
-    "rights": "© {year} BrightSmile Dental. All rights reserved."
+    "rights": "© {year} BrightSmile Dental. All rights reserved.",
+    "inn": "TIN {inn}",
+    "ogrn": "OGRN {ogrn}",
+    "license": "Medical licence No. {license}"
   },
   "NotFound": {
     "metaTitle": "Page not found",
@@ -199,7 +204,7 @@
       "name": "Name",
       "namePlaceholder": "What should we call you?",
       "phone": "Phone",
-      "phonePlaceholder": "+1 555 000 0000",
+      "phonePlaceholder": "+7 900 000-00-00",
       "country": "Country",
       "service": "Service",
       "servicePlaceholder": "Not sure yet — I'd like a consultation",
@@ -210,8 +215,8 @@
       "timeAny": "Any time",
       "comment": "Comments",
       "commentPlaceholder": "Anything bothering you, or questions you'd like to ask",
-      "consentBefore": "I agree to the processing of my personal data as described in the ",
-      "consentLink": "Privacy Policy",
+      "consentBefore": "I consent to the processing of my personal data, including its transfer via Telegram, under the ",
+      "consentLink": "Personal Data Policy",
       "honeypot": "Leave this field empty",
       "optional": "optional",
       "required": "required"
@@ -257,67 +262,86 @@
     "preferPhone": "Prefer to call?"
   },
   "Privacy": {
-    "metaTitle": "Privacy Policy",
-    "metaDescription": "How BrightSmile Dental collects, uses and protects the information you share on our website.",
-    "title": "Privacy Policy",
-    "updated": "Last updated: {date}",
-    "intro": "We take your privacy seriously. This page explains, in plain language, what information we receive through our website, why we need it, and the choices you have.",
+    "metaTitle": "Personal Data Policy",
+    "metaDescription": "How BrightSmile Dental processes and protects personal data under Russian Federal Law No. 152-FZ.",
+    "title": "Personal Data Policy",
+    "updated": "Effective as of {date}",
+    "intro": "This Policy is issued under Russian Federal Law No. 152-FZ “On Personal Data” of 27 July 2006. It explains, in plain language, what information we receive through our website, why we need it, and the choices you have.",
     "back": "Back to home",
     "sections": [
       {
-        "title": "Who we are",
+        "title": "1. Data controller",
         "paragraphs": [
-          "This website belongs to BrightSmile Dental, 1250 Market Street, San Francisco, CA 94102, USA. For any privacy questions, email {email} or call {phone}."
+          "Your personal data is controlled by {legalName}{legalDetails}, {address}. For any privacy questions, email {email} or call {phone}."
         ]
       },
       {
-        "title": "What we collect",
+        "title": "2. What we collect",
         "paragraphs": [
-          "Only what you enter in the booking form: your name, phone number and, if you choose, a service, a dentist, a preferred date and time, and a comment.",
-          "We don't ask for or store medical records, payment details or insurance ID numbers through this website. Please don't include that kind of information in the comment field."
+          "Only what you enter in the booking form: your name and phone number and, if you choose, a service, a dentist, a preferred date and time, and a comment.",
+          "We don't ask for health information through the website. Please don't include it in the comment field — your dentist will go over everything at your visit."
         ]
       },
       {
-        "title": "How we use it",
+        "title": "3. Why we use it",
         "paragraphs": [
-          "To call you back, answer your questions and schedule your visit. We don't use your details for marketing emails, and we never sell them."
+          "To call you back, schedule your visit and answer your questions. We don't use your details for marketing, and we never sell them."
         ]
       },
       {
-        "title": "Where it's stored and who sees it",
+        "title": "4. Legal basis",
         "paragraphs": [
-          "Your request goes to a private Telegram chat used by our front desk team. The website has no database. Only staff who handle scheduling can see booking requests.",
-          "The website is hosted on Vercel, and Telegram delivers booking requests. These services process data only as needed to run. We don't share your information with anyone else unless the law requires it."
+          "Your consent to the processing of personal data (Art. 6(1)(1) of Law No. 152-FZ), which you give by ticking the consent box in the booking form."
         ]
       },
       {
-        "title": "How long we keep it",
+        "title": "5. How we process it",
         "paragraphs": [
-          "Booking requests are kept for up to 12 months and then deleted from the team chat. If you become our patient, your records are kept as required by law."
+          "We collect, record, organize, store, update, use, transfer, block, delete and destroy data, both with and without automated tools."
         ]
       },
       {
-        "title": "Cookies and analytics",
+        "title": "6. Transfer and storage",
         "paragraphs": [
-          "We don't use advertising cookies or web analytics. The Contact section includes an embedded Google Map; when it loads, Google may set its own cookies under Google's privacy policy."
+          "Your request is delivered to our front desk team via Telegram, and the website is hosted on Vercel. These services may keep data on servers outside Russia, so by sending the form you agree to this cross-border transfer.",
+          "We don't share your data with anyone else unless Russian law requires it."
         ]
       },
       {
-        "title": "Your rights",
+        "title": "7. How long we keep it",
         "paragraphs": [
-          "You can ask what information we hold about you, have it corrected or deleted, or withdraw your consent at any time. Just email {email} and we'll respond within 30 days."
+          "We keep your data only as long as needed for the purposes above, and no longer than 12 months after your request or until you withdraw consent, whichever comes first. After that it is deleted."
         ]
       },
       {
-        "title": "Children",
+        "title": "8. Your rights",
         "paragraphs": [
-          "Only a parent or legal guardian can book a visit for a child. We don't knowingly accept requests from children under 13."
+          "You can ask how your data is processed, have it corrected, blocked or destroyed, and file a complaint with Roskomnadzor (the Russian data protection authority) or a court.",
+          "Send requests to {email}. We reply within 10 business days, or up to 5 more business days if we tell you why we need extra time."
         ]
       },
       {
-        "title": "Changes to this policy",
+        "title": "9. Withdrawing consent",
         "paragraphs": [
-          "If we update this policy, the new version will be posted on this page with a new date."
+          "You can withdraw your consent at any time by emailing {email} with the subject “Withdraw consent”. We'll stop processing and destroy your data within 30 days."
+        ]
+      },
+      {
+        "title": "10. Security",
+        "paragraphs": [
+          "Only staff who handle scheduling can see booking requests. We take the legal, organizational and technical measures required to protect your data from unauthorized access."
+        ]
+      },
+      {
+        "title": "11. Cookies and analytics",
+        "paragraphs": [
+          "We don't use advertising cookies or web analytics. The Contact section includes an embedded Yandex Map; when it loads, Yandex may set its own cookies under its own policy."
+        ]
+      },
+      {
+        "title": "12. Changes to this policy",
+        "paragraphs": [
+          "We may update this Policy. The current version is always posted on this page with its effective date."
         ]
       }
     ]

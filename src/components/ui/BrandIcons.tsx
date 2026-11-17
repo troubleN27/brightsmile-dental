@@ -10,21 +10,22 @@ export function TelegramIcon({ className }: IconProps) {
   );
 }
 
-export function InstagramIcon({ className }: IconProps) {
+/** Simple "VK" lettermark in a rounded square */
+export function VkIcon({ className }: IconProps) {
   return (
-    <svg
-      aria-hidden
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+    <svg aria-hidden viewBox="0 0 24 24" className={className}>
+      <rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="currentColor" />
+      <text
+        x="12"
+        y="16.2"
+        textAnchor="middle"
+        fontSize="10.5"
+        fontWeight="800"
+        fontFamily="Arial, sans-serif"
+        fill="#fff"
+      >
+        VK
+      </text>
     </svg>
   );
 }

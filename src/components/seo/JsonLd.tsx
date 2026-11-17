@@ -15,9 +15,10 @@ export function JsonLd({ locale }: { locale: Locale }) {
     url: `${base}${localizedPath(locale)}`,
     logo: `${base}/icon.svg`,
     image: `${base}${localizedPath(locale)}/opengraph-image`,
-    telephone: site.phone.replace(/\s/g, ""),
+    telephone: site.phone.replace(/[^\d+]/g, ""),
     email: site.email,
-    priceRange: "$$",
+    priceRange: "₽₽",
+    currenciesAccepted: "RUB",
     address: {
       "@type": "PostalAddress",
       streetAddress: postalAddress.street,
@@ -40,7 +41,7 @@ export function JsonLd({ locale }: { locale: Locale }) {
       bestRating: 5,
     },
     availableLanguage: ["Russian", "English"],
-    sameAs: [site.telegram, site.instagram],
+    sameAs: [site.telegram, site.vk],
   };
 
   return (

@@ -21,8 +21,8 @@ export const faq: FaqItem[] = [
     id: "installments",
     question: { ru: "Можно ли оплатить в рассрочку?", en: "Do you offer payment plans?" },
     answer: {
-      ru: "Да. Лечение от $500 можно разделить на ежемесячные платежи до 12 месяцев без переплаты. Условия обсудим на консультации.",
-      en: "Yes. Treatment over $500 can be split into monthly payments for up to 12 months, interest-free. We'll go over the details at your consultation.",
+      ru: "Да. Лечение от 30 000 ₽ можно оплачивать частями до 12 месяцев без переплаты — рассрочку оформляет банк-партнёр прямо в клинике. Условия обсудим на консультации.",
+      en: "Yes. Treatment from ₽30,000 can be split into monthly payments for up to 12 months, interest-free, arranged with our partner bank right at the clinic. We'll go over the details at your consultation.",
     },
   },
   {
@@ -45,16 +45,16 @@ export const faq: FaqItem[] = [
     id: "prepare",
     question: { ru: "Как подготовиться к первому визиту?", en: "How should I prepare for my first visit?" },
     answer: {
-      ru: "Ничего особенного не нужно. Возьмите документ, список лекарств, которые принимаете, и прошлые снимки, если они есть. Приходите за 10 минут, чтобы спокойно заполнить анкету.",
-      en: "Nothing special. Bring a photo ID, a list of any medications you take, and previous X-rays if you have them. Arriving 10 minutes early gives you time to fill out a short form.",
+      ru: "Ничего особенного не нужно. Возьмите паспорт, список лекарств, которые принимаете, и прошлые снимки, если они есть. Приходите за 10 минут, чтобы спокойно заполнить анкету.",
+      en: "Nothing special. Bring your passport, a list of any medications you take, and previous X-rays if you have them. Arriving 10 minutes early gives you time to fill out a short form.",
     },
   },
   {
     id: "insurance",
-    question: { ru: "Вы работаете со страховкой?", en: "Do you accept dental insurance?" },
+    question: { ru: "Работаете ли вы с ДМС и налоговым вычетом?", en: "Do you accept health insurance?" },
     answer: {
-      ru: "Да, мы работаем с большинством PPO-страховок и сами оформляем документы для страховой компании. Уточните ваш план у администратора при записи.",
-      en: "Yes, we're in network with most PPO plans and handle the claims paperwork for you. Mention your plan when you book and we'll check your coverage.",
+      ru: "Да, мы принимаем пациентов по полисам ДМС крупных страховых компаний — уточните вашу программу у администратора при записи. А для налогового вычета за лечение подготовим справку об оплате медицинских услуг и копию лицензии.",
+      en: "Yes, we work with major voluntary health insurance (DMS) providers — mention your policy when you book and we'll check your coverage. If you have international travel insurance, we'll prepare an itemized invoice in English for your claim.",
     },
   },
 ];

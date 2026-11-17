@@ -19,7 +19,7 @@ export const services: Service[] = [
       ru: "Осмотр, 3D-снимок при необходимости и письменный план с ценами на каждый этап.",
       en: "A full exam, 3D scan if needed, and a written plan with the cost of every step.",
     },
-    priceFrom: 60,
+    priceFrom: 1500,
   },
   {
     id: "filling",
@@ -29,7 +29,7 @@ export const services: Service[] = [
       ru: "Светоотверждаемая пломба в цвет зуба под местной анестезией.",
       en: "A composite filling matched to your tooth shade, done under local numbing.",
     },
-    priceFrom: 150,
+    priceFrom: 6500,
   },
   {
     id: "root-canal",
@@ -39,7 +39,7 @@ export const services: Service[] = [
       ru: "Лечение под микроскопом, чтобы сохранить зуб и избавить от воспаления.",
       en: "Microscope-guided treatment that clears infection and saves the natural tooth.",
     },
-    priceFrom: 900,
+    priceFrom: 18000,
   },
   {
     id: "crown",
@@ -49,7 +49,7 @@ export const services: Service[] = [
       ru: "Восстановление сильно разрушенного зуба прочной и естественной на вид коронкой.",
       en: "A strong, natural-looking crown to restore a heavily damaged tooth.",
     },
-    priceFrom: 1100,
+    priceFrom: 28000,
   },
 
   // Hygiene
@@ -61,7 +61,7 @@ export const services: Service[] = [
       ru: "Ультразвук, Air Flow и полировка — удаляем налёт и камень за один визит.",
       en: "Ultrasonic scaling, Air Flow and polishing to remove plaque and tartar in one visit.",
     },
-    priceFrom: 120,
+    priceFrom: 7500,
   },
   {
     id: "deep-cleaning",
@@ -71,7 +71,7 @@ export const services: Service[] = [
       ru: "Чистка под линией десны при кровоточивости и воспалении.",
       en: "Cleaning below the gumline for bleeding or inflamed gums.",
     },
-    priceFrom: 250,
+    priceFrom: 9000,
   },
   {
     id: "fluoride",
@@ -81,7 +81,7 @@ export const services: Service[] = [
       ru: "Укрепляет эмаль и снижает чувствительность зубов.",
       en: "Strengthens enamel and helps reduce tooth sensitivity.",
     },
-    priceFrom: 40,
+    priceFrom: 2500,
   },
 
   // Implants
@@ -93,7 +93,7 @@ export const services: Service[] = [
       ru: "Установка импланта, абатмент и коронка — с гарантией на всю конструкцию.",
       en: "Implant, abutment and crown, with a warranty covering the whole restoration.",
     },
-    priceFrom: 2400,
+    priceFrom: 75000,
   },
   {
     id: "bone-graft",
@@ -103,7 +103,7 @@ export const services: Service[] = [
       ru: "Восстанавливает объём кости, если её недостаточно для импланта.",
       en: "Rebuilds bone volume when there is not enough to place an implant.",
     },
-    priceFrom: 600,
+    priceFrom: 25000,
   },
   {
     id: "all-on-4",
@@ -113,7 +113,7 @@ export const services: Service[] = [
       ru: "Несъёмный протез всей челюсти на четырёх имплантах.",
       en: "A fixed full-arch bridge supported by four implants.",
     },
-    priceFrom: 14500,
+    priceFrom: 380000,
   },
   {
     id: "extraction",
@@ -123,7 +123,7 @@ export const services: Service[] = [
       ru: "Аккуратное удаление, в том числе зубов мудрости, с бережным обезболиванием.",
       en: "Gentle removal, including wisdom teeth, with careful numbing.",
     },
-    priceFrom: 180,
+    priceFrom: 4500,
   },
 
   // Orthodontics
@@ -135,7 +135,7 @@ export const services: Service[] = [
       ru: "Прозрачные капы для выравнивания зубов — почти незаметны для окружающих.",
       en: "Nearly invisible trays that gradually straighten your teeth.",
     },
-    priceFrom: 3500,
+    priceFrom: 180000,
   },
   {
     id: "braces",
@@ -145,7 +145,7 @@ export const services: Service[] = [
       ru: "Металлические или керамические брекеты для исправления прикуса.",
       en: "Metal or ceramic braces to correct your bite and alignment.",
     },
-    priceFrom: 4200,
+    priceFrom: 140000,
   },
   {
     id: "retainer",
@@ -155,7 +155,7 @@ export const services: Service[] = [
       ru: "Сохраняет результат после брекетов или элайнеров.",
       en: "Keeps your teeth in place after braces or aligners.",
     },
-    priceFrom: 250,
+    priceFrom: 12000,
   },
 
   // Aesthetics
@@ -167,7 +167,7 @@ export const services: Service[] = [
       ru: "Осветление эмали на несколько тонов за один визит.",
       en: "Brightens your smile by several shades in a single visit.",
     },
-    priceFrom: 350,
+    priceFrom: 25000,
   },
   {
     id: "veneers",
@@ -177,7 +177,7 @@ export const services: Service[] = [
       ru: "Тонкие накладки, которые меняют форму и цвет зуба. Цена за один зуб.",
       en: "Thin shells that refine tooth shape and color. Price per tooth.",
     },
-    priceFrom: 1100,
+    priceFrom: 45000,
   },
   {
     id: "bonding",
@@ -187,7 +187,7 @@ export const services: Service[] = [
       ru: "Исправляем сколы и щели композитом за один визит.",
       en: "Repairs chips and small gaps with composite in one visit.",
     },
-    priceFrom: 250,
+    priceFrom: 9000,
   },
 
   // Kids
@@ -199,7 +199,7 @@ export const services: Service[] = [
       ru: "Знакомство с врачом в игровой форме, осмотр и советы родителям.",
       en: "A playful first meeting with the dentist, an exam, and tips for parents.",
     },
-    priceFrom: 50,
+    priceFrom: 1500,
   },
   {
     id: "kids-filling",
@@ -209,7 +209,7 @@ export const services: Service[] = [
       ru: "Бережное лечение с обезболиванием и короткими перерывами.",
       en: "Gentle treatment with numbing and plenty of short breaks.",
     },
-    priceFrom: 110,
+    priceFrom: 4500,
   },
   {
     id: "sealants",
@@ -219,7 +219,7 @@ export const services: Service[] = [
       ru: "Защищает жевательные зубы от кариеса. Цена за один зуб.",
       en: "Protects back teeth from cavities. Price per tooth.",
     },
-    priceFrom: 45,
+    priceFrom: 2500,
   },
 ];
 

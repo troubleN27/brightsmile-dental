@@ -4,23 +4,28 @@ type Localized = Record<Locale, string>;
 
 export const site = {
   name: "BrightSmile Dental",
-  phone: "+1 555 010 2030",
+  phone: "+7 495 221-78-45",
   email: "hello@brightsmile.dental",
   address: {
-    ru: "1250 Market Street, Сан-Франциско, CA 94102, США",
-    en: "1250 Market Street, San Francisco, CA 94102, USA",
+    ru: "Москва, ул. Покровка, 27, стр. 1",
+    en: "27 Pokrovka St., Bldg. 1, Moscow",
+  } satisfies Localized,
+  /** Nearest metro station, shown in contacts */
+  metro: {
+    ru: "м. «Чистые пруды», 7 минут пешком",
+    en: "Chistye Prudy metro station, 7-minute walk",
   } satisfies Localized,
   /** The same address split into fields, for structured data (JSON-LD) */
   postalAddress: {
-    street: "1250 Market Street",
-    city: "San Francisco",
-    region: "CA",
-    postalCode: "94102",
-    country: "US",
+    street: "ул. Покровка, 27, стр. 1",
+    city: "Москва",
+    region: "Москва",
+    postalCode: "105062",
+    country: "RU",
   },
   hours: {
     ru: "Пн–Сб 9:00–20:00, Вс 10:00–16:00",
-    en: "Mon–Sat 9 AM–8 PM, Sun 10 AM–4 PM",
+    en: "Mon–Sat 9:00–20:00, Sun 10:00–16:00",
   } satisfies Localized,
   /** Machine-readable opening hours (24h), keep in sync with `hours` */
   openingHours: [
@@ -28,8 +33,18 @@ export const site = {
     { days: ["Sunday"], opens: "10:00", closes: "16:00" },
   ],
   telegram: "https://t.me/brightsmiledental",
-  instagram: "https://instagram.com/brightsmile.dental",
-  map: { lat: 37.7765, lng: -122.4172, zoom: 15 },
+  vk: "https://vk.com/brightsmiledental",
+  map: { lat: 55.7593, lng: 37.6466, zoom: 16 },
+  /**
+   * Legal details of the clinic (operator of personal data, medical licence).
+   * Fields left empty are simply not shown on the site.
+   */
+  legal: {
+    name: { ru: "ООО «БрайтСмайл Дентал»", en: "BrightSmile Dental LLC" } satisfies Localized,
+    inn: "",
+    ogrn: "",
+    license: "",
+  },
   stats: {
     years: 12,
     patients: 15000,
@@ -40,7 +55,7 @@ export const site = {
   },
 } as const;
 
-/** Phone number in a form suitable for `tel:` links, e.g. "+15550102030". */
+/** Phone number in a form suitable for `tel:` links, e.g. "+74952217845". */
 export const phoneHref = `tel:${site.phone.replace(/[^\d+]/g, "")}`;
 
 /**

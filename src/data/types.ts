@@ -15,7 +15,7 @@ export type Service = {
   category: ServiceCategory;
   title: Localized;
   description: Localized;
-  /** Starting price in US dollars */
+  /** Starting price in Russian rubles */
   priceFrom: number;
 };
 
