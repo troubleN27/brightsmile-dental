@@ -7,6 +7,7 @@ import { FloatingButtons } from "@/components/layout/FloatingButtons";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { routing } from "@/i18n/routing";
+import { BookingProvider } from "@/store/booking";
 import "../globals.css";
 
 const manrope = Manrope({
@@ -44,7 +45,9 @@ export default async function LocaleLayout({
       <body className="flex min-h-dvh flex-col font-sans">
         <NextIntlClientProvider>
           <Header />
-          <main className="flex-1">{children}</main>
+          <BookingProvider>
+            <main className="flex-1">{children}</main>
+          </BookingProvider>
           <Footer year={year} />
           <FloatingButtons />
         </NextIntlClientProvider>

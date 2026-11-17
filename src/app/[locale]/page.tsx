@@ -1,5 +1,6 @@
 import { Advantages } from "@/components/sections/Advantages";
 import { BeforeAfter } from "@/components/sections/BeforeAfter";
+import { Booking } from "@/components/sections/Booking";
 import { Contacts } from "@/components/sections/Contacts";
 import { Doctors } from "@/components/sections/Doctors";
 import { Faq } from "@/components/sections/Faq";
@@ -24,6 +25,7 @@ export default function HomePage() {
         <Offer />
         <Reviews />
         <Faq />
+        <Booking />
         <Contacts />
       </Reveal>
     </>

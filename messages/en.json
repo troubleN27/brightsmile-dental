@@ -186,6 +186,71 @@
     "call": "Call us",
     "telegram": "Message on Telegram"
   },
+  "Booking": {
+    "eyebrow": "Book a visit",
+    "title": "Book your free consultation",
+    "subtitle": "Leave your details and our front desk will call you back within 15 minutes during office hours to find a time that works.",
+    "fields": {
+      "name": "Name",
+      "namePlaceholder": "What should we call you?",
+      "phone": "Phone",
+      "phonePlaceholder": "+1 555 000 0000",
+      "country": "Country",
+      "service": "Service",
+      "servicePlaceholder": "Not sure yet — I'd like a consultation",
+      "doctor": "Dentist",
+      "doctorPlaceholder": "First available dentist",
+      "date": "Preferred date",
+      "time": "Preferred time",
+      "timeAny": "Any time",
+      "comment": "Comments",
+      "commentPlaceholder": "Anything bothering you, or questions you'd like to ask",
+      "consentBefore": "I agree to the processing of my personal data as described in the ",
+      "consentLink": "Privacy Policy",
+      "honeypot": "Leave this field empty",
+      "optional": "optional",
+      "required": "required"
+    },
+    "time": {
+      "morning": "Morning",
+      "day": "Afternoon",
+      "evening": "Evening"
+    },
+    "timeHint": {
+      "morning": "9 AM–12 PM",
+      "day": "12–5 PM",
+      "evening": "5–8 PM"
+    },
+    "submit": "Request appointment",
+    "submitting": "Sending…",
+    "successTitle": "Thank you! We'll call you within 15 minutes",
+    "successText": "We've got your request. If it comes in after hours, our front desk will call you first thing the next business day.",
+    "again": "Send another request",
+    "errorTitle": "We couldn't send your request",
+    "errorText": "Please try again, or give us a call and we'll book you over the phone.",
+    "tooManyText": "Several requests have already been sent from this device. Please call us and we'll book you over the phone.",
+    "callUs": "Call {phone}",
+    "retry": "Try again",
+    "errors": {
+      "nameRequired": "Please enter your name",
+      "nameTooShort": "Name must be at least 2 characters",
+      "nameTooLong": "Name must be 50 characters or fewer",
+      "phoneRequired": "Please enter your phone number",
+      "phoneInvalid": "Please check the number and include the country code",
+      "dateInvalid": "Please enter a valid date",
+      "dateInPast": "Please choose today or a future date",
+      "commentTooLong": "Comments must be 500 characters or fewer",
+      "consentRequired": "Please agree to the processing of your data",
+      "invalidChoice": "Please choose an option from the list"
+    },
+    "nextTitle": "What happens next",
+    "next": {
+      "call": "Our front desk calls you to confirm a date and time.",
+      "visit": "At your consultation, the dentist does an exam and a 3D scan.",
+      "plan": "You get a written treatment plan with prices — free of charge."
+    },
+    "preferPhone": "Prefer to call?"
+  },
   "Floating": {
     "telegram": "Message us on Telegram",
     "book": "Book a visit",

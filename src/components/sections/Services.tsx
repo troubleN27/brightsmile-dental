@@ -2,13 +2,12 @@
 
 import { CalendarPlus, Info } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { BookingLink } from "@/components/ui/BookingLink";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { sectionHref } from "@/components/layout/nav-items";
 import { serviceCategories, services } from "@/data/services";
-import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { formatPrice } from "@/lib/format";
 
@@ -58,10 +57,10 @@ export function Services() {
                             {t("priceFrom", { price: formatPrice(service.priceFrom, locale) })}
                           </p>
                           <Button asChild size="sm" variant="outline">
-                            <Link href={sectionHref("booking")} aria-label={t("bookLabel", { service: title })}>
+                            <BookingLink serviceId={service.id} aria-label={t("bookLabel", { service: title })}>
                               <CalendarPlus />
                               {t("book")}
-                            </Link>
+                            </BookingLink>
                           </Button>
                         </div>
                       </li>

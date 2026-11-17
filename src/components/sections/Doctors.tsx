@@ -1,12 +1,11 @@
 import { Award, CalendarPlus, UserRound } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { BookingLink } from "@/components/ui/BookingLink";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Photo } from "@/components/ui/Photo";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { sectionHref } from "@/components/layout/nav-items";
 import { doctors } from "@/data/doctors";
-import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 
 export function Doctors() {
@@ -46,13 +45,10 @@ export function Doctors() {
                     {t("experience", { years: doctor.experienceYears })}
                   </p>
                   <Button asChild variant="outline" className="mt-auto w-full">
-                    <Link
-                      href={sectionHref("booking")}
-                      aria-label={`${t("book")}: ${name}`}
-                    >
+                    <BookingLink doctorId={doctor.id} aria-label={`${t("book")}: ${name}`}>
                       <CalendarPlus />
                       {t("book")}
-                    </Link>
+                    </BookingLink>
                   </Button>
                 </div>
               </li>
