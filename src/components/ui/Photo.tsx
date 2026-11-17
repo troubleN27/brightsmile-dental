@@ -17,6 +17,10 @@ type PhotoProps = {
   preload?: boolean;
   placeholderIcon?: LucideIcon;
   placeholderTone?: "brand" | "muted";
+  /** Cover the positioned parent instead of keeping the photo's own ratio */
+  fill?: boolean;
+  /** Square corners, for full-bleed photos */
+  square?: boolean;
   className?: string;
 };
 
@@ -38,16 +42,34 @@ export function Photo({
   preload = false,
   placeholderIcon,
   placeholderTone,
+  fill = false,
+  square = false,
   className,
 }: PhotoProps) {
   if (!publicFileExists(src)) {
     return (
       <ImagePlaceholder
-        ratio={`${width} / ${height}`}
+        ratio={fill ? undefined : `${width} / ${height}`}
         label={alt}
         icon={placeholderIcon}
         tone={placeholderTone}
+        square={square}
         className={className}
+      />
+    );
+  }
+
+  const rounding = square ? "rounded-none" : "rounded-card";
+
+  if (fill) {
+    return (
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        preload={preload}
+        className={cn("object-cover", rounding, className)}
       />
     );
   }
@@ -60,7 +82,7 @@ export function Photo({
       height={height}
       sizes={sizes}
       preload={preload}
-      className={cn("h-auto w-full rounded-card object-cover", className)}
+      className={cn("h-auto w-full object-cover", rounding, className)}
     />
   );
 }
