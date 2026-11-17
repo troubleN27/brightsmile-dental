@@ -162,7 +162,7 @@ export function BookingForm() {
         role="status"
         className="flex flex-col items-center py-10 text-center outline-none"
       >
-        <span className="flex size-16 items-center justify-center rounded-full bg-primary/15 text-primary-dark">
+        <span className="flex size-16 items-center justify-center rounded-full bg-sky text-primary-dark">
           <CheckCircle2 aria-hidden className="size-8" />
         </span>
         <h3 className="mt-5 text-xl font-bold text-navy md:text-2xl">{t("successTitle")}</h3>
@@ -347,7 +347,7 @@ export function BookingForm() {
 
         <fieldset>
           <legend className="mb-1.5 font-semibold text-navy">{t("fields.time")}</legend>
-          <div className="grid h-12 grid-cols-3 gap-1 rounded-button bg-surface p-1 ring-1 ring-primary/10">
+          <div className="grid h-12 grid-cols-3 gap-1 rounded-button bg-surface p-1 ring-1 ring-line">
             {timesOfDay.map((time) => (
               <label key={time} className="relative">
                 <input type="radio" value={time} className="peer sr-only" {...register("timeOfDay")} />

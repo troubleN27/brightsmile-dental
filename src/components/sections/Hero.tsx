@@ -19,44 +19,46 @@ export function Hero() {
   ];
 
   return (
-    <section className="pt-8 pb-16 md:pt-14 md:pb-24">
-      <Container>
-        <h1 className="text-h1 max-w-[14ch] text-navy sm:max-w-none">{t("title")}</h1>
-
-        <div className="mt-6 grid gap-8 md:mt-8 lg:grid-cols-12 lg:items-end lg:gap-12">
-          <p className="max-w-[52ch] text-lg leading-8 text-navy/80 lg:col-span-6">{t("lead")}</p>
-
-          <div className="lg:col-span-6 lg:col-start-7 lg:justify-self-end">
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+    <section className="px-2 pt-2 pb-14 sm:px-4 md:pb-20">
+      {/* The soft blue panel is the page's one strong gesture */}
+      <div className="mx-auto max-w-[1440px] rounded-[28px] bg-sky md:rounded-[36px]">
+        <Container className="grid gap-8 py-10 md:py-14 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-16">
+          <div className="lg:col-span-6">
+            <OpenStatus className="mb-6 w-fit rounded-full bg-white/70 px-3.5 py-1.5 max-sm:text-[13px]" />
+            <h1 className="type-h1 text-navy text-balance">{t("title")}</h1>
+            <p className="mt-6 max-w-[48ch] text-lg leading-8 text-navy/80">{t("lead")}</p>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
               <Button asChild size="lg">
                 <Link href={sectionHref("booking")}>{t("ctaPrimary")}</Link>
               </Button>
               <Link
                 href={sectionHref("services")}
-                className="font-semibold text-navy underline decoration-navy/25 underline-offset-[6px] transition-colors hover:decoration-navy"
+                className="font-semibold text-navy underline decoration-navy/30 underline-offset-[6px] transition-colors hover:decoration-navy"
               >
                 {t("ctaSecondary")}
               </Link>
             </div>
-            <OpenStatus className="mt-5" />
           </div>
-        </div>
 
-        <figure className="mt-10 md:mt-14">
-          <Photo
-            src="/images/hero.webp"
-            alt={t("photoAlt")}
-            width={1600}
-            height={1200}
-            sizes="(min-width: 1248px) 1200px, 100vw"
-            preload
-            className="aspect-[4/3] max-h-[640px] rounded-[20px] object-cover md:aspect-[16/8]"
-          />
-        </figure>
+          <div className="lg:col-span-6">
+            <Photo
+              src="/images/hero.webp"
+              alt={t("photoAlt")}
+              width={1200}
+              height={1500}
+              sizes="(min-width: 1024px) 600px, 100vw"
+              preload
+              className="aspect-[4/3] rounded-[22px] object-cover object-[40%_center] lg:aspect-[4/5] lg:max-h-[620px]"
+            />
+          </div>
+        </Container>
+      </div>
 
-        <ul className="mt-6 grid gap-x-10 gap-y-2 text-[15px] text-navy/70 sm:grid-cols-3 md:mt-8">
+      <Container>
+        <ul className="mt-6 grid gap-x-10 gap-y-1 text-[15px] text-navy/75 sm:grid-cols-3 md:mt-8">
           {facts.map((fact) => (
-            <li key={fact} className="border-t border-line pt-3">
+            <li key={fact} className="flex items-center gap-3 py-2">
+              <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-primary-dark" />
               {fact}
             </li>
           ))}

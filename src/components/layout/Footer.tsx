@@ -1,4 +1,3 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { phoneHref, site } from "@/config/site";
@@ -15,24 +14,32 @@ export function Footer({ year }: FooterProps) {
   const t = useTranslations();
   const locale = useLocale() as Locale;
 
+  // Registration numbers and licence appear once filled in site.ts
+  const legal = [
+    site.legal.name[locale],
+    site.legal.inn && t("Footer.inn", { inn: site.legal.inn }),
+    site.legal.ogrn && t("Footer.ogrn", { ogrn: site.legal.ogrn }),
+    site.legal.license && t("Footer.license", { license: site.legal.license }),
+  ]
+    .filter(Boolean)
+    .join(", ");
+
   return (
-    <footer className="bg-navy text-slate-300">
-      <Container className="grid gap-10 py-12 md:grid-cols-[1.3fr_1fr_1.3fr] md:py-16">
+    <footer className="bg-navy text-white/70">
+      <Container className="grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1.3fr] md:py-16">
         <div className="space-y-4">
           <Link href="/" aria-label={t("Common.logoLabel")} className="inline-block">
             <Logo tone="light" />
           </Link>
-          <p className="max-w-xs text-sm leading-6">{t("Footer.tagline")}</p>
+          <p className="max-w-xs text-[15px] leading-6">{t("Footer.tagline")}</p>
         </div>
 
         <nav aria-label={t("Footer.navTitle")}>
-          <h2 className="mb-4 text-sm font-bold tracking-wider text-white uppercase">
-            {t("Footer.navTitle")}
-          </h2>
-          <ul className="space-y-2.5 text-sm">
+          <h2 className="mb-4 font-semibold text-white">{t("Footer.navTitle")}</h2>
+          <ul className="space-y-2.5 text-[15px]">
             {navItems.map((id) => (
               <li key={id}>
-                <Link href={sectionHref(id)} className="transition-colors hover:text-primary">
+                <Link href={sectionHref(id)} className="transition-colors hover:text-white">
                   {t(`Nav.${id}`)}
                 </Link>
               </li>
@@ -41,51 +48,35 @@ export function Footer({ year }: FooterProps) {
         </nav>
 
         <div>
-          <h2 className="mb-4 text-sm font-bold tracking-wider text-white uppercase">
-            {t("Footer.contactsTitle")}
-          </h2>
-          <ul className="space-y-3 text-sm">
+          <h2 className="mb-4 font-semibold text-white">{t("Footer.contactsTitle")}</h2>
+          <ul className="space-y-2.5 text-[15px]">
             <li>
-              <a href={phoneHref} className="flex gap-3 transition-colors hover:text-primary">
-                <Phone aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
+              <a href={phoneHref} className="font-semibold text-white tabular-nums transition-colors hover:text-primary">
                 {site.phone}
               </a>
             </li>
             <li>
-              <a href={`mailto:${site.email}`} className="flex gap-3 transition-colors hover:text-primary">
-                <Mail aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
+              <a href={`mailto:${site.email}`} className="transition-colors hover:text-white">
                 {site.email}
               </a>
             </li>
-            <li className="flex gap-3">
-              <MapPin aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
-              {site.address[locale]}
-            </li>
-            <li className="flex gap-3">
-              <Clock aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
-              {site.hours[locale]}
-            </li>
+            <li>{site.address[locale]}</li>
+            <li>{site.hours[locale]}</li>
           </ul>
         </div>
       </Container>
 
       <div className="border-t border-white/10">
-        <Container className="flex flex-col gap-3 py-6 text-sm sm:flex-row sm:items-center sm:justify-between">
+        <Container className="flex flex-col gap-4 py-6 text-sm sm:flex-row sm:items-start sm:justify-between">
           <div className="space-y-1">
             <p>{t("Footer.rights", { year })}</p>
-            {/* Legal details: registration numbers and licence appear once filled in site.ts */}
-            <p className="text-xs text-slate-400">
-              {[
-                site.legal.name[locale],
-                site.legal.inn && t("Footer.inn", { inn: site.legal.inn }),
-                site.legal.ogrn && t("Footer.ogrn", { ogrn: site.legal.ogrn }),
-                site.legal.license && t("Footer.license", { license: site.legal.license }),
-              ]
-                .filter(Boolean)
-                .join(" · ")}
-            </p>
+            <p className="text-white/50">{legal}</p>
+            <p className="font-semibold text-white/80">{t("Legal.contraindications")}</p>
           </div>
-          <Link href="/privacy" className="underline-offset-4 transition-colors hover:text-primary hover:underline">
+          <Link
+            href="/privacy"
+            className="shrink-0 underline underline-offset-4 decoration-white/30 transition-colors hover:text-white hover:decoration-white"
+          >
             {t("Footer.privacy")}
           </Link>
         </Container>

@@ -16,7 +16,7 @@ export default function NotFoundPage() {
       >
         404
       </p>
-      <h1 className="mt-4 text-h2 text-navy text-balance">{t("title")}</h1>
+      <h1 className="mt-4 type-h2 text-navy text-balance">{t("title")}</h1>
       <p className="mt-4 max-w-md text-muted-foreground text-pretty">{t("text")}</p>
       <Button asChild size="lg" className="mt-8">
         <Link href="/">

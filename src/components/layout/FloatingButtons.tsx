@@ -40,7 +40,7 @@ export function FloatingButtons() {
         rel="noopener noreferrer"
         aria-label={t("telegram")}
         className={cn(
-          "fixed right-4 z-30 flex size-12 items-center justify-center rounded-full bg-navy text-white shadow-[0_10px_24px_-10px_rgba(31,42,51,0.55)] transition-[bottom,background-color] duration-300 hover:bg-primary-dark focus-visible:ring-4 focus-visible:ring-primary-dark/30 focus-visible:outline-none md:right-6 md:bottom-6 md:size-14",
+          "fixed right-4 z-30 flex size-12 items-center justify-center rounded-full bg-primary-dark text-white shadow-[0_10px_24px_-10px_rgba(21,37,59,0.55)] ring-2 ring-white transition-[bottom,background-color] duration-300 hover:bg-primary-hover focus-visible:ring-4 focus-visible:ring-primary-dark/30 focus-visible:outline-none md:right-6 md:bottom-6 md:size-14",
           barVisible ? "bottom-[88px]" : "bottom-4",
         )}
       >

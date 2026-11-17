@@ -3,32 +3,35 @@
 @import "shadcn/tailwind.css";
 
 /*
- * Brand tokens — "warm private clinic" redesign.
- * paper    #FAF8F4  page background
- * sand     #F1EBE2  alternating sections (kept under the old `surface` name)
- * ink      #1F2A33  text (kept under the old `navy` name)
- * teal     #0F6E66  accent: buttons, links (`primary-dark`)
- * mint     #14B8A6  small highlights only (`primary`)
- * line     #E3DBCF  hairline dividers
+ * Brand tokens — soft blue.
+ * paper     #FAFCFE  page background
+ * surface   #EAF2FB  alternating sections (mist blue)
+ * sky       #CFE2F7  soft blue panels (hero, offer, highlights)
+ * primary   #8DB8E8  soft blue accents: dots, rings, selected dates
+ * primary-dark #2A64A8  deep blue: buttons, links (white text passes AA)
+ * navy      #15253B  text and footer (ink blue)
+ * peach     #F7DCCB  warm pair to blue: small badges
+ * warning   #E8A15C  apricot: rating stars
+ * line      #D8E3EF  hairlines
  */
 @theme {
-  --color-paper: #faf8f4;
-  --color-surface: #f1ebe2;
-  --color-navy: #1f2a33;
-  --color-primary-dark: #0f6e66;
-  --color-teal-deep: #0b5a53;
-  --color-mint-soft: #d5ece6;
-  --color-line: #e3dbcf;
-  --color-warning: #d99a2b;
+  --color-paper: #fafcfe;
+  --color-surface: #eaf2fb;
+  --color-sky: #cfe2f7;
+  --color-navy: #15253b;
+  --color-primary-dark: #2a64a8;
+  --color-primary-hover: #1f4f88;
+  --color-peach: #f7dccb;
+  --color-line: #d8e3ef;
+  --color-warning: #e8a15c;
 
-  --radius-card: 16px;
+  --radius-card: 24px;
   --radius-button: 12px;
 }
 
 /* shadcn/ui semantic tokens mapped onto the brand palette */
 @theme inline {
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-lora), ui-serif, Georgia, serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-ring: var(--ring);
@@ -56,24 +59,24 @@
 
 :root {
   --radius: 0.75rem;
-  --background: #faf8f4;
-  --foreground: #1f2a33;
+  --background: #fafcfe;
+  --foreground: #15253b;
   --card: #ffffff;
-  --card-foreground: #1f2a33;
+  --card-foreground: #15253b;
   --popover: #ffffff;
-  --popover-foreground: #1f2a33;
-  --primary: #14b8a6;
-  --primary-foreground: #1f2a33;
-  --secondary: #f1ebe2;
-  --secondary-foreground: #0f6e66;
-  --muted: #f1ebe2;
-  --muted-foreground: #5c6870;
-  --accent: #d5ece6;
-  --accent-foreground: #0f6e66;
+  --popover-foreground: #15253b;
+  --primary: #8db8e8;
+  --primary-foreground: #15253b;
+  --secondary: #eaf2fb;
+  --secondary-foreground: #2a64a8;
+  --muted: #eaf2fb;
+  --muted-foreground: #556579;
+  --accent: #cfe2f7;
+  --accent-foreground: #2a64a8;
   --destructive: #c2410c;
-  --border: #e3dbcf;
-  --input: #d6ccbe;
-  --ring: #0f6e66;
+  --border: #d8e3ef;
+  --input: #c6d4e4;
+  --ring: #2a64a8;
 }
 
 @layer base {
@@ -109,42 +112,40 @@
   }
 
   ::selection {
-    background: var(--color-mint-soft);
+    background: var(--color-sky);
   }
 }
 
-/* Typography: Lora for headings, Manrope for text. Mobile first. */
-@utility text-h1 {
-  font-family: var(--font-serif);
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 46px;
-  letter-spacing: -0.015em;
+/* Typography: Manrope only, weight and tight tracking carry the headings. Mobile first. */
+@utility type-h1 {
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 44px;
+  letter-spacing: -0.035em;
   @media (width >= 48rem) {
-    font-size: 56px;
-    line-height: 62px;
+    font-size: 52px;
+    line-height: 58px;
   }
   @media (width >= 80rem) {
-    font-size: 64px;
-    line-height: 70px;
+    font-size: 60px;
+    line-height: 66px;
   }
 }
 
-@utility text-h2 {
-  font-family: var(--font-serif);
-  font-weight: 500;
+@utility type-h2 {
+  font-weight: 700;
   font-size: 30px;
-  line-height: 37px;
-  letter-spacing: -0.01em;
+  line-height: 36px;
+  letter-spacing: -0.03em;
   @media (width >= 48rem) {
     font-size: 42px;
-    line-height: 50px;
+    line-height: 48px;
   }
 }
 
-@utility text-h3 {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: 21px;
-  line-height: 28px;
+@utility type-h3 {
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 26px;
+  letter-spacing: -0.01em;
 }
