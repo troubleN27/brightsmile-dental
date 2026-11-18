@@ -352,12 +352,18 @@ export function BookingForm() {
               <label key={time} className="relative">
                 <input type="radio" value={time} className="peer sr-only" {...register("timeOfDay")} />
                 <span
-                  title={t(`timeHint.${time}`)}
-                  className="flex h-full cursor-pointer items-center justify-center rounded-[10px] text-sm font-semibold text-white/70 peer-checked:bg-white peer-checked:text-violet peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-primary hover:text-white"
+                  className="flex h-full cursor-pointer items-center justify-center rounded-[10px] text-sm font-semibold text-white/70 peer-checked:bg-white peer-checked:text-violet peer-checked:shadow-sm peer-checked:hover:text-violet peer-focus-visible:ring-2 peer-focus-visible:ring-primary hover:text-white"
                 >
                   {t(`time.${time}`)}
+                  <span className="sr-only">, {t(`timeHint.${time}`)}</span>
                 </span>
               </label>
+            ))}
+          </div>
+          {/* Hours for each option, right under its button */}
+          <div aria-hidden className="mt-1.5 grid grid-cols-3 gap-1 px-1 text-center text-xs text-white/65 tabular-nums">
+            {timesOfDay.map((time) => (
+              <span key={time}>{t(`timeHint.${time}`)}</span>
             ))}
           </div>
         </fieldset>
