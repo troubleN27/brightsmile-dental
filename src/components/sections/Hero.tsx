@@ -31,7 +31,7 @@ export function Hero() {
           fill
           square
           // On phones keep the patient in frame, matching the hero-mobile video crop
-          className="object-[39%_50%] md:object-center"
+          className="object-[88%_50%] md:object-center"
           placeholderIcon={Smile}
         />
         <AutoplayVideo src="/videos/hero" mobileSrc="/videos/hero-mobile" />
