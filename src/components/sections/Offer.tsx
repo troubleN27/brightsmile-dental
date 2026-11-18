@@ -12,7 +12,7 @@ export function Offer() {
   const t = useTranslations("Offer");
 
   return (
-    <section id="offer" className="bg-brand-gradient py-16 md:py-24">
+    <section id="offer" className="bg-ink py-16 md:py-24">
       <Container className="grid items-center gap-10 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:gap-16">
         <div className="relative aspect-video overflow-hidden rounded-card shadow-[0_30px_60px_-30px_rgba(11,31,58,0.8)] ring-1 ring-white/25">
           <Photo

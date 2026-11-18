@@ -8,7 +8,6 @@ import { Faq } from "@/components/sections/Faq";
 import { Hero } from "@/components/sections/Hero";
 import { Kids } from "@/components/sections/Kids";
 import { Offer } from "@/components/sections/Offer";
-import { Process } from "@/components/sections/Process";
 import { Reviews } from "@/components/sections/Reviews";
 import { Services } from "@/components/sections/Services";
 import { Reveal } from "@/components/ui/Reveal";
@@ -20,15 +19,14 @@ export default function HomePage() {
       <Hero />
       <Reveal>
         <About />
-        <Services />
         <Advantages />
+        <Doctors />
+        <Services />
         <BeforeAfter />
         <Reviews />
-        <Doctors />
         <Kids />
-        <Process />
-        <Offer />
         <Faq />
+        <Offer />
         <Booking />
         <Contacts />
       </Reveal>

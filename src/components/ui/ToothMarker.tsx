@@ -10,16 +10,21 @@ type ToothMarkerProps = {
   /** Unique per page: the gradient id inside the SVG is built from it */
   id: string;
   size?: "sm" | "md";
+  /** "white" for gradient backgrounds where a coloured tooth would blend in */
+  tone?: "gradient" | "white";
 };
 
-/** Step number inside a sky-to-violet tooth, used for sequences on dark backgrounds. */
-export function ToothMarker({ number, id, size = "md" }: ToothMarkerProps) {
+/** Step number inside a tooth: sky-to-violet on dark backgrounds, white on gradients. */
+export function ToothMarker({ number, id, size = "md", tone = "gradient" }: ToothMarkerProps) {
   const gradientId = `tooth-${id}`;
   return (
     <div
       aria-hidden
       className={cn(
-        "relative shrink-0 drop-shadow-[0_10px_18px_rgba(14,165,233,0.35)]",
+        "relative shrink-0",
+        tone === "gradient"
+          ? "drop-shadow-[0_10px_18px_rgba(14,165,233,0.35)]"
+          : "drop-shadow-[0_10px_18px_rgba(11,31,58,0.35)]",
         size === "md" ? "size-16" : "size-10",
       )}
     >
@@ -30,11 +35,12 @@ export function ToothMarker({ number, id, size = "md" }: ToothMarkerProps) {
             <stop offset="100%" stopColor="#6d4fd4" />
           </linearGradient>
         </defs>
-        <path d={TOOTH_PATH} fill={`url(#${gradientId})`} />
+        <path d={TOOTH_PATH} fill={tone === "gradient" ? `url(#${gradientId})` : "#ffffff"} />
       </svg>
       <span
         className={cn(
-          "absolute inset-x-0 top-[36%] -translate-y-1/2 text-center font-extrabold text-white",
+          "absolute inset-x-0 top-[36%] -translate-y-1/2 text-center font-extrabold",
+          tone === "gradient" ? "text-white" : "text-violet",
           size === "md" ? "text-xl" : "text-sm",
         )}
       >

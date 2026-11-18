@@ -88,8 +88,6 @@
     "education": "Education"
   },
   "Process": {
-    "title": "What happens after you book",
-    "subtitle": "You'll know the cost before treatment starts, not at the front desk.",
     "steps": {
       "request": {
         "title": "Send a request",
@@ -219,7 +217,7 @@
     "telegram": "Message on Telegram"
   },
   "Booking": {
-    "title": "Book a free consultation",
+    "title": "Request an appointment",
     "subtitle": "Leave your name and number. During opening hours we'll call back within 15 minutes to set a day.",
     "fields": {
       "name": "Name",
@@ -282,14 +280,8 @@
       "consentRequired": "Please agree to the processing of your data",
       "invalidChoice": "Please choose an option from the list"
     },
-    "nextTitle": "What happens next",
-    "next": {
-      "call": "The front desk calls to offer a date and time.",
-      "visit": "At the consultation, your dentist checks your teeth and takes a 3D scan.",
-      "plan": "You leave with a treatment plan and prices. There's nothing to pay."
-    },
     "preferPhone": "Prefer to call?",
-    "hoursTitle": "Opening hours"
+    "telegram": "Message us on Telegram"
   },
   "Privacy": {
     "metaTitle": "Personal Data Policy",

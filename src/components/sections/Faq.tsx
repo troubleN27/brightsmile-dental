@@ -19,7 +19,7 @@ export function Faq() {
   const locale = useLocale() as Locale;
 
   return (
-    <section id="faq" className="bg-lavender py-16 md:py-24">
+    <section id="faq" className="py-16 md:py-24">
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-16">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <SectionTitle
