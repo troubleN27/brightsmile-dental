@@ -53,11 +53,11 @@ export const reviews: Review[] = [
   },
   {
     id: "r6",
-    author: { ru: "Ольга В.", en: "Olga V." },
+    author: { ru: "Олег В.", en: "Oleg V." },
     rating: 5,
     serviceId: "veneers",
     text: {
-      ru: "Сделала шесть виниров. Сначала примерили временный вариант, чтобы я увидела форму. Выглядит естественно, никто не догадывается.",
+      ru: "Поставил шесть виниров. Сначала примерили временный вариант, чтобы я увидел форму. Выглядит естественно, никто не догадывается.",
       en: "Got six veneers. They let me try a temporary mock-up first so I could see the shape. The result looks so natural nobody can tell.",
     },
   },
