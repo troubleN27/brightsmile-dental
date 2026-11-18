@@ -50,10 +50,10 @@ function CaseSlider({ item, sizes }: CaseSliderProps) {
           />
         }
       />
-      <figcaption className="pt-3">
-        <span className="font-bold text-navy">{service}</span>
-        <span className="text-sm text-muted-foreground">
-          {" "}
+      {/* Service and duration on separate lines; the duration never breaks mid-phrase */}
+      <figcaption className="pt-4">
+        <span className="block leading-6 font-bold text-navy text-balance">{service}</span>
+        <span className="mt-1 block text-sm whitespace-nowrap text-muted-foreground">
           {t("duration", { duration: item.duration[locale] })}
         </span>
       </figcaption>
