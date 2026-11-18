@@ -1,5 +1,6 @@
 import { Smile } from "lucide-react";
 import { useFormatter, useTranslations } from "next-intl";
+import { AutoplayVideo } from "@/components/ui/AutoplayVideo";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Photo } from "@/components/ui/Photo";
@@ -18,18 +19,23 @@ export function Hero() {
     // the centred white text readable; a wave leads into the next section
     <section className="relative -mt-16 flex min-h-[640px] items-center overflow-hidden bg-ink lg:-mt-20 lg:min-h-[740px]">
       <div className="absolute inset-0">
+        {/* Poster = first frame of the video: it is the LCP image and what phones
+            and reduced-motion visitors see */}
         <Photo
           src="/images/hero.webp"
           alt={t("photoAlt")}
-          width={2400}
-          height={1340}
+          width={1920}
+          height={1080}
           sizes="100vw"
           preload
           fill
           square
-          // People sit right of centre in the shot; keep them in the crop
-          className="object-[70%_50%]"
           placeholderIcon={Smile}
+        />
+        <AutoplayVideo
+          src="/videos/hero"
+          media="(min-width: 768px)"
+          controlClassName="right-4 bottom-24 md:right-6 lg:bottom-32"
         />
       </div>
       <div
