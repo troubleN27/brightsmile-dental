@@ -47,7 +47,6 @@
     "text1": "We have four dentists, and each one looks after their own patients from start to finish. We set aside a full hour for a first visit, so there's time for the exam, the scans and all your questions.",
     "text2": "Most people come to us on a friend's recommendation, and later bring their kids and parents. That's the best review we could ask for.",
     "role": "Clinical Director",
-    "cta": "Book a consultation",
     "photoAlt": "{name}, Clinical Director at BrightSmile Dental"
   },
   "Advantages": {
@@ -113,7 +112,6 @@
     "badge": "Online bookings only",
     "title": "Free consultation and 3D scan",
     "text": "Your dentist examines you, takes a 3D scan and hands you a treatment plan with prices. Take it home and decide in your own time.",
-    "cta": "Book my free visit",
     "note": "Usually ₽1,500 for the consultation and from ₽3,000 for the 3D scan",
     "videoAlt": "A short walk through the clinic: reception, corridor and a treatment room"
   },
@@ -157,8 +155,6 @@
       "kids": "Kids"
     },
     "priceFrom": "from {price}",
-    "book": "Book",
-    "bookLabel": "Book: {service}",
     "note": "Your dentist gives you the exact price after the exam, since it depends on what you actually need. You get the plan with prices before any work starts, and it doesn't change without your OK.",
     "photoAlt": "{category} at BrightSmile Dental",
     "categoryText": {
@@ -189,7 +185,6 @@
       }
     },
     "cta": "Book for my child",
-    "call": "Call us",
     "photoAlt": "Pediatric dentist Olga Granina laughing with a little girl in the dental chair"
   },
   "Results": {
@@ -217,7 +212,6 @@
   "Faq": {
     "title": "Questions people ask us",
     "subtitle": "Can't find your answer? Call us or message us on Telegram. The front desk will answer or check with a dentist.",
-    "call": "Call us",
     "telegram": "Message on Telegram"
   },
   "Booking": {

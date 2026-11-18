@@ -1,11 +1,8 @@
 import { UserRound } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Photo } from "@/components/ui/Photo";
-import { sectionHref } from "@/components/layout/nav-items";
 import { doctors } from "@/data/doctors";
-import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 
 /** Short word from the chief dentist, next to her portrait. */
@@ -39,9 +36,6 @@ export function About() {
             <span className="block font-bold text-navy">{chief.name[locale]}</span>
             <span className="text-sm text-muted-foreground">{t("role")}</span>
           </p>
-          <Button asChild size="lg" className="mt-8">
-            <Link href={sectionHref("booking")}>{t("cta")}</Link>
-          </Button>
         </div>
       </Container>
     </section>

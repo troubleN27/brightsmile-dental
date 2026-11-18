@@ -1,7 +1,5 @@
 import { ImageIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { BookingLink } from "@/components/ui/BookingLink";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Photo } from "@/components/ui/Photo";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -53,16 +51,9 @@ export function Services() {
                       <h4 className="text-lg font-bold text-navy">{title}</h4>
                       <p className="mt-1 text-muted-foreground">{service.description[locale]}</p>
                     </div>
-                    <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end">
-                      <p className="text-xl font-extrabold whitespace-nowrap text-primary-dark">
-                        {t("priceFrom", { price: formatPrice(service.priceFrom, locale) })}
-                      </p>
-                      <Button asChild size="sm" variant="outline">
-                        <BookingLink serviceId={service.id} aria-label={t("bookLabel", { service: title })}>
-                          {t("book")}
-                        </BookingLink>
-                      </Button>
-                    </div>
+                    <p className="text-xl font-extrabold whitespace-nowrap text-primary-dark sm:text-right">
+                      {t("priceFrom", { price: formatPrice(service.priceFrom, locale) })}
+                    </p>
                   </li>
                 );
               })}

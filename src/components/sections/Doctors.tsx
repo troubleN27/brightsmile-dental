@@ -1,7 +1,6 @@
 import { UserRound } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { BookingLink } from "@/components/ui/BookingLink";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Photo } from "@/components/ui/Photo";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -51,11 +50,14 @@ export function Doctors() {
                   <span className="mb-1 block font-semibold text-navy/70">{t("education")}</span>
                   {doctor.education[locale]}
                 </p>
-                <Button asChild variant="outline" className="mt-auto w-full">
-                  <BookingLink doctorId={doctor.id} aria-label={`${t("book")}: ${name}`}>
-                    {t("book")}
-                  </BookingLink>
-                </Button>
+                {/* A quiet link rather than a button: the main call to action is elsewhere */}
+                <BookingLink
+                  doctorId={doctor.id}
+                  aria-label={`${t("book")}: ${name}`}
+                  className="mt-auto rounded-button font-semibold text-violet underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:ring-sky focus-visible:outline-none"
+                >
+                  {t("book")}
+                </BookingLink>
               </li>
             );
           })}

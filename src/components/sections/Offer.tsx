@@ -1,11 +1,8 @@
 import { Building2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { AutoplayVideo } from "@/components/ui/AutoplayVideo";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Photo } from "@/components/ui/Photo";
-import { sectionHref } from "@/components/layout/nav-items";
-import { Link } from "@/i18n/navigation";
 
 /** Gradient band: a short clinic tour plays by itself next to the free consultation offer. */
 export function Offer() {
@@ -32,10 +29,8 @@ export function Offer() {
           <p className="font-semibold text-white/90">{t("badge")}</p>
           <h2 className="mt-3 text-h2 text-white">{t("title")}</h2>
           <p className="mt-4 text-lg leading-8 text-white/85 text-pretty">{t("text")}</p>
-          <Button asChild size="lg" className="mt-8 bg-white text-violet hover:bg-surface">
-            <Link href={sectionHref("booking")}>{t("cta")}</Link>
-          </Button>
-          <p className="mt-3 text-sm text-white/80">{t("note")}</p>
+          {/* The booking form follows right below, so no separate button here */}
+          <p className="mt-6 text-sm text-white/80">{t("note")}</p>
         </div>
       </Container>
     </section>

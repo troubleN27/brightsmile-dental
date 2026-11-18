@@ -1,10 +1,9 @@
-import { Baby, Phone, UserRound } from "lucide-react";
+import { Baby, UserRound } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { BookingLink } from "@/components/ui/BookingLink";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Photo } from "@/components/ui/Photo";
-import { phoneHref } from "@/config/site";
 import { getDoctor } from "@/data/doctors";
 import type { Locale } from "@/i18n/routing";
 
@@ -74,17 +73,9 @@ export function Kids() {
             </div>
           )}
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg">
-              <BookingLink serviceId="kids-checkup">{t("cta")}</BookingLink>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <a href={phoneHref}>
-                <Phone />
-                {t("call")}
-              </a>
-            </Button>
-          </div>
+          <Button asChild size="lg" className="mt-8">
+            <BookingLink serviceId="kids-checkup">{t("cta")}</BookingLink>
+          </Button>
         </div>
       </Container>
     </section>
