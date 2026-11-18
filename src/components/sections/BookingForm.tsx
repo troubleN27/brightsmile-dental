@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { AlertCircle, CheckCircle2, Loader2, Phone } from "lucide-react";
+import { AlertCircle, Check, CheckCircle2, Loader2, Phone } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Controller, useForm, useWatch, type FieldError } from "react-hook-form";
 import PhoneInput, { type Props as PhoneInputBaseProps } from "react-phone-number-input";
@@ -401,14 +401,22 @@ export function BookingForm() {
 
       <div>
         <label className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-white/80">
-          <input
-            type="checkbox"
-            aria-required
-            aria-invalid={!!errors.consent}
-            aria-describedby={describedBy("consent", errors.consent)}
-            className="mt-1 size-5 shrink-0 cursor-pointer rounded accent-violet"
-            {...register("consent")}
-          />
+          {/* Custom box: frosted when empty, white with a deep blue tick when checked */}
+          <span className="relative mt-0.5 flex size-5 shrink-0">
+            <input
+              type="checkbox"
+              aria-required
+              aria-invalid={!!errors.consent}
+              aria-describedby={describedBy("consent", errors.consent)}
+              className="peer size-5 cursor-pointer appearance-none rounded-md border border-white/50 bg-white/10 transition-colors outline-none hover:border-white/80 checked:border-white checked:bg-white focus-visible:ring-3 focus-visible:ring-white/30 aria-invalid:border-rose-300"
+              {...register("consent")}
+            />
+            <Check
+              aria-hidden
+              strokeWidth={3}
+              className="pointer-events-none absolute inset-0.5 hidden size-4 text-primary-dark peer-checked:block"
+            />
+          </span>
           <span>
             {t("fields.consentBefore")}
             <Link href="/privacy" target="_blank" className="font-semibold text-white underline underline-offset-2 hover:text-white/80">
