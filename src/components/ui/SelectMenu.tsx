@@ -141,18 +141,18 @@ export const SelectMenu = forwardRef<HTMLButtonElement, SelectMenuProps>(functio
         aria-invalid={ariaInvalid || undefined}
         aria-describedby={ariaDescribedBy}
         className={cn(
-          "flex h-12 w-full cursor-pointer items-center gap-2 rounded-button border bg-surface/60 pr-3 pl-4 text-left text-base transition-colors outline-none",
-          "hover:border-sky/60 focus-visible:border-violet focus-visible:ring-3 focus-visible:ring-primary/25",
-          "data-[state=open]:border-violet data-[state=open]:ring-3 data-[state=open]:ring-primary/25",
-          ariaInvalid ? "border-destructive" : "border-input",
+          "flex h-12 w-full cursor-pointer items-center gap-2 rounded-button border bg-field pr-3 pl-4 text-left text-base transition-colors outline-none",
+          "hover:border-sky/60 focus-visible:border-sky-light focus-visible:ring-3 focus-visible:ring-sky/30",
+          "data-[state=open]:border-sky-light data-[state=open]:ring-3 data-[state=open]:ring-sky/30",
+          ariaInvalid ? "border-red-400" : "border-field-border",
         )}
       >
-        <span className={cn("min-w-0 flex-1 truncate", selected ? "text-navy" : "text-slate-400")}>
+        <span className={cn("min-w-0 flex-1 truncate", selected ? "text-white" : "text-sky-light/55")}>
           {selected?.label ?? placeholder}
         </span>
         <ChevronDown
           aria-hidden
-          className={cn("size-5 shrink-0 text-navy/50 transition-transform", open && "rotate-180")}
+          className={cn("size-5 shrink-0 text-sky-light/70 transition-transform", open && "rotate-180")}
         />
       </PopoverPrimitive.Trigger>
 

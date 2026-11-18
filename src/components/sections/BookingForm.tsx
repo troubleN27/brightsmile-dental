@@ -25,7 +25,7 @@ import { useBooking } from "@/store/booking";
 type Status = "idle" | "success" | "error" | "rateLimited";
 
 const fieldClass =
-  "h-12 w-full rounded-button border border-input bg-surface/60 px-4 text-base text-navy transition-colors placeholder:text-slate-400 hover:border-sky/60 focus:border-violet focus:ring-3 focus:ring-primary/25 focus:outline-none aria-invalid:border-destructive aria-invalid:focus:ring-destructive/20";
+  "h-12 w-full rounded-button border border-field-border bg-field px-4 text-base text-white transition-colors placeholder:text-sky-light/55 hover:border-sky/60 focus:border-sky-light focus:ring-3 focus:ring-sky/30 focus:outline-none aria-invalid:border-red-400 aria-invalid:focus:ring-red-400/25";
 
 const noopSubscribe = () => () => {};
 
@@ -37,7 +37,7 @@ function useToday() {
 function ErrorMessage({ id, text }: { id: string; text: string | null }) {
   if (!text) return null;
   return (
-    <p id={id} className="mt-1.5 flex items-start gap-1.5 text-sm text-destructive">
+    <p id={id} className="mt-1.5 flex items-start gap-1.5 text-sm text-red-300">
       <AlertCircle aria-hidden className="mt-0.5 size-4 shrink-0" />
       {text}
     </p>
@@ -162,11 +162,11 @@ export function BookingForm() {
         role="status"
         className="flex flex-col items-center py-10 text-center outline-none"
       >
-        <span className="flex size-16 items-center justify-center rounded-full bg-primary/15 text-primary-dark">
+        <span className="flex size-16 items-center justify-center rounded-full bg-sky/15 text-sky-light">
           <CheckCircle2 aria-hidden className="size-8" />
         </span>
-        <h3 className="mt-5 text-xl font-bold text-navy md:text-2xl">{t("successTitle")}</h3>
-        <p className="mt-3 max-w-md text-muted-foreground">{t("successText")}</p>
+        <h3 className="mt-5 text-xl font-bold text-white md:text-2xl">{t("successTitle")}</h3>
+        <p className="mt-3 max-w-md text-white/60">{t("successText")}</p>
         <Button onClick={startOver} variant="outline" className="mt-8">
           {t("again")}
         </Button>
@@ -181,16 +181,16 @@ export function BookingForm() {
           ref={statusRef}
           tabIndex={-1}
           role="alert"
-          className="rounded-card border border-destructive/30 bg-red-50 p-4 outline-none"
+          className="rounded-card border border-red-400/40 bg-red-500/10 p-4 outline-none"
         >
-          <p className="flex items-center gap-2 font-bold text-destructive">
+          <p className="flex items-center gap-2 font-bold text-red-300">
             <AlertCircle aria-hidden className="size-5" />
             {t("errorTitle")}
           </p>
-          <p className="mt-1 text-sm text-navy/80">
+          <p className="mt-1 text-sm text-white/80">
             {status === "rateLimited" ? t("tooManyText") : t("errorText")}
           </p>
-          <a href={phoneHref} className="mt-2 inline-flex items-center gap-2 text-sm font-bold text-primary-dark hover:underline">
+          <a href={phoneHref} className="mt-2 inline-flex items-center gap-2 text-sm font-bold text-sky-light hover:underline">
             <Phone aria-hidden className="size-4" />
             {t("callUs", { phone: site.phone })}
           </a>
@@ -199,8 +199,8 @@ export function BookingForm() {
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor={fieldId("name")} className="mb-1.5 block font-semibold text-navy">
-            {t("fields.name")} <span aria-hidden className="text-destructive">*</span>
+          <label htmlFor={fieldId("name")} className="mb-1.5 block font-semibold text-white">
+            {t("fields.name")} <span aria-hidden className="text-red-300">*</span>
           </label>
           <input
             id={fieldId("name")}
@@ -217,8 +217,8 @@ export function BookingForm() {
         </div>
 
         <div>
-          <label htmlFor={fieldId("phone")} className="mb-1.5 block font-semibold text-navy">
-            {t("fields.phone")} <span aria-hidden className="text-destructive">*</span>
+          <label htmlFor={fieldId("phone")} className="mb-1.5 block font-semibold text-white">
+            {t("fields.phone")} <span aria-hidden className="text-red-300">*</span>
           </label>
           <Controller
             name="phone"
@@ -249,11 +249,11 @@ export function BookingForm() {
                 aria-invalid={!!errors.phone}
                 aria-describedby={describedBy("phone", errors.phone)}
                 className={cn(
-                  "flex h-12 items-stretch rounded-button border bg-surface/60 pl-1 transition-colors focus-within:border-violet focus-within:ring-3 focus-within:ring-primary/25",
-                  errors.phone ? "border-destructive" : "border-input hover:border-sky/60",
+                  "flex h-12 items-stretch rounded-button border bg-field pl-1 transition-colors focus-within:border-sky-light focus-within:ring-3 focus-within:ring-sky/30",
+                  errors.phone ? "border-red-400" : "border-field-border hover:border-sky/60",
                 )}
                 numberInputProps={{
-                  className: "h-full min-w-0 flex-1 rounded-r-button bg-transparent px-3 text-base text-navy outline-none",
+                  className: "h-full min-w-0 flex-1 rounded-r-button bg-transparent px-3 text-base text-white outline-none placeholder:text-sky-light/55",
                 }}
               />
             )}
@@ -264,7 +264,7 @@ export function BookingForm() {
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor={fieldId("service")} className="mb-1.5 block font-semibold text-navy">
+          <label htmlFor={fieldId("service")} className="mb-1.5 block font-semibold text-white">
             {t("fields.service")}
           </label>
           <Controller
@@ -290,7 +290,7 @@ export function BookingForm() {
         </div>
 
         <div>
-          <label htmlFor={fieldId("doctor")} className="mb-1.5 block font-semibold text-navy">
+          <label htmlFor={fieldId("doctor")} className="mb-1.5 block font-semibold text-white">
             {t("fields.doctor")}
           </label>
           <Controller
@@ -316,7 +316,7 @@ export function BookingForm() {
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor={fieldId("date")} className="mb-1.5 block font-semibold text-navy">
+          <label htmlFor={fieldId("date")} className="mb-1.5 block font-semibold text-white">
             {t("fields.date")}
           </label>
           <Controller
@@ -346,14 +346,14 @@ export function BookingForm() {
         </div>
 
         <fieldset>
-          <legend className="mb-1.5 font-semibold text-navy">{t("fields.time")}</legend>
-          <div className="grid h-12 grid-cols-3 gap-1 rounded-button bg-surface/60 p-1 ring-1 ring-input">
+          <legend className="mb-1.5 font-semibold text-white">{t("fields.time")}</legend>
+          <div className="grid h-12 grid-cols-3 gap-1 rounded-button bg-field p-1 ring-1 ring-field-border">
             {timesOfDay.map((time) => (
               <label key={time} className="relative">
                 <input type="radio" value={time} className="peer sr-only" {...register("timeOfDay")} />
                 <span
                   title={t(`timeHint.${time}`)}
-                  className="flex h-full cursor-pointer items-center justify-center rounded-[10px] text-sm font-semibold text-navy/70 transition-colors peer-checked:bg-violet peer-checked:text-white peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-primary hover:text-navy"
+                  className="flex h-full cursor-pointer items-center justify-center rounded-[10px] text-sm font-semibold text-white/70 transition-colors peer-checked:bg-violet peer-checked:text-white peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-primary hover:text-white"
                 >
                   {t(`time.${time}`)}
                 </span>
@@ -365,11 +365,11 @@ export function BookingForm() {
 
       <div>
         <div className="mb-1.5 flex items-baseline justify-between gap-4">
-          <label htmlFor={fieldId("comment")} className="font-semibold text-navy">
+          <label htmlFor={fieldId("comment")} className="font-semibold text-white">
             {t("fields.comment")}
           </label>
           <span
-            className={cn("text-sm", commentLength > 500 ? "text-destructive" : "text-muted-foreground")}
+            className={cn("text-sm", commentLength > 500 ? "text-red-300" : "text-white/60")}
             aria-hidden
           >
             {commentLength}/500
@@ -394,7 +394,7 @@ export function BookingForm() {
       </div>
 
       <div>
-        <label className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-navy/80">
+        <label className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-white/80">
           <input
             type="checkbox"
             aria-required
@@ -405,10 +405,10 @@ export function BookingForm() {
           />
           <span>
             {t("fields.consentBefore")}
-            <Link href="/privacy" target="_blank" className="font-semibold text-primary-dark underline underline-offset-2">
+            <Link href="/privacy" target="_blank" className="font-semibold text-sky-light underline underline-offset-2">
               {t("fields.consentLink")}
             </Link>
-            <span aria-hidden className="text-destructive"> *</span>
+            <span aria-hidden className="text-red-300"> *</span>
           </span>
         </label>
         <ErrorMessage {...errorProps("consent", errors.consent)} />

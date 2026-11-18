@@ -9,7 +9,7 @@ import { LazyBookingForm } from "./LazyBookingForm";
 
 const nextSteps = ["call", "visit", "plan"] as const;
 
-/** White form card on the brand gradient, with a frosted-glass side panel. */
+/** Dark form card on the brand gradient, with a frosted-glass side panel. */
 export function Booking() {
   const t = useTranslations("Booking");
   const locale = useLocale();
@@ -19,7 +19,7 @@ export function Booking() {
       <Container>
         <SectionTitle tone="light" title={t("title")} subtitle={t("subtitle")} />
         <div className="grid gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] lg:gap-8">
-          <div className="overflow-hidden rounded-[28px] bg-white shadow-[0_30px_70px_-30px_rgba(11,31,58,0.75)]">
+          <div className="overflow-hidden rounded-[28px] bg-ink shadow-[0_30px_70px_-30px_rgba(11,31,58,0.9)] ring-1 ring-sky-light/20">
             {/* Thin brand stripe across the top of the card */}
             <div aria-hidden className="h-1.5 bg-[linear-gradient(90deg,#0ea5e9,#6d4fd4)]" />
             <div className="p-5 sm:p-8">
@@ -60,13 +60,13 @@ export function Booking() {
 
             <a
               href={phoneHref}
-              className="group flex items-center gap-4 rounded-card bg-white px-5 py-4 text-navy transition-colors hover:bg-surface"
+              className="group flex items-center gap-4 rounded-card bg-violet px-5 py-4 text-white shadow-[0_16px_32px_-16px_rgba(109,79,212,0.9)] transition-colors hover:bg-violet-dark"
             >
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-violet text-white">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white text-violet">
                 <Phone aria-hidden className="size-5" />
               </span>
               <span>
-                <span className="block text-sm text-muted-foreground">{t("preferPhone")}</span>
+                <span className="block text-sm text-white/80">{t("preferPhone")}</span>
                 <span className="block text-lg font-extrabold">{site.phone}</span>
               </span>
             </a>
