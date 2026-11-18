@@ -353,7 +353,7 @@ export function BookingForm() {
                 <input type="radio" value={time} className="peer sr-only" {...register("timeOfDay")} />
                 <span
                   title={t(`timeHint.${time}`)}
-                  className="flex h-full cursor-pointer items-center justify-center rounded-[10px] text-sm font-semibold text-white/70 transition-colors peer-checked:bg-white peer-checked:text-violet peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-primary hover:text-white"
+                  className="flex h-full cursor-pointer items-center justify-center rounded-[10px] text-sm font-semibold text-white/70 peer-checked:bg-white peer-checked:text-violet peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-primary hover:text-white"
                 >
                   {t(`time.${time}`)}
                 </span>
