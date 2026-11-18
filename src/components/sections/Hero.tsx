@@ -15,10 +15,11 @@ export function Hero() {
   const { years, patients, rating } = site.stats;
 
   return (
-    // Full-width photo under the see-through header, dark blue overlay keeps
-    // the centred white text readable; a wave leads into the next section
-    <section className="relative -mt-16 flex min-h-[640px] items-center overflow-hidden bg-ink lg:-mt-20 lg:min-h-[740px]">
-      <div className="absolute inset-0">
+    // Phones: the whole 16:9 video sits as a strip under the header, text follows
+    // on dark blue. From 768px: the video fills the section under the see-through
+    // header with a dark overlay and the text centred on top. A wave closes it.
+    <section className="relative -mt-16 overflow-hidden bg-ink md:flex md:min-h-[640px] md:items-center lg:-mt-20 lg:min-h-[740px]">
+      <div className="relative mt-16 aspect-video md:absolute md:inset-0 md:mt-0 md:aspect-auto">
         {/* Poster = first frame of the video: it is the LCP image and what
             reduced-motion visitors see */}
         <Photo
@@ -30,18 +31,17 @@ export function Hero() {
           preload
           fill
           square
-          // On phones keep the patient in frame, matching the hero-mobile video crop
-          className="object-[88%_50%] md:object-center"
           placeholderIcon={Smile}
         />
         <AutoplayVideo src="/videos/hero" mobileSrc="/videos/hero-mobile" />
+        {/* Phones: only fade the bottom edge into the text area; desktop: full tint */}
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,31,58,0)_60%,#0b1f3a_100%)] md:bg-[linear-gradient(180deg,rgba(11,31,58,0.7)_0%,rgba(11,31,58,0.5)_45%,rgba(11,31,58,0.8)_100%)]"
+        />
       </div>
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,31,58,0.7)_0%,rgba(11,31,58,0.5)_45%,rgba(11,31,58,0.8)_100%)]"
-      />
 
-      <Container className="relative z-10 pt-32 pb-28 text-center lg:pt-40 lg:pb-36">
+      <Container className="relative z-10 pt-6 pb-24 text-center md:pt-32 md:pb-28 lg:pt-40 lg:pb-36">
         <h1 className="mx-auto max-w-3xl text-h1 text-white text-balance lg:text-[60px] lg:leading-[68px]">
           {t("title")}
         </h1>

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 type AutoplayVideoProps = {
   /** Path without extension inside /public, e.g. "/videos/hero" (.webm and .mp4 must exist) */
   src: string;
-  /** Optional lighter, phone-shaped version used below 768px, e.g. "/videos/hero-mobile" */
+  /** Optional lighter (smaller) version used below 768px, e.g. "/videos/hero-mobile" */
   mobileSrc?: string;
   className?: string;
 };
