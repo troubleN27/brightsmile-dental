@@ -50,7 +50,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "64px 72px",
-          background: "linear-gradient(135deg, #F0FDFA 0%, #CCFBF1 55%, #99F6E4 100%)",
+          background: "linear-gradient(135deg, #EAF6FD 0%, #D6ECFB 55%, #E4DCFB 100%)",
           fontFamily: "Manrope",
           color: "#0F172A",
         }}
@@ -75,7 +75,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
             </svg>
           </div>
           <div style={{ display: "flex", fontSize: 40, fontWeight: 800 }}>
-            BrightSmile<span style={{ color: "#0F766E", marginLeft: 12 }}>Dental</span>
+            BrightSmile<span style={{ color: "#0369A1", marginLeft: 12 }}>Dental</span>
           </div>
         </div>
 
@@ -92,7 +92,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
               display: "flex",
               padding: "14px 28px",
               borderRadius: 999,
-              background: "#0F172A",
+              background: "#6D4FD4",
               color: "#fff",
               fontSize: 28,
               fontWeight: 600,

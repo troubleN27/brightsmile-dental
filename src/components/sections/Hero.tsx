@@ -19,8 +19,8 @@ export function Hero() {
     // the centred white text readable; a wave leads into the next section
     <section className="relative -mt-16 flex min-h-[640px] items-center overflow-hidden bg-ink lg:-mt-20 lg:min-h-[740px]">
       <div className="absolute inset-0">
-        {/* Poster = first frame of the video: it is the LCP image and what phones
-            and reduced-motion visitors see */}
+        {/* Poster = first frame of the video: it is the LCP image and what
+            reduced-motion visitors see */}
         <Photo
           src="/images/hero.webp"
           alt={t("photoAlt")}
@@ -30,13 +30,11 @@ export function Hero() {
           preload
           fill
           square
+          // On phones keep the dentist in frame, matching the hero-mobile video crop
+          className="object-[64%_50%] md:object-center"
           placeholderIcon={Smile}
         />
-        <AutoplayVideo
-          src="/videos/hero"
-          media="(min-width: 768px)"
-          controlClassName="right-4 bottom-24 md:right-6 lg:bottom-32"
-        />
+        <AutoplayVideo src="/videos/hero" mobileSrc="/videos/hero-mobile" />
       </div>
       <div
         aria-hidden

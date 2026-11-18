@@ -25,7 +25,7 @@ export function Offer() {
             square
             placeholderIcon={Building2}
           />
-          <AutoplayVideo src="/videos/tour" controlClassName="right-3 bottom-3" />
+          <AutoplayVideo src="/videos/tour" />
         </div>
 
         <div>
