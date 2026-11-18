@@ -1,4 +1,4 @@
-import { Armchair } from "lucide-react";
+import { Armchair, Check } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { Photo } from "@/components/ui/Photo";
@@ -7,37 +7,43 @@ import { site } from "@/config/site";
 
 const items = ["painless", "equipment", "warranty", "installments", "kids", "everyday"] as const;
 
+/** Wide photo band: clinic room under a blue-to-violet tint, reasons with check marks. */
 export function Advantages() {
   const t = useTranslations("Advantages");
 
   return (
-    <section id="advantages" className="bg-lavender py-16 md:py-24">
-      <Container className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
-        <div>
-          <SectionTitle title={t("title")} subtitle={t("subtitle")} className="md:mb-10" />
-          <div className="hidden max-w-sm lg:block">
-            <Photo
-              src="/images/clinic/room.webp"
-              alt={t("photoAlt")}
-              width={1200}
-              height={1500}
-              sizes="384px"
-              square
-              placeholderIcon={Armchair}
-            />
-          </div>
-        </div>
+    <section id="advantages" className="relative overflow-hidden bg-ink py-16 md:py-24">
+      <div className="absolute inset-0">
+        <Photo
+          src="/images/clinic/room-wide.webp"
+          alt={t("photoAlt")}
+          width={2400}
+          height={1340}
+          sizes="100vw"
+          fill
+          square
+          placeholderIcon={Armchair}
+        />
+      </div>
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-[linear-gradient(120deg,rgba(3,105,161,0.92)_0%,rgba(63,91,201,0.88)_55%,rgba(109,79,212,0.92)_100%)]"
+      />
 
-        <ul className="border-b border-navy/10 lg:self-center">
+      <Container className="relative">
+        <SectionTitle tone="light" title={t("title")} subtitle={t("subtitle")} />
+        <ul className="grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
           {items.map((key) => (
-            <li
-              key={key}
-              className="grid gap-2 border-t border-navy/10 py-6 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] sm:gap-8"
-            >
-              <h3 className="text-lg font-bold text-navy">
-                {t(`items.${key}.title`, { years: site.stats.warrantyYears })}
-              </h3>
-              <p className="text-muted-foreground">{t(`items.${key}.text`)}</p>
+            <li key={key} className="flex gap-4">
+              <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/40">
+                <Check aria-hidden className="size-4 text-white" strokeWidth={3} />
+              </span>
+              <div>
+                <h3 className="text-lg font-bold text-white">
+                  {t(`items.${key}.title`, { years: site.stats.warrantyYears })}
+                </h3>
+                <p className="mt-1.5 text-white/85">{t(`items.${key}.text`)}</p>
+              </div>
             </li>
           ))}
         </ul>

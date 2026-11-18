@@ -8,7 +8,7 @@ export function Process() {
   const t = useTranslations("Process");
 
   return (
-    <section id="process" className="bg-brand-gradient py-16 md:py-24">
+    <section id="process" className="bg-ink py-16 md:py-24">
       <Container>
         <SectionTitle tone="light" title={t("title")} subtitle={t("subtitle")} />
         <ol className="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-4">

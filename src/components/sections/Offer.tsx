@@ -8,21 +8,21 @@ export function Offer() {
   const t = useTranslations("Offer");
 
   return (
-    <section id="offer" className="bg-lavender py-16 md:py-24">
+    <section id="offer" className="bg-brand-gradient py-16 md:py-24">
       <Container>
-        <div className="grid gap-8 border-y border-navy/15 py-10 md:py-12 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-end lg:gap-16">
+        <div className="grid gap-8 border-y border-white/25 py-10 md:py-12 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-end lg:gap-16">
           <div>
-            <p className="font-semibold text-primary-dark">{t("badge")}</p>
-            <h2 className="mt-3 text-h2 text-navy">{t("title")}</h2>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground text-pretty">
+            <p className="font-semibold text-white/90">{t("badge")}</p>
+            <h2 className="mt-3 text-h2 text-white">{t("title")}</h2>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-white/85 text-pretty">
               {t("text")}
             </p>
           </div>
           <div className="flex flex-col items-start gap-3">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="bg-white text-violet hover:bg-surface">
               <Link href={sectionHref("booking")}>{t("cta")}</Link>
             </Button>
-            <p className="text-sm text-muted-foreground">{t("note")}</p>
+            <p className="text-sm text-white/80">{t("note")}</p>
           </div>
         </div>
       </Container>

@@ -26,9 +26,11 @@ export function Reviews() {
   }));
 
   return (
-    <section id="reviews" className="bg-surface py-16 md:py-24">
+    <section id="reviews" className="bg-brand-gradient py-16 md:py-24">
       <Container>
         <SectionTitle
+          tone="light"
+          align="center"
           title={t("title")}
           subtitle={t("subtitle", { rating: format.number(site.stats.rating) })}
         />

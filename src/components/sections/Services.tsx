@@ -19,24 +19,27 @@ export function Services() {
     return {
       id: category,
       label,
+      photo: (
+        <Photo
+          src={`/images/services/${category}.webp`}
+          alt={t("photoAlt", { category: label })}
+          width={1500}
+          height={1000}
+          sizes="(min-width: 1024px) 380px, 50vw"
+          fill
+          square
+          className="transition-transform duration-500 group-hover:scale-105"
+          placeholderIcon={ImageIcon}
+        />
+      ),
       content: (
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
-          <div>
-            <Photo
-              src={`/images/services/${category}.webp`}
-              alt={t("photoAlt", { category: label })}
-              width={1200}
-              height={800}
-              sizes="(min-width: 1024px) 440px, 100vw"
-              square
-              placeholderIcon={ImageIcon}
-            />
-            <p className="mt-5 text-muted-foreground text-pretty">
-              {t(`categoryText.${category}`)}
-            </p>
+        <div className="rounded-card bg-surface p-6 md:p-10">
+          <div className="max-w-3xl">
+            <h3 className="text-2xl font-extrabold text-navy">{label}</h3>
+            <p className="mt-2 text-muted-foreground text-pretty">{t(`categoryText.${category}`)}</p>
           </div>
 
-          <ul className="border-b border-navy/10">
+          <ul className="mt-6 grid gap-x-12 lg:grid-cols-2">
             {services
               .filter((service) => service.category === category)
               .map((service) => {
@@ -44,10 +47,10 @@ export function Services() {
                 return (
                   <li
                     key={service.id}
-                    className="flex flex-col gap-3 border-t border-navy/10 py-5 sm:flex-row sm:items-center sm:gap-6"
+                    className="flex flex-col gap-3 border-t border-primary-dark/15 py-5 sm:flex-row sm:items-center sm:gap-6"
                   >
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-navy">{title}</h3>
+                      <h4 className="text-lg font-bold text-navy">{title}</h4>
                       <p className="mt-1 text-muted-foreground">{service.description[locale]}</p>
                     </div>
                     <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end">
@@ -74,7 +77,7 @@ export function Services() {
       <Container>
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
         <ServicesTabs tabs={tabs} />
-        <p className="mt-10 max-w-3xl text-sm leading-6 text-muted-foreground">{t("note")}</p>
+        <p className="mt-8 max-w-3xl text-sm leading-6 text-muted-foreground">{t("note")}</p>
       </Container>
     </section>
   );

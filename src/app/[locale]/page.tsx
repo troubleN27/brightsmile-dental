@@ -20,14 +20,14 @@ export default function HomePage() {
       <Hero />
       <Reveal>
         <About />
-        <Advantages />
         <Services />
-        <Kids />
+        <Advantages />
         <BeforeAfter />
+        <Reviews />
         <Doctors />
+        <Kids />
         <Process />
         <Offer />
-        <Reviews />
         <Faq />
         <Booking />
         <Contacts />

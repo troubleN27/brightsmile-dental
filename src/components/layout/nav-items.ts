@@ -2,8 +2,8 @@
 export const navItems = [
   "services",
   "results",
-  "doctors",
   "reviews",
+  "doctors",
   "faq",
   "contacts",
 ] as const;

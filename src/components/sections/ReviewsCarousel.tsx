@@ -58,11 +58,9 @@ type ReviewsCarouselProps = {
 export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
   const t = useTranslations("Reviews");
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    slidesToScroll: 1,
+    align: "center",
+    loop: true,
     breakpoints: {
-      "(min-width: 768px)": { slidesToScroll: 2 },
-      "(min-width: 1024px)": { slidesToScroll: 3 },
       // Near-instant scrolling for people who prefer less motion
       "(prefers-reduced-motion: reduce)": { duration: 10 },
     },
@@ -71,22 +69,22 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
 
   return (
     <div role="region" aria-roledescription="carousel" aria-label={t("carousel")}>
-      <div ref={emblaRef} className="-mx-3 overflow-hidden px-3 py-2">
-        <div className="-ml-4 flex touch-pan-y lg:-ml-6">
+      <div ref={emblaRef} className="overflow-hidden">
+        <div className="flex touch-pan-y">
           {reviews.map((review, index) => (
             <div
               key={review.id}
               role="group"
               aria-roledescription="slide"
               aria-label={t("slide", { index: index + 1, total: reviews.length })}
-              className="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3 lg:pl-6"
+              className="min-w-0 shrink-0 grow-0 basis-full px-1"
             >
-              <figure className="flex h-full flex-col rounded-card bg-white p-6 md:p-7">
+              <figure className="mx-auto flex h-full max-w-3xl flex-col items-center text-center">
                 <div>
                   <div
                     role="img"
                     aria-label={t("rating", { rating: review.rating })}
-                    className="flex gap-0.5"
+                    className="flex justify-center gap-1"
                   >
                     {Array.from({ length: 5 }, (_, i) => (
                       <Star
@@ -96,16 +94,18 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
                           "size-5",
                           i < review.rating
                             ? "fill-warning text-warning"
-                            : "fill-slate-200 text-slate-200",
+                            : "fill-white/25 text-white/25",
                         )}
                       />
                     ))}
                   </div>
                 </div>
-                <blockquote className="mt-4 flex-1 text-navy/85">{review.text}</blockquote>
-                <figcaption className="mt-6 border-t border-border pt-4">
-                  <p className="font-bold text-navy">{review.author}</p>
-                  <p className="text-sm text-primary-dark">{review.service}</p>
+                <blockquote className="mt-6 flex-1 text-xl leading-9 font-medium text-white text-pretty md:text-2xl md:leading-10">
+                  «{review.text}»
+                </blockquote>
+                <figcaption className="mt-6">
+                  <p className="font-bold text-white">{review.author}</p>
+                  <p className="text-sm text-sky-light">{review.service}</p>
                 </figcaption>
               </figure>
             </div>
@@ -113,7 +113,7 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
         </div>
       </div>
 
-      <div className="mt-8 flex items-center justify-between gap-4">
+      <div className="mt-10 flex items-center justify-center gap-6">
         <div className="flex flex-wrap gap-1">
           {Array.from({ length: snapCount }, (_, index) => (
             <button
@@ -122,12 +122,12 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
               onClick={() => emblaApi?.scrollTo(index)}
               aria-label={t("goTo", { index: index + 1 })}
               aria-current={index === selected ? "true" : undefined}
-              className="group flex size-6 cursor-pointer items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="group flex size-6 cursor-pointer items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <span
                 className={cn(
                   "block h-2 rounded-full transition-all",
-                  index === selected ? "w-6 bg-primary-dark" : "w-2 bg-navy/20 group-hover:bg-navy/40",
+                  index === selected ? "w-6 bg-white" : "w-2 bg-white/35 group-hover:bg-white/60",
                 )}
               />
             </button>
@@ -137,6 +137,7 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
           <Button
             variant="outline"
             size="icon"
+            className="border-white/50 bg-transparent text-white hover:border-white hover:bg-white/10 hover:text-white disabled:opacity-40"
             onClick={() => emblaApi?.scrollPrev()}
             disabled={!canPrev}
             aria-label={t("prev")}
@@ -146,6 +147,7 @@ export function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
           <Button
             variant="outline"
             size="icon"
+            className="border-white/50 bg-transparent text-white hover:border-white hover:bg-white/10 hover:text-white disabled:opacity-40"
             onClick={() => emblaApi?.scrollNext()}
             disabled={!canNext}
             aria-label={t("next")}

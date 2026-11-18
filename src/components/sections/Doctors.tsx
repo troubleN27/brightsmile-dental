@@ -8,47 +8,47 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { doctors } from "@/data/doctors";
 import type { Locale } from "@/i18n/routing";
 
+/** White cards with a round portrait that sits half above the card. */
 export function Doctors() {
   const t = useTranslations("Doctors");
   const locale = useLocale() as Locale;
 
   return (
-    <section id="doctors" className="py-16 md:py-24">
+    <section id="doctors" className="bg-surface py-16 md:py-24">
       <Container>
-        <SectionTitle
-          title={t("title")}
-          subtitle={t("subtitle")}
-        />
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionTitle align="center" title={t("title")} subtitle={t("subtitle")} />
+        <ul className="mt-20 grid gap-x-6 gap-y-24 sm:grid-cols-2 lg:grid-cols-4">
           {doctors.map((doctor) => {
             const name = doctor.name[locale];
             const specialty = doctor.specialty[locale];
             return (
               <li
                 key={doctor.id}
-                className="flex flex-col"
+                className="flex flex-col items-center rounded-card bg-white px-5 pb-6 text-center shadow-[0_24px_48px_-30px_rgba(3,105,161,0.5)]"
               >
-                <Photo
-                  src={doctor.photo}
-                  alt={t("photoAlt", { name, specialty })}
-                  width={600}
-                  height={750}
-                  sizes="(min-width: 1024px) 270px, (min-width: 640px) 45vw, 100vw"
-                  square
-                  placeholderIcon={UserRound}
-                />
-                <div className="flex flex-1 flex-col pt-4">
-                  <h3 className="text-lg font-bold text-navy">{name}</h3>
-                  <p className="mt-1 text-primary-dark">{specialty}</p>
-                  <p className="mt-1 mb-5 text-sm text-muted-foreground">
-                    {t("experience", { years: doctor.experienceYears })}
-                  </p>
-                  <Button asChild variant="outline" className="mt-auto w-full">
-                    <BookingLink doctorId={doctor.id} aria-label={`${t("book")}: ${name}`}>
-                      {t("book")}
-                    </BookingLink>
-                  </Button>
+                <div className="relative -mt-16 size-36 overflow-hidden rounded-full bg-surface ring-6 ring-white">
+                  <Photo
+                    src={doctor.photo}
+                    alt={t("photoAlt", { name, specialty })}
+                    width={960}
+                    height={1200}
+                    sizes="144px"
+                    fill
+                    square
+                    className="object-[50%_20%]"
+                    placeholderIcon={UserRound}
+                  />
                 </div>
+                <h3 className="mt-5 text-lg font-bold text-navy">{name}</h3>
+                <p className="mt-1 text-primary-dark">{specialty}</p>
+                <p className="mt-1 mb-5 text-sm text-muted-foreground">
+                  {t("experience", { years: doctor.experienceYears })}
+                </p>
+                <Button asChild variant="outline" className="mt-auto w-full">
+                  <BookingLink doctorId={doctor.id} aria-label={`${t("book")}: ${name}`}>
+                    {t("book")}
+                  </BookingLink>
+                </Button>
               </li>
             );
           })}

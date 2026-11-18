@@ -24,7 +24,8 @@ export function SectionTitle({
         className,
       )}
     >
-      <h2 className={cn("text-h2 text-balance", tone === "dark" ? "text-navy" : "text-white")}>
+      {/* Plain string, not cn(): tailwind-merge mistakes text-h2 for a colour and drops it */}
+      <h2 className={`text-h2 text-balance ${tone === "dark" ? "text-navy" : "text-white"}`}>
         {title}
       </h2>
       {subtitle && (
