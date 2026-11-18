@@ -37,7 +37,7 @@ export function Hero() {
         {/* Phones: only fade the bottom edge into the text area; desktop: full tint */}
         <div
           aria-hidden
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,31,58,0)_60%,#0b1f3a_100%)] md:bg-[linear-gradient(180deg,rgba(11,31,58,0.7)_0%,rgba(11,31,58,0.5)_45%,rgba(11,31,58,0.8)_100%)]"
+          className="absolute inset-0 bg-hero-overlay"
         />
       </div>
 

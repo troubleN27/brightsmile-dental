@@ -24,8 +24,17 @@ type PhotoProps = {
   className?: string;
 };
 
+// In production public/ never changes, so each check runs once per server
+// instance. In development it is not cached, so newly added photos show up.
+const existsCache = new Map<string, boolean>();
+const cacheChecks = process.env.NODE_ENV === "production";
+
 function publicFileExists(src: string) {
-  return existsSync(path.join(process.cwd(), "public", src));
+  const cached = cacheChecks ? existsCache.get(src) : undefined;
+  if (cached !== undefined) return cached;
+  const exists = existsSync(path.join(process.cwd(), "public", src));
+  if (cacheChecks) existsCache.set(src, exists);
+  return exists;
 }
 
 /**

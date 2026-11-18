@@ -27,7 +27,7 @@ export function Advantages() {
       </div>
       <div
         aria-hidden
-        className="absolute inset-0 bg-[linear-gradient(120deg,rgba(3,105,161,0.92)_0%,rgba(63,91,201,0.88)_55%,rgba(109,79,212,0.92)_100%)]"
+        className="absolute inset-0 bg-brand-overlay"
       />
 
       <Container className="relative">

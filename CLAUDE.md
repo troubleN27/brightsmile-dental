@@ -31,7 +31,7 @@ Landing site for a dental clinic. Requirements: [docs/PRD.md](docs/PRD.md). Tech
 
 - All UI text lives in `messages/ru.json` and `messages/en.json`; English is written for native readers, not translated literally. No "demo/example/test" wording anywhere.
 - Clinic contacts and stats: only in `src/config/site.ts`.
-- Colors: brand tokens in `src/app/globals.css` — `primary` (teal), `primary-dark`, `navy`, `surface`, `warning`; SPEC "muted" text color = `text-muted-foreground`. Text on `primary` is navy (white fails contrast).
+- Colors: sky blue + violet palette, tokens in `src/app/globals.css` — `primary` (= violet, buttons, white text), `violet`/`violet-dark`, `primary-dark` (deep blue accent text), `sky`/`sky-light`, `ink` (dark header/footer/panels), `navy` (text), `surface`/`lavender` (section backgrounds), `indigo` (gradient middle), `telegram`, `warning`. Gradients and overlays are utilities: `bg-brand-gradient`, `bg-brand-overlay`, `bg-hero-overlay`, `bg-placeholder-*`. No raw hex in components (except `opengraph-image.tsx`, `icon.svg`, `themeColor`, which can't read CSS variables). SPEC "muted" text color = `text-muted-foreground`.
 - Radii: `rounded-card` (16px), `rounded-button` (12px). Headings: `text-h1`, `text-h2` utilities.
 - Section anchors: `sectionHref(id)` from `src/components/layout/nav-items.ts`.
 - Code, comments, commits in English; secrets only in `.env.local`.

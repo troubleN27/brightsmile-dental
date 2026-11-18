@@ -23,10 +23,14 @@ type ServicesTabsProps = {
  */
 export function ServicesTabs({ tabs }: ServicesTabsProps) {
   const panelsRef = useRef<HTMLDivElement>(null);
+  // Keyboard users move between tabs with arrows and must not be thrown down the page
+  const pickedByPointer = useRef(false);
 
   function revealPrices() {
     const panels = panelsRef.current;
-    if (!panels || !window.matchMedia("(max-width: 1023px)").matches) return;
+    const byPointer = pickedByPointer.current;
+    pickedByPointer.current = false;
+    if (!byPointer || !panels || !window.matchMedia("(max-width: 1023px)").matches) return;
     // Wait for the new panel to render before measuring
     requestAnimationFrame(() => {
       const top = panels.getBoundingClientRect().top;
@@ -36,7 +40,10 @@ export function ServicesTabs({ tabs }: ServicesTabsProps) {
 
   return (
     <Tabs defaultValue={tabs[0]?.id} onValueChange={revealPrices} className="gap-8">
-      <TabsList className="grid h-auto w-full grid-cols-2 gap-3 bg-transparent p-0 group-data-[orientation=horizontal]/tabs:h-auto md:gap-4 lg:grid-cols-3">
+      <TabsList
+        onPointerDown={() => (pickedByPointer.current = true)}
+        onKeyDown={() => (pickedByPointer.current = false)}
+        className="grid h-auto w-full grid-cols-2 gap-3 bg-transparent p-0 group-data-[orientation=horizontal]/tabs:h-auto md:gap-4 lg:grid-cols-3">
         {tabs.map((tab) => (
           <TabsTrigger
             key={tab.id}

@@ -40,7 +40,7 @@ export function FloatingButtons() {
         rel="noopener noreferrer"
         aria-label={t("telegram")}
         // Desktop only: on phones Telegram lives in the bottom bar instead
-        className="fixed right-6 bottom-6 z-30 hidden size-14 items-center justify-center rounded-full bg-[#229ED9] text-white shadow-[0_12px_32px_-8px_rgba(34,158,217,0.6)] transition-transform duration-300 hover:scale-105 focus-visible:ring-4 focus-visible:ring-[#229ED9]/40 focus-visible:outline-none md:flex"
+        className="fixed right-6 bottom-6 z-30 hidden size-14 items-center justify-center rounded-full bg-telegram text-white shadow-[0_12px_32px_-8px] shadow-telegram/60 transition-transform duration-300 hover:scale-105 focus-visible:ring-4 focus-visible:ring-telegram/40 focus-visible:outline-none md:flex"
       >
         <TelegramIcon className="size-7 -translate-x-px" />
       </a>
@@ -61,7 +61,7 @@ export function FloatingButtons() {
         </Button>
         <Button asChild variant="outline" size="icon" className="size-12 shrink-0">
           <a href={site.telegram} target="_blank" rel="noopener noreferrer" aria-label={t("telegram")}>
-            <TelegramIcon className="size-5 text-[#229ED9]" />
+            <TelegramIcon className="size-5 text-telegram" />
           </a>
         </Button>
         <Button asChild className="h-12 flex-1 text-base">

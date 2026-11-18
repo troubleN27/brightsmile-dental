@@ -24,16 +24,26 @@ export function AutoplayVideo({ src, mobileSrc, className }: AutoplayVideoProps)
   const [source, setSource] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
 
-  // Decide once on the client whether this visitor gets the video and which file
+  // Decide on the client whether this visitor gets the video and which file;
+  // switch files when the screen crosses the phone breakpoint (rotation, resize)
   useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection
       ?.saveData;
-    const isPhone = window.matchMedia(MOBILE_QUERY).matches;
-    const chosen = reducedMotion || saveData ? null : isPhone && mobileSrc ? mobileSrc : src;
+    if (reducedMotion || saveData) return;
+
+    const phone = window.matchMedia(MOBILE_QUERY);
+    const choose = () => {
+      setPlaying(false);
+      setSource(phone.matches && mobileSrc ? mobileSrc : src);
+    };
     // Deferred to keep the effect free of synchronous state updates
-    const id = window.setTimeout(() => setSource(chosen), 0);
-    return () => window.clearTimeout(id);
+    const id = window.setTimeout(choose, 0);
+    phone.addEventListener("change", choose);
+    return () => {
+      window.clearTimeout(id);
+      phone.removeEventListener("change", choose);
+    };
   }, [src, mobileSrc]);
 
   // Load on first sight, play only while visible
@@ -62,6 +72,8 @@ export function AutoplayVideo({ src, mobileSrc, className }: AutoplayVideoProps)
 
   return (
     <video
+      // A new element per file: browsers ignore <source> changes on a mounted video
+      key={source}
       ref={videoRef}
       aria-hidden
       muted

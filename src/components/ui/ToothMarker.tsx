@@ -31,11 +31,11 @@ export function ToothMarker({ number, id, size = "md", tone = "gradient" }: Toot
       <svg viewBox="8 8 24 26" className="size-full">
         <defs>
           <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#7dd3fc" />
-            <stop offset="100%" stopColor="#6d4fd4" />
+            <stop offset="0%" stopColor="var(--color-sky-light)" />
+            <stop offset="100%" stopColor="var(--color-violet)" />
           </linearGradient>
         </defs>
-        <path d={TOOTH_PATH} fill={tone === "gradient" ? `url(#${gradientId})` : "#ffffff"} />
+        <path d={TOOTH_PATH} fill={tone === "gradient" ? `url(#${gradientId})` : "white"} />
       </svg>
       <span
         className={cn(

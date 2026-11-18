@@ -19,12 +19,12 @@ export function ProcessSteps() {
         aria-hidden
         viewBox="0 0 1000 100"
         preserveAspectRatio="none"
-        className="pointer-events-none absolute inset-x-0 top-0 hidden h-[100px] w-full lg:block"
+        className="pointer-events-none absolute inset-x-0 top-0 hidden h-[100px] w-full text-white lg:block"
       >
         <path
           d="M125 32 Q500 130 875 32"
           fill="none"
-          stroke="#ffffff"
+          stroke="currentColor"
           strokeOpacity="0.5"
           strokeWidth="2"
           strokeDasharray="6 8"

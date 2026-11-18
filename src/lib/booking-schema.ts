@@ -29,6 +29,15 @@ function earliestAllowedDate() {
   return toIsoDate(now);
 }
 
+/** True for an existing calendar day: rejects "2026-02-31", "2026-13-01" and the like */
+function isRealDate(value: string) {
+  const [year, month, day] = value.split("-").map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day));
+  return (
+    date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day
+  );
+}
+
 const optional = <T extends z.ZodType>(schema: T) =>
   z.union([schema, z.literal("")]).optional();
 
@@ -49,6 +58,7 @@ export const bookingSchema = z.object({
     z
       .string()
       .regex(/^\d{4}-\d{2}-\d{2}$/, { error: "dateInvalid" })
+      .refine(isRealDate, { error: "dateInvalid" })
       .refine((value) => value >= earliestAllowedDate(), { error: "dateInPast" }),
   ),
   timeOfDay: optional(z.enum(timesOfDay, { error: "invalidChoice" })),

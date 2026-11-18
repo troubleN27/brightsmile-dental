@@ -52,7 +52,7 @@ export function Booking() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 rounded-card bg-white/10 px-5 py-4 text-white ring-1 ring-white/20 backdrop-blur-md transition-colors hover:bg-white/20"
               >
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white text-[#229ED9]">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white text-telegram">
                   <TelegramIcon className="size-5" />
                 </span>
                 <span className="font-bold">{t("telegram")}</span>
