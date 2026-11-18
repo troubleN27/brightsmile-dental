@@ -25,7 +25,7 @@ import { useBooking } from "@/store/booking";
 type Status = "idle" | "success" | "error" | "rateLimited";
 
 const fieldClass =
-  "h-12 w-full rounded-button border border-input bg-white px-4 text-base text-navy transition-colors placeholder:text-slate-400 hover:border-slate-400 focus:border-primary-dark focus:ring-3 focus:ring-primary/25 focus:outline-none aria-invalid:border-destructive aria-invalid:focus:ring-destructive/20";
+  "h-12 w-full rounded-button border border-input bg-surface/60 px-4 text-base text-navy transition-colors placeholder:text-slate-400 hover:border-sky/60 focus:border-violet focus:ring-3 focus:ring-primary/25 focus:outline-none aria-invalid:border-destructive aria-invalid:focus:ring-destructive/20";
 
 const noopSubscribe = () => () => {};
 
@@ -249,8 +249,8 @@ export function BookingForm() {
                 aria-invalid={!!errors.phone}
                 aria-describedby={describedBy("phone", errors.phone)}
                 className={cn(
-                  "flex h-12 items-stretch rounded-button border bg-white pl-1 transition-colors focus-within:border-primary-dark focus-within:ring-3 focus-within:ring-primary/25",
-                  errors.phone ? "border-destructive" : "border-input hover:border-slate-400",
+                  "flex h-12 items-stretch rounded-button border bg-surface/60 pl-1 transition-colors focus-within:border-violet focus-within:ring-3 focus-within:ring-primary/25",
+                  errors.phone ? "border-destructive" : "border-input hover:border-sky/60",
                 )}
                 numberInputProps={{
                   className: "h-full min-w-0 flex-1 rounded-r-button bg-transparent px-3 text-base text-navy outline-none",
@@ -347,13 +347,13 @@ export function BookingForm() {
 
         <fieldset>
           <legend className="mb-1.5 font-semibold text-navy">{t("fields.time")}</legend>
-          <div className="grid h-12 grid-cols-3 gap-1 rounded-button bg-surface p-1 ring-1 ring-primary/10">
+          <div className="grid h-12 grid-cols-3 gap-1 rounded-button bg-surface/60 p-1 ring-1 ring-input">
             {timesOfDay.map((time) => (
               <label key={time} className="relative">
                 <input type="radio" value={time} className="peer sr-only" {...register("timeOfDay")} />
                 <span
                   title={t(`timeHint.${time}`)}
-                  className="flex h-full cursor-pointer items-center justify-center rounded-[10px] text-sm font-semibold text-navy/70 transition-colors peer-checked:bg-white peer-checked:text-primary-dark peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-primary hover:text-navy"
+                  className="flex h-full cursor-pointer items-center justify-center rounded-[10px] text-sm font-semibold text-navy/70 transition-colors peer-checked:bg-violet peer-checked:text-white peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-primary hover:text-navy"
                 >
                   {t(`time.${time}`)}
                 </span>
@@ -400,7 +400,7 @@ export function BookingForm() {
             aria-required
             aria-invalid={!!errors.consent}
             aria-describedby={describedBy("consent", errors.consent)}
-            className="mt-1 size-5 shrink-0 cursor-pointer rounded accent-primary-dark"
+            className="mt-1 size-5 shrink-0 cursor-pointer rounded accent-violet"
             {...register("consent")}
           />
           <span>

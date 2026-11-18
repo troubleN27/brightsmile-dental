@@ -169,9 +169,9 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(functio
         aria-invalid={ariaInvalid || undefined}
         aria-describedby={ariaDescribedBy}
         className={cn(
-          "flex h-12 w-full cursor-pointer items-center gap-3 rounded-button border bg-white px-4 text-left text-base transition-colors outline-none",
-          "hover:border-slate-400 focus-visible:border-primary-dark focus-visible:ring-3 focus-visible:ring-primary/25",
-          "data-[state=open]:border-primary-dark data-[state=open]:ring-3 data-[state=open]:ring-primary/25",
+          "flex h-12 w-full cursor-pointer items-center gap-3 rounded-button border bg-surface/60 px-4 text-left text-base transition-colors outline-none",
+          "hover:border-sky/60 focus-visible:border-violet focus-visible:ring-3 focus-visible:ring-primary/25",
+          "data-[state=open]:border-violet data-[state=open]:ring-3 data-[state=open]:ring-primary/25",
           ariaInvalid ? "border-destructive" : "border-input",
         )}
       >
