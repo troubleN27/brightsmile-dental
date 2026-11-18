@@ -40,6 +40,14 @@
     "photoAlt": "Smiling patient with her dentist at BrightSmile Dental",
     "facts": "We've been open {years, plural, one {# year} other {# years}} and have treated more than {patients} patients, with an average review score of {rating} out of 5. Open every day, until 4 PM on Sundays."
   },
+  "About": {
+    "title": "A small clinic where we know patients by name",
+    "text1": "We have four dentists, and each one looks after their own patients from start to finish. We set aside a full hour for a first visit, so there's time for the exam, the scans and all your questions.",
+    "text2": "Most people come to us on a friend's recommendation, and later bring their kids and parents. That's the best review we could ask for.",
+    "role": "Clinical Director",
+    "cta": "Book a consultation",
+    "photoAlt": "{name}, Clinical Director at BrightSmile Dental"
+  },
   "Advantages": {
     "title": "Nobody looks forward to the dentist. We get it.",
     "subtitle": "So we try to keep the visit calm and the bill free of surprises.",

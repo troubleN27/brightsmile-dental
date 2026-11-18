@@ -1,3 +1,4 @@
+import { About } from "@/components/sections/About";
 import { Advantages } from "@/components/sections/Advantages";
 import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { Booking } from "@/components/sections/Booking";
@@ -18,6 +19,7 @@ export default function HomePage() {
       {/* Hero is not animated: it is the first thing people see */}
       <Hero />
       <Reveal>
+        <About />
         <Advantages />
         <Services />
         <Kids />

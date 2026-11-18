@@ -12,7 +12,7 @@ export function Booking() {
   const locale = useLocale();
 
   return (
-    <section id="booking" className="bg-teal-gradient py-16 md:py-24">
+    <section id="booking" className="bg-brand-gradient py-16 md:py-24">
       <Container>
         <SectionTitle tone="light" title={t("title")} subtitle={t("subtitle")} />
         <div className="grid gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] lg:gap-8">
@@ -26,7 +26,7 @@ export function Booking() {
               <ol className="mt-4 space-y-4">
                 {nextSteps.map((key, index) => (
                   <li key={key} className="flex gap-3">
-                    <span className="font-bold text-primary">{index + 1}.</span>
+                    <span className="font-bold text-sky-light">{index + 1}.</span>
                     <p className="text-sm leading-6">{t(`next.${key}`)}</p>
                   </li>
                 ))}
@@ -53,7 +53,7 @@ export function Booking() {
 
             <div>
               <p className="text-sm">{t("preferPhone")}</p>
-              <a href={phoneHref} className="mt-1 inline-block text-xl font-extrabold text-white hover:text-primary">
+              <a href={phoneHref} className="mt-1 inline-block text-xl font-extrabold text-white hover:text-sky-light">
                 {site.phone}
               </a>
             </div>

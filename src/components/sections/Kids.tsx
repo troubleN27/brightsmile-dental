@@ -12,7 +12,7 @@ export function Kids() {
   const t = useTranslations("Kids");
 
   return (
-    <section id="kids" className="relative bg-teal-gradient pb-16 md:pb-24 lg:py-0">
+    <section id="kids" className="relative bg-brand-gradient pb-16 md:pb-24 lg:py-0">
       <div className="relative aspect-[4/3] lg:absolute lg:inset-y-16 lg:left-0 lg:aspect-auto lg:w-1/2">
         <Photo
           src="/images/kids.webp"

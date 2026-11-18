@@ -261,7 +261,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(functio
                           "hover:bg-surface focus-visible:ring-2 focus-visible:ring-primary",
                           outside ? "text-navy/35" : "text-navy",
                           disabled && "cursor-default text-slate-300 hover:bg-transparent",
-                          isSelected && "bg-primary text-navy hover:bg-primary",
+                          isSelected && "bg-primary text-white hover:bg-primary",
                         )}
                       >
                         {day.day}

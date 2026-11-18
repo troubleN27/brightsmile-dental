@@ -4,7 +4,7 @@ type SectionTitleProps = {
   title: string;
   subtitle?: string;
   align?: "left" | "center";
-  /** "light" for teal sections */
+  /** "light" for dark blue and gradient sections */
   tone?: "dark" | "light";
   className?: string;
 };

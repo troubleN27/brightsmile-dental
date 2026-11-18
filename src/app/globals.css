@@ -2,18 +2,22 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* Brand tokens (SPEC §8) */
+/* Brand tokens: sky blue + violet palette */
 @theme {
-  --color-primary-dark: #0f766e;
+  /* Deep blue: accent text on light backgrounds (links, prices), dark end of gradients */
+  --color-primary-dark: #0369a1;
   --color-navy: #0f172a;
-  --color-surface: #f0fdfa;
-  /* Section backgrounds: soft mint and warm sand alternate with white and teal */
-  --color-mint: #e4f5f1;
-  --color-sand: #f7efe4;
-  /* Darkest teal for the footer and dark panels */
-  --color-ink: #0b3b38;
-  /* Header and the top of teal gradients */
-  --color-teal-deep: #115e59;
+  /* Sky blue accents (icons, numbers) and light sky for text on dark blue */
+  --color-sky: #0ea5e9;
+  --color-sky-light: #7dd3fc;
+  /* Section backgrounds: ice blue and lavender instead of plain white */
+  --color-surface: #eaf6fd;
+  --color-lavender: #f1edfd;
+  /* Violet call-to-action buttons and its hover shade */
+  --color-violet: #6d4fd4;
+  --color-violet-dark: #5a3cc0;
+  /* Darkest blue for the header, footer and dark panels */
+  --color-ink: #0b1f3a;
   --color-warning: #f59e0b;
 
   --radius-card: 16px;
@@ -57,19 +61,19 @@
   --card-foreground: #0f172a;
   --popover: #ffffff;
   --popover-foreground: #0f172a;
-  /* Teal fails AA with white text, so text on primary is navy */
-  --primary: #14b8a6;
-  --primary-foreground: #0f172a;
-  --secondary: #f0fdfa;
-  --secondary-foreground: #0f766e;
+  /* Primary = violet call-to-action, white text passes AA (5.4:1) */
+  --primary: #6d4fd4;
+  --primary-foreground: #ffffff;
+  --secondary: #eaf6fd;
+  --secondary-foreground: #0369a1;
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
-  --accent: #ccfbf1;
-  --accent-foreground: #0f766e;
+  --accent: #d6ecfb;
+  --accent-foreground: #0369a1;
   --destructive: #dc2626;
   --border: #e2e8f0;
   --input: #cbd5e1;
-  --ring: #14b8a6;
+  --ring: #0ea5e9;
 }
 
 @layer base {
@@ -128,9 +132,8 @@
   }
 }
 
-/* Brand gradient for the hero and other teal bands: starts with the header
-   colour (teal-deep) so the two join without a seam. White text stays above
-   4.5:1 contrast across the whole gradient. */
-@utility bg-teal-gradient {
-  background-image: linear-gradient(180deg, var(--color-teal-deep) 0%, var(--color-primary-dark) 100%);
+/* Brand gradient (deep blue to violet) for coloured bands. Both ends keep
+   white text above 4.5:1 contrast. */
+@utility bg-brand-gradient {
+  background-image: linear-gradient(120deg, var(--color-primary-dark) 0%, #3f5bc9 50%, var(--color-violet) 100%);
 }

@@ -32,7 +32,7 @@ export function Footer({ year }: FooterProps) {
           <ul className="space-y-2.5 text-sm">
             {navItems.map((id) => (
               <li key={id}>
-                <Link href={sectionHref(id)} className="transition-colors hover:text-primary">
+                <Link href={sectionHref(id)} className="transition-colors hover:text-sky-light">
                   {t(`Nav.${id}`)}
                 </Link>
               </li>
@@ -46,23 +46,23 @@ export function Footer({ year }: FooterProps) {
           </h2>
           <ul className="space-y-3 text-sm">
             <li>
-              <a href={phoneHref} className="flex gap-3 transition-colors hover:text-primary">
-                <Phone aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
+              <a href={phoneHref} className="flex gap-3 transition-colors hover:text-sky-light">
+                <Phone aria-hidden className="mt-0.5 size-4 shrink-0 text-sky-light" />
                 {site.phone}
               </a>
             </li>
             <li>
-              <a href={`mailto:${site.email}`} className="flex gap-3 transition-colors hover:text-primary">
-                <Mail aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
+              <a href={`mailto:${site.email}`} className="flex gap-3 transition-colors hover:text-sky-light">
+                <Mail aria-hidden className="mt-0.5 size-4 shrink-0 text-sky-light" />
                 {site.email}
               </a>
             </li>
             <li className="flex gap-3">
-              <MapPin aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
+              <MapPin aria-hidden className="mt-0.5 size-4 shrink-0 text-sky-light" />
               {site.address[locale]}
             </li>
             <li className="flex gap-3">
-              <Clock aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
+              <Clock aria-hidden className="mt-0.5 size-4 shrink-0 text-sky-light" />
               {site.hours[locale]}
             </li>
           </ul>
@@ -85,7 +85,7 @@ export function Footer({ year }: FooterProps) {
                 .join(", ")}
             </p>
           </div>
-          <Link href="/privacy" className="underline-offset-4 transition-colors hover:text-primary hover:underline">
+          <Link href="/privacy" className="underline-offset-4 transition-colors hover:text-sky-light hover:underline">
             {t("Footer.privacy")}
           </Link>
         </Container>

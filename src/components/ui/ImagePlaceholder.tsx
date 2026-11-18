@@ -36,7 +36,7 @@ export function ImagePlaceholder({
         square ? "rounded-none" : "rounded-card",
         !ratio && "h-full",
         tone === "brand"
-          ? "border border-primary/15 bg-[radial-gradient(circle_at_30%_20%,#ccfbf1,transparent_60%),linear-gradient(135deg,#f0fdfa,#e6fffa)]"
+          ? "border border-primary/15 bg-[radial-gradient(circle_at_30%_20%,#d6ecfb,transparent_60%),linear-gradient(135deg,#eaf6fd,#f1edfd)]"
           : "border border-slate-300/60 bg-[radial-gradient(circle_at_30%_20%,#f1f5f9,transparent_60%),linear-gradient(135deg,#e2e8f0,#cbd5e1)]",
         className,
       )}

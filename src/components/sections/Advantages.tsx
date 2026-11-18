@@ -11,7 +11,7 @@ export function Advantages() {
   const t = useTranslations("Advantages");
 
   return (
-    <section id="advantages" className="bg-mint py-16 md:py-24">
+    <section id="advantages" className="bg-lavender py-16 md:py-24">
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
         <div>
           <SectionTitle title={t("title")} subtitle={t("subtitle")} className="md:mb-10" />

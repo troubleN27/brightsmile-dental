@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 type WaveProps = {
-  /** Text colour class = colour of the section below, e.g. "text-mint" */
+  /** Text colour class = colour of the section below, e.g. "text-surface" */
   className?: string;
 };
 

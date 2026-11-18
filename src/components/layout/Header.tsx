@@ -21,6 +21,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const activeId = useActiveSection(navItems);
   const pathname = usePathname();
+  const overHero = pathname === "/" && !scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD);
@@ -44,8 +45,9 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 bg-teal-deep transition-shadow duration-300",
-        scrolled && "shadow-[0_8px_24px_-12px_rgba(4,47,46,0.6)]",
+        "sticky top-0 z-40 transition-[background-color,box-shadow] duration-300",
+        // Over the home page hero the header is see-through until the page scrolls
+        overHero ? "bg-transparent" : "bg-ink shadow-[0_8px_24px_-12px_rgba(2,6,23,0.6)]",
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4 lg:h-20">
@@ -83,9 +85,9 @@ export function Header() {
         <div className="flex items-center gap-2 xl:gap-3">
           <a
             href={phoneHref}
-            className="hidden items-center gap-2 font-bold whitespace-nowrap text-white transition-colors hover:text-mint 2xl:flex"
+            className="hidden items-center gap-2 font-bold whitespace-nowrap text-white transition-colors hover:text-sky-light 2xl:flex"
           >
-            <Phone aria-hidden className="size-4 text-mint" />
+            <Phone aria-hidden className="size-4 text-sky-light" />
             {site.phone}
           </a>
           <Button
@@ -100,7 +102,7 @@ export function Header() {
             </a>
           </Button>
           <LanguageSwitcher tone="onDark" className="hidden md:inline-flex" />
-          <Button asChild className="hidden bg-white text-primary-dark hover:bg-mint hover:text-primary-dark sm:inline-flex">
+          <Button asChild className="hidden sm:inline-flex">
             <Link href={sectionHref("booking")}>{t("Header.book")}</Link>
           </Button>
           <MobileMenu />

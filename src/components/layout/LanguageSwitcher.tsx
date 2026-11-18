@@ -6,7 +6,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 type LanguageSwitcherProps = {
-  /** "onDark" for the teal header */
+  /** "onDark" for the dark blue header */
   tone?: "light" | "onDark";
   className?: string;
 };

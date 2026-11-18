@@ -19,7 +19,7 @@ export function ServicesTabs({ tabs }: ServicesTabsProps) {
     <Tabs defaultValue={tabs[0]?.id} className="gap-8">
       {/* Scrolls sideways on small screens instead of wrapping */}
       <div className="-mx-4 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden">
-        <TabsList className="flex h-auto w-max gap-1 rounded-button bg-mint p-1.5">
+        <TabsList className="flex h-auto w-max gap-1 rounded-button bg-surface p-1.5">
           {tabs.map((tab) => (
             <TabsTrigger
               key={tab.id}
