@@ -1,3 +1,4 @@
+import { Phone } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import {
   Accordion,
@@ -9,7 +10,7 @@ import { TelegramIcon } from "@/components/ui/BrandIcons";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { site } from "@/config/site";
+import { phoneHref, site } from "@/config/site";
 import { faq } from "@/data/faq";
 import type { Locale } from "@/i18n/routing";
 
@@ -28,6 +29,12 @@ export function Faq() {
             className="mb-6 md:mb-8"
           />
           <div className="flex flex-wrap gap-3">
+            <Button asChild variant="outline">
+              <a href={phoneHref} aria-label={`${t("call")}: ${site.phone}`}>
+                <Phone />
+                {site.phone}
+              </a>
+            </Button>
             <Button asChild variant="secondary">
               <a href={site.telegram} target="_blank" rel="noopener noreferrer">
                 <TelegramIcon className="size-4" />
