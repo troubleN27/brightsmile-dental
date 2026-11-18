@@ -18,8 +18,10 @@ const KEY_STEP = 5;
 const clamp = (value: number) => Math.min(100, Math.max(0, value));
 
 /**
- * Before/after comparison. The "before" layer is clipped from the right; drag
- * the divider (mouse or touch) or use arrow keys / Home / End on the handle.
+ * Before/after comparison. The labels mark the ends of the track: drag the
+ * handle towards "before" to see the "before" photo, towards "after" to see the
+ * "after" one. The "after" layer covers the part left of the divider.
+ * Mouse, touch, arrow keys and Home / End all move the handle.
  */
 export function CompareSlider({
   before,
@@ -85,14 +87,14 @@ export function CompareSlider({
         className,
       )}
     >
-      {/* "After" sits underneath and defines the size */}
-      <div className="[&_*]:rounded-none">{after}</div>
+      {/* "Before" sits underneath and defines the size */}
+      <div className="[&_*]:rounded-none">{before}</div>
 
       <div
         className="absolute inset-0 [&_*]:rounded-none"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
-        {before}
+        {after}
       </div>
 
       <span className="pointer-events-none absolute top-3 left-3 rounded-full bg-navy/75 px-2.5 py-1 text-xs font-semibold text-white">
