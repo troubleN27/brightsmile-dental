@@ -16,7 +16,7 @@ export function Footer({ year }: FooterProps) {
   const locale = useLocale() as Locale;
 
   return (
-    <footer className="bg-navy text-slate-300">
+    <footer className="bg-ink text-slate-300">
       <Container className="grid gap-10 py-12 md:grid-cols-[1.3fr_1fr_1.3fr] md:py-16">
         <div className="space-y-4">
           <Link href="/" aria-label={t("Common.logoLabel")} className="inline-block">

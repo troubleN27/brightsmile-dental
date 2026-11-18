@@ -12,15 +12,15 @@ export function Booking() {
   const locale = useLocale();
 
   return (
-    <section id="booking" className="bg-mist py-16 md:py-24">
+    <section id="booking" className="bg-teal-gradient py-16 md:py-24">
       <Container>
-        <SectionTitle title={t("title")} subtitle={t("subtitle")} />
+        <SectionTitle tone="light" title={t("title")} subtitle={t("subtitle")} />
         <div className="grid gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] lg:gap-8">
-          <div className="rounded-card bg-white p-5 shadow-[0_24px_60px_-32px_rgba(15,23,42,0.35)] ring-1 ring-navy/10 sm:p-8">
+          <div className="rounded-card bg-white p-5 shadow-[0_30px_60px_-30px_rgba(4,47,46,0.7)] sm:p-8">
             <LazyBookingForm />
           </div>
 
-          <aside className="space-y-8 rounded-card bg-navy p-6 text-slate-300 sm:p-8 lg:self-start">
+          <aside className="space-y-8 rounded-card bg-ink p-6 text-slate-300 sm:p-8 lg:self-start">
             <div>
               <h3 className="text-lg font-bold text-white">{t("nextTitle")}</h3>
               <ol className="mt-4 space-y-4">

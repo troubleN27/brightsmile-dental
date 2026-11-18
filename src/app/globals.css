@@ -7,8 +7,13 @@
   --color-primary-dark: #0f766e;
   --color-navy: #0f172a;
   --color-surface: #f0fdfa;
-  /* Neutral light grey for alternating "airy" bands */
-  --color-mist: #f3f4f6;
+  /* Section backgrounds: soft mint and warm sand alternate with white and teal */
+  --color-mint: #e4f5f1;
+  --color-sand: #f7efe4;
+  /* Darkest teal for the footer and dark panels */
+  --color-ink: #0b3b38;
+  /* Header and the top of teal gradients */
+  --color-teal-deep: #115e59;
   --color-warning: #f59e0b;
 
   --radius-card: 16px;
@@ -121,4 +126,11 @@
     font-size: 36px;
     line-height: 44px;
   }
+}
+
+/* Brand gradient for the hero and other teal bands: starts with the header
+   colour (teal-deep) so the two join without a seam. White text stays above
+   4.5:1 contrast across the whole gradient. */
+@utility bg-teal-gradient {
+  background-image: linear-gradient(180deg, var(--color-teal-deep) 0%, var(--color-primary-dark) 100%);
 }

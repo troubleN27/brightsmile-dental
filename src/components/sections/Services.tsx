@@ -70,7 +70,7 @@ export function Services() {
   });
 
   return (
-    <section id="services" className="bg-mist py-16 md:py-24">
+    <section id="services" className="py-16 md:py-24">
       <Container>
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
         <ServicesTabs tabs={tabs} />

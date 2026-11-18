@@ -66,7 +66,7 @@ export function FloatingButtons() {
         </Button>
       </div>
       {/* Keeps the footer clear of the fixed bar on mobile */}
-      <div aria-hidden className="h-[76px] bg-navy md:hidden" />
+      <div aria-hidden className="h-[76px] bg-ink md:hidden" />
     </>
   );
 }

@@ -46,7 +46,7 @@ export function MobileMenu() {
         <Button
           variant="ghost"
           size="icon"
-          className="xl:hidden"
+          className="text-white hover:bg-white/10 hover:text-white xl:hidden"
           aria-label={t("Header.openMenu")}
         >
           <Menu className="size-6" />

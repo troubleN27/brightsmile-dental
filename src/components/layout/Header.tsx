@@ -44,10 +44,8 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 transition-[background-color,box-shadow] duration-300",
-        scrolled
-          ? "bg-white/90 shadow-[0_8px_24px_-12px_rgba(15,23,42,0.18)] backdrop-blur-md"
-          : "bg-transparent",
+        "sticky top-0 z-40 bg-teal-deep transition-shadow duration-300",
+        scrolled && "shadow-[0_8px_24px_-12px_rgba(4,47,46,0.6)]",
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4 lg:h-20">
@@ -57,7 +55,7 @@ export function Header() {
           onClick={handleLogoClick}
           className="rounded-button"
         >
-          <Logo />
+          <Logo tone="brand" />
         </Link>
 
         <nav aria-label={t("Nav.label")} className="hidden xl:block">
@@ -70,8 +68,8 @@ export function Header() {
                     href={sectionHref(id)}
                     aria-current={isActive ? "location" : undefined}
                     className={cn(
-                      "rounded-button px-2.5 py-2 text-[15px] font-semibold whitespace-nowrap transition-colors hover:text-primary-dark",
-                      isActive ? "bg-surface text-primary-dark" : "text-navy/80",
+                      "rounded-button px-2.5 py-2 text-[15px] font-semibold whitespace-nowrap transition-colors hover:text-white",
+                      isActive ? "bg-white/15 text-white" : "text-white/80",
                     )}
                   >
                     {t(`Nav.${id}`)}
@@ -85,24 +83,24 @@ export function Header() {
         <div className="flex items-center gap-2 xl:gap-3">
           <a
             href={phoneHref}
-            className="hidden items-center gap-2 font-bold whitespace-nowrap text-navy transition-colors hover:text-primary-dark 2xl:flex"
+            className="hidden items-center gap-2 font-bold whitespace-nowrap text-white transition-colors hover:text-mint 2xl:flex"
           >
-            <Phone aria-hidden className="size-4 text-primary-dark" />
+            <Phone aria-hidden className="size-4 text-mint" />
             {site.phone}
           </a>
           <Button
             asChild
             variant="ghost"
             size="icon"
-            className="2xl:hidden"
+            className="text-white hover:bg-white/10 hover:text-white 2xl:hidden"
             aria-label={t("Header.call")}
           >
             <a href={phoneHref}>
               <Phone className="size-5" />
             </a>
           </Button>
-          <LanguageSwitcher className="hidden md:inline-flex" />
-          <Button asChild className="hidden sm:inline-flex">
+          <LanguageSwitcher tone="onDark" className="hidden md:inline-flex" />
+          <Button asChild className="hidden bg-white text-primary-dark hover:bg-mint hover:text-primary-dark sm:inline-flex">
             <Link href={sectionHref("booking")}>{t("Header.book")}</Link>
           </Button>
           <MobileMenu />

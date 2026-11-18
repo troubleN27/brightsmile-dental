@@ -4,6 +4,8 @@ type SectionTitleProps = {
   title: string;
   subtitle?: string;
   align?: "left" | "center";
+  /** "light" for teal sections */
+  tone?: "dark" | "light";
   className?: string;
 };
 
@@ -11,6 +13,7 @@ export function SectionTitle({
   title,
   subtitle,
   align = "left",
+  tone = "dark",
   className,
 }: SectionTitleProps) {
   return (
@@ -21,9 +24,18 @@ export function SectionTitle({
         className,
       )}
     >
-      <h2 className="text-h2 text-navy text-balance">{title}</h2>
+      <h2 className={cn("text-h2 text-balance", tone === "dark" ? "text-navy" : "text-white")}>
+        {title}
+      </h2>
       {subtitle && (
-        <p className="mt-4 text-lg text-muted-foreground text-pretty">{subtitle}</p>
+        <p
+          className={cn(
+            "mt-4 text-lg text-pretty",
+            tone === "dark" ? "text-muted-foreground" : "text-white/85",
+          )}
+        >
+          {subtitle}
+        </p>
       )}
     </div>
   );

@@ -12,7 +12,7 @@ export function Kids() {
   const t = useTranslations("Kids");
 
   return (
-    <section id="kids" className="relative py-16 md:py-24 lg:py-0">
+    <section id="kids" className="relative bg-teal-gradient pb-16 md:pb-24 lg:py-0">
       <div className="relative aspect-[4/3] lg:absolute lg:inset-y-16 lg:left-0 lg:aspect-auto lg:w-1/2">
         <Photo
           src="/images/kids.webp"
@@ -26,8 +26,8 @@ export function Kids() {
         />
       </div>
 
-      <Container className="relative z-10 pt-10 lg:flex lg:justify-end lg:py-28">
-        <div className="lg:w-[56%] lg:border lg:border-navy/15 lg:bg-white lg:p-10 xl:px-12">
+      <Container className="relative z-10 -mt-10 lg:mt-0 lg:flex lg:justify-end lg:py-28">
+        <div className="bg-white p-6 shadow-[0_30px_60px_-30px_rgba(4,47,46,0.7)] sm:p-8 lg:w-[56%] lg:p-10 xl:px-12">
           <h2 className="text-h2 text-navy text-balance">{t("title")}</h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground text-pretty">{t("text")}</p>
           <ul className="mt-6 space-y-3 border-t border-border pt-6">

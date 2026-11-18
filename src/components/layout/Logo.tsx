@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
-  /** "light" is for dark backgrounds such as the footer */
-  tone?: "dark" | "light";
+  /** "light" is for dark backgrounds such as the footer, "brand" for the teal header */
+  tone?: "dark" | "light" | "brand";
   className?: string;
 };
 
@@ -37,7 +37,9 @@ export function Logo({ tone = "dark", className }: LogoProps) {
         <span
           className={cn(
             "font-semibold",
-            tone === "dark" ? "text-primary-dark" : "text-primary",
+            tone === "dark" && "text-primary-dark",
+            tone === "light" && "text-primary",
+            tone === "brand" && "text-mint",
           )}
         >
           {" "}

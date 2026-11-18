@@ -6,10 +6,12 @@ import { routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 type LanguageSwitcherProps = {
+  /** "onDark" for the teal header */
+  tone?: "light" | "onDark";
   className?: string;
 };
 
-export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ tone = "light", className }: LanguageSwitcherProps) {
   const t = useTranslations("LanguageSwitcher");
   const currentLocale = useLocale();
   const pathname = usePathname();
@@ -25,7 +27,8 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
     <nav
       aria-label={t("label")}
       className={cn(
-        "inline-flex rounded-button border border-border bg-white p-0.5 text-sm font-semibold",
+        "inline-flex rounded-button border p-0.5 text-sm font-semibold",
+        tone === "light" ? "border-border bg-white" : "border-white/25 bg-white/10",
         className,
       )}
     >
@@ -43,9 +46,10 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
             onClick={(event) => switchTo(event, locale)}
             className={cn(
               "rounded-[10px] px-2.5 py-1.5 uppercase transition-colors",
-              isActive
-                ? "bg-navy text-white"
-                : "text-muted-foreground hover:text-navy",
+              tone === "light" &&
+                (isActive ? "bg-navy text-white" : "text-muted-foreground hover:text-navy"),
+              tone === "onDark" &&
+                (isActive ? "bg-white text-primary-dark" : "text-white/80 hover:text-white"),
             )}
           >
             {locale}

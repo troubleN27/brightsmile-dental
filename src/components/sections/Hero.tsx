@@ -3,6 +3,7 @@ import { useFormatter, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Photo } from "@/components/ui/Photo";
+import { Wave } from "@/components/ui/Wave";
 import { sectionHref } from "@/components/layout/nav-items";
 import { site } from "@/config/site";
 import { Link } from "@/i18n/navigation";
@@ -13,12 +14,11 @@ export function Hero() {
   const { years, patients, rating } = site.stats;
 
   return (
-    // On desktop the lower part of the section turns grey, the photo bleeds to
-    // the right edge and the framed text box overlaps it
-    <section className="relative">
-      <div aria-hidden className="absolute inset-x-0 bottom-0 hidden h-[38%] bg-mist lg:block" />
-      <Container className="relative z-10 pt-8 pb-10 md:pt-12 lg:py-24">
-        <div className="lg:w-[64%] lg:border lg:border-navy/15 lg:bg-white lg:p-10 xl:w-[58%] xl:px-12">
+    // Teal band continuing the header; on desktop the photo bleeds to the right
+    // edge and the white text box overlaps it. A wave leads into the next section.
+    <section className="relative overflow-hidden bg-teal-gradient">
+      <Container className="relative z-10 pt-6 pb-10 md:pt-10 lg:pt-20 lg:pb-32">
+        <div className="bg-white p-6 shadow-[0_30px_60px_-30px_rgba(4,47,46,0.7)] sm:p-8 lg:w-[64%] lg:p-10 xl:w-[58%] xl:px-12">
           <h1 className="text-h1 text-navy text-balance">{t("title")}</h1>
           <p className="mt-5 max-w-xl text-lg leading-8 text-muted-foreground text-pretty">
             {t("subtitle")}
@@ -43,7 +43,7 @@ export function Hero() {
         </div>
       </Container>
 
-      <div className="relative aspect-[3/2] lg:absolute lg:top-0 lg:right-0 lg:bottom-20 lg:aspect-auto lg:w-1/2">
+      <div className="relative aspect-[3/2] lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-1/2">
         <Photo
           src="/images/hero.webp"
           alt={t("photoAlt")}
@@ -58,6 +58,8 @@ export function Hero() {
           placeholderIcon={Smile}
         />
       </div>
+
+      <Wave className="text-mint" />
     </section>
   );
 }

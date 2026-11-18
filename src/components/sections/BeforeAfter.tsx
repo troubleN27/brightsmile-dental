@@ -71,7 +71,7 @@ export function BeforeAfter() {
   const rest = cases.filter((item) => item !== featured);
 
   return (
-    <section id="results" className="bg-mist py-16 md:py-24">
+    <section id="results" className="bg-sand py-16 md:py-24">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-center lg:gap-16">
           <div>

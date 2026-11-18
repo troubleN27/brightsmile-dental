@@ -8,7 +8,7 @@ export function Offer() {
   const t = useTranslations("Offer");
 
   return (
-    <section id="offer" className="py-16 md:py-24">
+    <section id="offer" className="bg-sand py-16 md:py-24">
       <Container>
         <div className="grid gap-8 border-y border-navy/15 py-10 md:py-12 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-end lg:gap-16">
           <div>

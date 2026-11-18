@@ -26,7 +26,7 @@ export function Reviews() {
   }));
 
   return (
-    <section id="reviews" className="bg-mist py-16 md:py-24">
+    <section id="reviews" className="bg-mint py-16 md:py-24">
       <Container>
         <SectionTitle
           title={t("title")}

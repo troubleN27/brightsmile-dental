@@ -40,7 +40,7 @@ export function Contacts() {
       </Container>
 
       <div className="relative lg:min-h-[600px]">
-        <div className="relative h-[340px] bg-mist md:h-[420px] lg:absolute lg:inset-0 lg:h-auto">
+        <div className="relative h-[340px] bg-mint md:h-[420px] lg:absolute lg:inset-0 lg:h-auto">
           <iframe
             title={t("mapTitle")}
             src={mapEmbedUrl(locale)}
