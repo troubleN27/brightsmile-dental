@@ -18,9 +18,8 @@ const KEY_STEP = 5;
 const clamp = (value: number) => Math.min(100, Math.max(0, value));
 
 /**
- * Before/after comparison. The labels under the photo mark the ends of the track: drag the
- * handle towards "before" to see the "before" photo, towards "after" to see the
- * "after" one. The "after" layer covers the part left of the divider.
+ * Before/after comparison: "before" is left of the divider, "after" right of it,
+ * each half labelled in its own top corner. Dragging right reveals more "before".
  * Mouse, touch, arrow keys and Home / End all move the handle.
  */
 export function CompareSlider({
@@ -87,15 +86,22 @@ export function CompareSlider({
         dragging ? "cursor-grabbing" : "cursor-ew-resize",
       )}
     >
-      {/* "Before" sits underneath and defines the size */}
-      <div className="[&_*]:rounded-none">{before}</div>
+      {/* "After" sits underneath and defines the size */}
+      <div className="[&_*]:rounded-none">{after}</div>
 
       <div
         className="absolute inset-0 [&_*]:rounded-none"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
-        {after}
+        {before}
       </div>
+
+      <span className="pointer-events-none absolute top-3 left-3 rounded-full bg-navy/75 px-2.5 py-1 text-xs font-semibold text-white">
+        {beforeLabel}
+      </span>
+      <span className="pointer-events-none absolute top-3 right-3 rounded-full bg-white/90 px-2.5 py-1 text-xs font-semibold text-navy">
+        {afterLabel}
+      </span>
 
       <div
         className="pointer-events-none absolute inset-y-0 w-0.5 -translate-x-1/2 bg-white shadow-[0_0_0_1px_rgba(15,23,42,0.12)]"
@@ -116,12 +122,6 @@ export function CompareSlider({
       >
         <ChevronsLeftRight aria-hidden className="size-5" />
       </div>
-    </div>
-
-    {/* Track ends sit under the photo, so a label never covers the other photo */}
-    <div aria-hidden className="mt-2 flex justify-between px-1 text-sm font-semibold text-navy">
-      <span>← {beforeLabel}</span>
-      <span>{afterLabel} →</span>
     </div>
     </div>
   );
