@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Photo } from "@/components/ui/Photo";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { cases } from "@/data/cases";
+import { CaseLightbox } from "./CaseLightbox";
 import { reviews } from "@/data/reviews";
 import { getService } from "@/data/services";
 import type { Case } from "@/data/types";
@@ -90,6 +91,16 @@ export function BeforeAfter() {
           {rest.map((item) => (
             <li key={item.id}>
               <CaseSlider item={item} sizes="(min-width: 1024px) 280px, (min-width: 640px) 50vw, 100vw" />
+              {/* Small sliders are fiddly on desktop: offer a large view there */}
+              <div className="hidden lg:block">
+                <CaseLightbox
+                  title={getService(item.serviceId)?.title[locale] ?? ""}
+                  openLabel={t("enlarge")}
+                  closeLabel={t("close")}
+                >
+                  <CaseSlider item={item} sizes="960px" />
+                </CaseLightbox>
+              </div>
             </li>
           ))}
         </ul>

@@ -31,7 +31,7 @@ export function Advantages() {
       />
 
       <Container className="relative">
-        <SectionTitle tone="light" title={t("title")} subtitle={t("subtitle")} />
+        <SectionTitle tone="light" align="center" title={t("title")} subtitle={t("subtitle")} />
         <ul className="grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
           {items.map((key) => (
             <li key={key} className="flex gap-4">

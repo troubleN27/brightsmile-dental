@@ -13,10 +13,12 @@
   },
   "Nav": {
     "label": "Site sections",
+    "about": "About",
+    "doctors": "Our Dentists",
     "services": "Services & Pricing",
     "results": "Results",
-    "doctors": "Our Dentists",
     "reviews": "Reviews",
+    "kids": "Kids",
     "faq": "FAQ",
     "contacts": "Contact"
   },
@@ -198,7 +200,9 @@
     "beforeAlt": "{service}: before treatment",
     "afterAlt": "{service}: after treatment",
     "sliderLabel": "Before and after comparison: {service}",
-    "duration": "Treatment time: {duration}"
+    "duration": "Treatment time: {duration}",
+    "enlarge": "View larger",
+    "close": "Close"
   },
   "Reviews": {
     "title": "From our patients",

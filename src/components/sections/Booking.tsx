@@ -19,6 +19,7 @@ export function Booking() {
       <Container>
         <SectionTitle
           tone="light"
+          align="center"
           title={t("title")}
           subtitle={t("subtitle")}
         />

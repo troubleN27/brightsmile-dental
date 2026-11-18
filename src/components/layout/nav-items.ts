@@ -1,9 +1,11 @@
 /** Landing sections linked from the header, mobile menu and footer. */
 export const navItems = [
+  "about",
   "doctors",
   "services",
   "results",
   "reviews",
+  "kids",
   "faq",
   "contacts",
 ] as const;

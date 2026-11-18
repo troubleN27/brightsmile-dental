@@ -16,7 +16,7 @@ export function Doctors() {
   return (
     <section id="doctors" className="bg-surface py-16 md:py-24">
       <Container>
-        <SectionTitle align="center" title={t("title")} subtitle={t("subtitle")} />
+        <SectionTitle title={t("title")} subtitle={t("subtitle")} />
         <ul className="mt-28 grid gap-x-8 gap-y-28 sm:grid-cols-2 xl:grid-cols-4">
           {doctors.map((doctor) => {
             const name = doctor.name[locale];

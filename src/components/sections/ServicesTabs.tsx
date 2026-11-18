@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export type ServicesTab = {
@@ -15,10 +16,26 @@ type ServicesTabsProps = {
   tabs: ServicesTab[];
 };
 
-/** Photo cards act as tabs; the price list of the chosen category opens below. */
+/**
+ * Photo cards act as tabs; the price list of the chosen category opens below.
+ * On phones and tablets the list is often off screen, so after a pick the page
+ * scrolls to it (smoothly unless the visitor prefers reduced motion, via CSS).
+ */
 export function ServicesTabs({ tabs }: ServicesTabsProps) {
+  const panelsRef = useRef<HTMLDivElement>(null);
+
+  function revealPrices() {
+    const panels = panelsRef.current;
+    if (!panels || !window.matchMedia("(max-width: 1023px)").matches) return;
+    // Wait for the new panel to render before measuring
+    requestAnimationFrame(() => {
+      const top = panels.getBoundingClientRect().top;
+      if (top > window.innerHeight * 0.5) panels.scrollIntoView({ block: "start" });
+    });
+  }
+
   return (
-    <Tabs defaultValue={tabs[0]?.id} className="gap-8">
+    <Tabs defaultValue={tabs[0]?.id} onValueChange={revealPrices} className="gap-8">
       <TabsList className="grid h-auto w-full grid-cols-2 gap-3 bg-transparent p-0 group-data-[orientation=horizontal]/tabs:h-auto md:gap-4 lg:grid-cols-3">
         {tabs.map((tab) => (
           <TabsTrigger
@@ -34,11 +51,13 @@ export function ServicesTabs({ tabs }: ServicesTabsProps) {
         ))}
       </TabsList>
 
-      {tabs.map((tab) => (
-        <TabsContent key={tab.id} value={tab.id}>
-          {tab.content}
-        </TabsContent>
-      ))}
+      <div ref={panelsRef}>
+        {tabs.map((tab) => (
+          <TabsContent key={tab.id} value={tab.id}>
+            {tab.content}
+          </TabsContent>
+        ))}
+      </div>
     </Tabs>
   );
 }

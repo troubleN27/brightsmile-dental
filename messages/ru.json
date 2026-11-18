@@ -13,10 +13,12 @@
   },
   "Nav": {
     "label": "Разделы сайта",
+    "about": "О клинике",
+    "doctors": "Врачи",
     "services": "Услуги и цены",
     "results": "До и после",
-    "doctors": "Врачи",
     "reviews": "Отзывы",
+    "kids": "Детям",
     "faq": "Вопросы",
     "contacts": "Контакты"
   },
@@ -198,7 +200,9 @@
     "beforeAlt": "{service}: до лечения",
     "afterAlt": "{service}: после лечения",
     "sliderLabel": "Сравнение до и после: {service}",
-    "duration": "Срок лечения: {duration}"
+    "duration": "Срок лечения: {duration}",
+    "enlarge": "Смотреть крупно",
+    "close": "Закрыть"
   },
   "Reviews": {
     "title": "Отзывы пациентов",

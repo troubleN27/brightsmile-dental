@@ -5,7 +5,7 @@ import { Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
-import { phoneHref, site } from "@/config/site";
+import { phoneHref } from "@/config/site";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -70,7 +70,7 @@ export function Header() {
                     href={sectionHref(id)}
                     aria-current={isActive ? "location" : undefined}
                     className={cn(
-                      "rounded-button px-2.5 py-2 text-[15px] font-semibold whitespace-nowrap transition-colors hover:text-white",
+                      "rounded-button px-2 py-2 text-sm font-semibold whitespace-nowrap transition-colors hover:text-white",
                       isActive ? "bg-white/15 text-white" : "text-white/80",
                     )}
                   >
@@ -83,18 +83,11 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2 xl:gap-3">
-          <a
-            href={phoneHref}
-            className="hidden items-center gap-2 font-bold whitespace-nowrap text-white transition-colors hover:text-sky-light 2xl:flex"
-          >
-            <Phone aria-hidden className="size-4 text-sky-light" />
-            {site.phone}
-          </a>
           <Button
             asChild
             variant="ghost"
             size="icon"
-            className="text-white hover:bg-white/10 hover:text-white 2xl:hidden"
+            className="text-white hover:bg-white/10 hover:text-white"
             aria-label={t("Header.call")}
           >
             <a href={phoneHref}>
