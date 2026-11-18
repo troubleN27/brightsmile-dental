@@ -84,7 +84,8 @@
     "subtitle": "У каждого врача своё направление. Кто начал лечение, тот его и заканчивает: вас не передают из рук в руки.",
     "experience": "Стаж {years, plural, one {# год} few {# года} many {# лет} other {# года}}",
     "book": "Записаться к врачу",
-    "photoAlt": "{name}, {specialty}"
+    "photoAlt": "{name}, {specialty}",
+    "education": "Образование"
   },
   "Process": {
     "title": "Что будет после заявки",

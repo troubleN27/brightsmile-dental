@@ -84,7 +84,8 @@
     "subtitle": "Each dentist has their own specialty. Whoever starts your treatment finishes it, so you won't be passed around.",
     "experience": "{years} years in practice",
     "book": "Book with this dentist",
-    "photoAlt": "{name}, {specialty}"
+    "photoAlt": "{name}, {specialty}",
+    "education": "Education"
   },
   "Process": {
     "title": "What happens after you book",

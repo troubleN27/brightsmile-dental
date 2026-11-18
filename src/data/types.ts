@@ -26,6 +26,9 @@ export type Doctor = {
   experienceYears: number;
   /** Path inside /public */
   photo: string;
+  /** Two short sentences: what the doctor does and how they work */
+  bio: Localized;
+  education: Localized;
 };
 
 /** Before/after case */
