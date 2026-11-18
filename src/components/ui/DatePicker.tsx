@@ -169,14 +169,14 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(functio
         aria-invalid={ariaInvalid || undefined}
         aria-describedby={ariaDescribedBy}
         className={cn(
-          "flex h-12 w-full cursor-pointer items-center gap-3 rounded-button border bg-field px-4 text-left text-base transition-colors outline-none",
-          "hover:border-sky/60 focus-visible:border-sky-light focus-visible:ring-3 focus-visible:ring-sky/30",
-          "data-[state=open]:border-sky-light data-[state=open]:ring-3 data-[state=open]:ring-sky/30",
-          ariaInvalid ? "border-red-400" : "border-field-border",
+          "flex h-12 w-full cursor-pointer items-center gap-3 rounded-button border bg-white/10 px-4 text-left text-base transition-colors outline-none",
+          "hover:border-white/50 focus-visible:border-white/80 focus-visible:ring-3 focus-visible:ring-white/20",
+          "data-[state=open]:border-white/80 data-[state=open]:ring-3 data-[state=open]:ring-white/20",
+          ariaInvalid ? "border-rose-300" : "border-white/25",
         )}
       >
-        <CalendarDays aria-hidden className="size-5 shrink-0 text-sky-light" />
-        <span className={cn("min-w-0 flex-1 truncate", selected ? "text-white" : "text-sky-light/55")}>
+        <CalendarDays aria-hidden className="size-5 shrink-0 text-white/80" />
+        <span className={cn("min-w-0 flex-1 truncate", selected ? "text-white" : "text-white/70")}>
           {selected ? formatters.trigger.format(toDate(selected)) : labels.placeholder}
         </span>
       </PopoverPrimitive.Trigger>

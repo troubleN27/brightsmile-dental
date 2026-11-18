@@ -138,13 +138,13 @@ export function CountrySelect({
         aria-label={`${ariaLabel ?? ""}: ${selectedLabel}`.trim()}
         onFocus={onFocus}
         onBlur={onBlur}
-        className="flex h-full shrink-0 cursor-pointer items-center gap-2 rounded-l-button border-r border-field-border pr-2.5 pl-1 text-sm font-bold text-white outline-none hover:bg-white/10 focus-visible:bg-white/10 disabled:cursor-not-allowed"
+        className="flex h-full shrink-0 cursor-pointer items-center gap-2 rounded-l-button border-r border-white/25 pr-2.5 pl-1 text-sm font-bold text-white outline-none hover:bg-white/10 focus-visible:bg-white/10 disabled:cursor-not-allowed"
       >
         <CountryFlag country={value} />
         <span>{value}</span>
         <ChevronDown
           aria-hidden
-          className={cn("size-4 text-sky-light/70 transition-transform", open && "rotate-180")}
+          className={cn("size-4 text-white/70 transition-transform", open && "rotate-180")}
         />
       </PopoverPrimitive.Trigger>
 

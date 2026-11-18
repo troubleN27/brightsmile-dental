@@ -9,7 +9,7 @@ import { LazyBookingForm } from "./LazyBookingForm";
 
 const nextSteps = ["call", "visit", "plan"] as const;
 
-/** Dark form card on the brand gradient, with a frosted-glass side panel. */
+/** Form and side panel both on frosted glass over the brand gradient. */
 export function Booking() {
   const t = useTranslations("Booking");
   const locale = useLocale();
@@ -19,12 +19,8 @@ export function Booking() {
       <Container>
         <SectionTitle tone="light" title={t("title")} subtitle={t("subtitle")} />
         <div className="grid gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] lg:gap-8">
-          <div className="overflow-hidden rounded-[28px] bg-ink shadow-[0_30px_70px_-30px_rgba(11,31,58,0.9)] ring-1 ring-sky-light/20">
-            {/* Thin brand stripe across the top of the card */}
-            <div aria-hidden className="h-1.5 bg-[linear-gradient(90deg,#0ea5e9,#6d4fd4)]" />
-            <div className="p-5 sm:p-8">
-              <LazyBookingForm />
-            </div>
+          <div className="rounded-[28px] bg-white/10 p-5 shadow-[0_30px_70px_-40px_rgba(11,31,58,0.8)] ring-1 ring-white/25 backdrop-blur-md sm:p-8">
+            <LazyBookingForm />
           </div>
 
           <aside className="space-y-7 rounded-[28px] bg-white/10 p-6 text-white/85 ring-1 ring-white/25 backdrop-blur-md sm:p-8 lg:self-start">
@@ -60,7 +56,7 @@ export function Booking() {
 
             <a
               href={phoneHref}
-              className="group flex items-center gap-4 rounded-card bg-violet px-5 py-4 text-white shadow-[0_16px_32px_-16px_rgba(109,79,212,0.9)] transition-colors hover:bg-violet-dark"
+              className="group flex items-center gap-4 rounded-card bg-white/10 px-5 py-4 text-white ring-1 ring-white/20 transition-colors hover:bg-white/20"
             >
               <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white text-violet">
                 <Phone aria-hidden className="size-5" />

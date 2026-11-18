@@ -25,7 +25,7 @@ import { useBooking } from "@/store/booking";
 type Status = "idle" | "success" | "error" | "rateLimited";
 
 const fieldClass =
-  "h-12 w-full rounded-button border border-field-border bg-field px-4 text-base text-white transition-colors placeholder:text-sky-light/55 hover:border-sky/60 focus:border-sky-light focus:ring-3 focus:ring-sky/30 focus:outline-none aria-invalid:border-red-400 aria-invalid:focus:ring-red-400/25";
+  "h-12 w-full rounded-button border border-white/25 bg-white/10 px-4 text-base text-white transition-colors placeholder:text-white/70 hover:border-white/50 focus:border-white/80 focus:ring-3 focus:ring-white/20 focus:outline-none aria-invalid:border-rose-300 aria-invalid:focus:ring-rose-200/30";
 
 const noopSubscribe = () => () => {};
 
@@ -37,7 +37,7 @@ function useToday() {
 function ErrorMessage({ id, text }: { id: string; text: string | null }) {
   if (!text) return null;
   return (
-    <p id={id} className="mt-1.5 flex items-start gap-1.5 text-sm text-red-300">
+    <p id={id} className="mt-1.5 flex items-start gap-1.5 text-sm text-rose-100">
       <AlertCircle aria-hidden className="mt-0.5 size-4 shrink-0" />
       {text}
     </p>
@@ -162,7 +162,7 @@ export function BookingForm() {
         role="status"
         className="flex flex-col items-center py-10 text-center outline-none"
       >
-        <span className="flex size-16 items-center justify-center rounded-full bg-sky/15 text-sky-light">
+        <span className="flex size-16 items-center justify-center rounded-full bg-white/15 text-white">
           <CheckCircle2 aria-hidden className="size-8" />
         </span>
         <h3 className="mt-5 text-xl font-bold text-white md:text-2xl">{t("successTitle")}</h3>
@@ -181,16 +181,16 @@ export function BookingForm() {
           ref={statusRef}
           tabIndex={-1}
           role="alert"
-          className="rounded-card border border-red-400/40 bg-red-500/10 p-4 outline-none"
+          className="rounded-card border border-rose-200/40 bg-rose-500/20 p-4 outline-none"
         >
-          <p className="flex items-center gap-2 font-bold text-red-300">
+          <p className="flex items-center gap-2 font-bold text-rose-100">
             <AlertCircle aria-hidden className="size-5" />
             {t("errorTitle")}
           </p>
           <p className="mt-1 text-sm text-white/80">
             {status === "rateLimited" ? t("tooManyText") : t("errorText")}
           </p>
-          <a href={phoneHref} className="mt-2 inline-flex items-center gap-2 text-sm font-bold text-sky-light hover:underline">
+          <a href={phoneHref} className="mt-2 inline-flex items-center gap-2 text-sm font-bold text-white underline-offset-2 hover:underline">
             <Phone aria-hidden className="size-4" />
             {t("callUs", { phone: site.phone })}
           </a>
@@ -200,7 +200,7 @@ export function BookingForm() {
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor={fieldId("name")} className="mb-1.5 block font-semibold text-white">
-            {t("fields.name")} <span aria-hidden className="text-red-300">*</span>
+            {t("fields.name")} <span aria-hidden className="text-rose-100">*</span>
           </label>
           <input
             id={fieldId("name")}
@@ -218,7 +218,7 @@ export function BookingForm() {
 
         <div>
           <label htmlFor={fieldId("phone")} className="mb-1.5 block font-semibold text-white">
-            {t("fields.phone")} <span aria-hidden className="text-red-300">*</span>
+            {t("fields.phone")} <span aria-hidden className="text-rose-100">*</span>
           </label>
           <Controller
             name="phone"
@@ -249,11 +249,11 @@ export function BookingForm() {
                 aria-invalid={!!errors.phone}
                 aria-describedby={describedBy("phone", errors.phone)}
                 className={cn(
-                  "flex h-12 items-stretch rounded-button border bg-field pl-1 transition-colors focus-within:border-sky-light focus-within:ring-3 focus-within:ring-sky/30",
-                  errors.phone ? "border-red-400" : "border-field-border hover:border-sky/60",
+                  "flex h-12 items-stretch rounded-button border bg-white/10 pl-1 transition-colors focus-within:border-white/80 focus-within:ring-3 focus-within:ring-white/20",
+                  errors.phone ? "border-rose-300" : "border-white/25 hover:border-white/50",
                 )}
                 numberInputProps={{
-                  className: "h-full min-w-0 flex-1 rounded-r-button bg-transparent px-3 text-base text-white outline-none placeholder:text-sky-light/55",
+                  className: "h-full min-w-0 flex-1 rounded-r-button bg-transparent px-3 text-base text-white outline-none placeholder:text-white/70",
                 }}
               />
             )}
@@ -347,13 +347,13 @@ export function BookingForm() {
 
         <fieldset>
           <legend className="mb-1.5 font-semibold text-white">{t("fields.time")}</legend>
-          <div className="grid h-12 grid-cols-3 gap-1 rounded-button bg-field p-1 ring-1 ring-field-border">
+          <div className="grid h-12 grid-cols-3 gap-1 rounded-button bg-white/10 p-1 ring-1 ring-white/25">
             {timesOfDay.map((time) => (
               <label key={time} className="relative">
                 <input type="radio" value={time} className="peer sr-only" {...register("timeOfDay")} />
                 <span
                   title={t(`timeHint.${time}`)}
-                  className="flex h-full cursor-pointer items-center justify-center rounded-[10px] text-sm font-semibold text-white/70 transition-colors peer-checked:bg-violet peer-checked:text-white peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-primary hover:text-white"
+                  className="flex h-full cursor-pointer items-center justify-center rounded-[10px] text-sm font-semibold text-white/70 transition-colors peer-checked:bg-white peer-checked:text-violet peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-primary hover:text-white"
                 >
                   {t(`time.${time}`)}
                 </span>
@@ -369,7 +369,7 @@ export function BookingForm() {
             {t("fields.comment")}
           </label>
           <span
-            className={cn("text-sm", commentLength > 500 ? "text-red-300" : "text-white/60")}
+            className={cn("text-sm", commentLength > 500 ? "text-rose-100" : "text-white/60")}
             aria-hidden
           >
             {commentLength}/500
@@ -405,16 +405,16 @@ export function BookingForm() {
           />
           <span>
             {t("fields.consentBefore")}
-            <Link href="/privacy" target="_blank" className="font-semibold text-sky-light underline underline-offset-2">
+            <Link href="/privacy" target="_blank" className="font-semibold text-white underline underline-offset-2 hover:text-white/80">
               {t("fields.consentLink")}
             </Link>
-            <span aria-hidden className="text-red-300"> *</span>
+            <span aria-hidden className="text-rose-100"> *</span>
           </span>
         </label>
         <ErrorMessage {...errorProps("consent", errors.consent)} />
       </div>
 
-      <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto">
+      <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-white text-violet hover:bg-surface sm:w-auto">
         {isSubmitting && <Loader2 aria-hidden className="size-5 animate-spin" />}
         {isSubmitting ? t("submitting") : t("submit")}
       </Button>
