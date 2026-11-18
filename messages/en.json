@@ -172,23 +172,25 @@
   },
   "Kids": {
     "title": "Children see their own dentist",
-    "text": "Dr. Granina works only with kids. She takes her time and makes sure the visit feels interesting rather than scary.",
-    "points": {
+    "text": "Kids at our clinic see Dr. Olga Granina. She takes her time and makes sure the visit feels interesting rather than scary.",
+    "badge": "Kids from age 3",
+    "facts": {
       "firstVisit": {
-        "title": "First visit, no treatment.",
-        "text": "Your child sits in the chair, holds the mirror, gets a checkup, and you get tips for brushing at home."
+        "value": "1st visit",
+        "label": "a hello, no treatment"
       },
       "short": {
-        "title": "Short appointments.",
-        "text": "Treatment takes 20 to 30 minutes, with breaks whenever your child needs one."
+        "value": "20–30 min",
+        "label": "per visit, with breaks"
       },
       "parent": {
-        "title": "You can stay.",
-        "text": "Parents are welcome in the room for the whole visit."
+        "value": "Together",
+        "label": "parents can stay in the room"
       }
     },
     "cta": "Book for my child",
-    "photoAlt": "A pediatric dentist talking to a little girl in the dental chair"
+    "call": "Call us",
+    "photoAlt": "Pediatric dentist Olga Granina laughing with a little girl in the dental chair"
   },
   "Results": {
     "title": "Work by our dentists",
